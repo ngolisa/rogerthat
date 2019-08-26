@@ -1,0 +1,2 @@
+class Notion < ApplicationRecord
+end
