@@ -2,12 +2,30 @@
   <h1><%= @lesson.notion.name %></h1>
   <p> <%= @lesson.notion.description %></p>
   <p><%= @lesson.teacher.full_name %></p>
-  <%= link_to "Edit", edit_lesson_path(@lesson) %>
+  <p><%= @lesson.status %></p>
+  <h3>This is the comment for this lesson</h3>
+  <p><%= @lesson.comment %></p>
+  <br>
 
-    <% if current_user == @lesson.teacher %>
-        <%= simple_form_for @lesson do |f| %>
+  <% until current_user.teacher %>
+    <%= link_to "Edit", edit_lesson_path(@lesson) %>
+  <% end %>
+
+  <% if current_user == @lesson.teacher && @lesson.status == 'pending'%>
+
+    <button type="button" class="btn btn-ghost">
+      <%= link_to "Confirm", changestatus_lesson_path(@lesson, :status => 'accepted'), method: :POST%>
+    </button>
+
+
+    <button type="button" class="btn btn-ghost">
+      <%= link_to "Refuse", changestatus_lesson_path(@lesson, :status => 'refused'), method: :POST %>
+    </button>
+  <% end %>
+  <% if current_user == @lesson.teacher && @lesson.comment == nil%>
+      <%= simple_form_for @lesson do |f| %>
         <%= f.input :comment %>
-        <%= f.submit %>
-      <% end %>
-    <%end %>
+      <%= f.submit %>
+    <% end %>
+  <%end %>
 </div>
