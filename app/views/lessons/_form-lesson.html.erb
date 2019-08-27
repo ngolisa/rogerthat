@@ -4,7 +4,7 @@
   <div class="container-form-new-spot">
     <%= simple_form_for @lesson do |f| %>
       <%= f.association :teacher, collection: User.where(teacher: true), label_method: :full_name %>
-      <%= f.association :notion, collection: Notion.all, label_method: :full_name %>
+      <%= f.association :notion, collection: Notion.all, label_method: :name %>
       <%= f.input :student, as: :hidden, input_html: { value: current_user }   %>
       <%= f.input :date, as: :datetime, required: false, input_html: {class: "datepicker"} %>
       <%= f.button :submit, class: 'btn btn-light' %>
