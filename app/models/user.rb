@@ -5,4 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :notions
   has_many :lessons
+
+  mount_uploader :avatar, PhotoUploader
+  # validates :avatar, presence: true
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
