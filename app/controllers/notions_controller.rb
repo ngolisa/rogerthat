@@ -13,7 +13,7 @@ class NotionsController < ApplicationController
 
   def create
     @notion = Notion.new(notion_params)
-    # @notion.user = current_user
+    @notion.user = current_user
     if @notion.save
       redirect_to notion_path(@notion)
     else

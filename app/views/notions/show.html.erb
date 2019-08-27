@@ -1,7 +1,17 @@
 <div class="container">
   <h1> <%= @notion.name %> </h1>
 
- <%= link_to "creer notion", new_notion_path %>
- <%= link_to "edit notion", edit_notion_path(@notion) %>
+    <%# debug current_user.id %>
+    <% if current_user == @notion.user %>
+      <%= link_to "edit notion", edit_notion_path(@notion) %>
+      <%= link_to "Delete", notion_path(@notion),
+            method: :delete,
+            data: { confirm: "Are you sure?" }, class:"btn-del" %>
+    <% end %>
+
+    <% unless @notion.photo.blank? %>
+      <%#= cl_image_tag @notion.photo %>
+    <% end %>
+
 
 </div>
