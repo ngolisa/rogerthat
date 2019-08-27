@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :notions
   has_many :lessons
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
