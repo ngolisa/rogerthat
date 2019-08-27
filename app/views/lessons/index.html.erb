@@ -3,7 +3,7 @@
   <% @lessons.each do |lesson|%>
     <%= link_to lesson_path(lesson) do %>
 
-      <%= lesson.date %>
+      <%= lesson.date.strftime('%A %e %B, at %l:%M')%>
     <% end %>
   <% end %>
   <h1>My past lessons</h1>
