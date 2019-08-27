@@ -38,8 +38,14 @@ class LessonsController < ApplicationController
   end
 
   def update
-    @lesson.update(lesson_params)
-    redirect_to lesson_path(@lesson)
+    unless current_user.teacher
+      @lesson = Lesson.update(lesson_params)
+      if @lesson.save
+        redirect_to lesson_path(@lesson)
+      else
+        render 'new'
+      end
+    end
   end
 
   def destroy
