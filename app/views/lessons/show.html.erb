@@ -4,4 +4,10 @@
   <p><%= @lesson.teacher.full_name %></p>
   <%= link_to "Edit", edit_lesson_path(@lesson) %>
 
+    <% if current_user == @lesson.teacher %>
+        <%= simple_form_for @lesson do |f| %>
+        <%= f.input :comment %>
+        <%= f.submit %>
+      <% end %>
+    <%end %>
 </div>

@@ -1,5 +1,6 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+
   def index
     if current_user.teacher
       @lessons = Lesson.where(teacher: current_user)
