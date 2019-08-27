@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>My lessons</h1>
+  <% @lessons.each do |lesson|%>
+    <h4><%= lesson.name %></h4>
+    <%= lesson.date %>
+  <% end %>
+</div>

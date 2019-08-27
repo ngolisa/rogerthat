@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
 puts "begin seed"
 Notion.destroy_all
 Lesson.destroy_all
@@ -23,4 +24,5 @@ smash = Notion.create!(name: "Smash", description: "test", user: teacher)
 Lesson.create!(teacher: teacher, student: student, notion: smash)
 
 puts "Seed done!"
+
 
