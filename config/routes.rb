@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get '/design', to: "pages#design"
   resources :notions
   resources :lessons
-  resources :reviews, only: [ :new, :create ]
+  resources :reviews, only: [:index, :new, :create, :delete ]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
