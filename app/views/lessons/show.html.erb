@@ -1,4 +1,10 @@
 <div class="container">
   <h1><%= @lesson.notion.name %></h1>
 
+    <% if current_user == @lesson.teacher %>
+        <%= simple_form_for @lesson do |f| %>
+        <%= f.input :comment %>
+        <%= f.submit %>
+      <% end %>
+    <%end %>
 </div>

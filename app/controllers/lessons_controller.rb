@@ -1,5 +1,6 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+
   def index
     if current_user.teacher
       @lessons = Lesson.where(teacher: current_user)
@@ -37,6 +38,8 @@ class LessonsController < ApplicationController
   end
 
   def update
+    @lesson.update(lesson_params)
+    redirect_to lesson_path(@lesson)
   end
 
   def destroy
