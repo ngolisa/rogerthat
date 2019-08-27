@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_144606) do
+ActiveRecord::Schema.define(version: 2019_08_27_102832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "lessons", force: :cascade do |t|
-    t.date "date"
+    t.datetime "date"
     t.bigint "notion_id"
     t.boolean "complete"
     t.text "comment"
@@ -34,10 +34,11 @@ ActiveRecord::Schema.define(version: 2019_08_26_144606) do
     t.string "name"
     t.string "description"
     t.string "video"
+    t.bigint "user_id"
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "user_id"
+    t.index ["user_id"], name: "index_notions_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -68,5 +69,6 @@ ActiveRecord::Schema.define(version: 2019_08_26_144606) do
   add_foreign_key "lessons", "notions"
   add_foreign_key "lessons", "users", column: "student_id", on_delete: :restrict
   add_foreign_key "lessons", "users", column: "teacher_id", on_delete: :restrict
+  add_foreign_key "notions", "users"
   add_foreign_key "reviews", "lessons"
 end
