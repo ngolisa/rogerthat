@@ -55,7 +55,7 @@ class LessonsController < ApplicationController
 
   def lesson_params
     # => Whitelisting
-    params.require(:lesson).permit(:date, :comment, :status, :teacher)
+    params.require(:lesson).permit(:date, :comment, :status, :teacher_id, :notion_id)
   end
 
   def set_lesson

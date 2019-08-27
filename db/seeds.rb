@@ -16,7 +16,7 @@ Notion.destroy_all
 puts "destroying users"
 User.destroy_all
 
-teacher = User.new(email: "roger@federer.com", password: '123456', teacher: true)
+teacher = User.new(email: "roger@federer.com", password: '123456', teacher: true, first_name: 'Roger', last_name: 'Federer')
 url = "https://cdn.images.express.co.uk/img/dynamic/72/590x/Roger-Federer-1169347.jpg?r=1566587000376"
 teacher.remote_avatar_url = url
 teacher.save
