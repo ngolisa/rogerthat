@@ -15,11 +15,16 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :first_name, %>
-    <% f.input :last_name,
+    <%= f.input :first_name,
                 required: true,
-                autofocus: true, %>
-    <%= f.input :avatar %>
+                input_html: { autocomplete: "first_name" }%>
+    <%= f.input :last_name,
+                required: true,
+                input_html: { autocomplete: "last_name" }%>
+    <%= f.input :avatar,
+                required: true,
+                input_html: { autocomplete: "avatar" }%>
+
 
 
   </div>
