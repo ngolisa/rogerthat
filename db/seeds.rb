@@ -6,4 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-coupdroit = Notion.new(name: "Coup droit", description: "test")
+
+puts "begin seed"
+Notion.destroy_all
+Lesson.destroy_all
+User.destroy_all
+
+teacher = User.create(email: "roger@federer.com", password: '123456')
+student = User.create(email: "novak@djoko", password: '123456')
+
+coupdroit = Notion.create!(name: "Coup droit", description: "test", user: teacher)
+revers = Notion.create!(name: "Revers", description: "test", user: teacher)
+service = Notion.create!(name: "Service", description: "test", user: teacher)
+smash = Notion.create!(name: "Smash", description: "test", user: teacher)
+
+Lesson.create!(teacher: teacher, student: student, notion: smash)
+
+puts "Seed done!"
+

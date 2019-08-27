@@ -34,11 +34,10 @@ ActiveRecord::Schema.define(version: 2019_08_26_144606) do
     t.string "name"
     t.string "description"
     t.string "video"
-    t.bigint "user_id"
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_notions_on_user_id"
+    t.string "user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -69,6 +68,5 @@ ActiveRecord::Schema.define(version: 2019_08_26_144606) do
   add_foreign_key "lessons", "notions"
   add_foreign_key "lessons", "users", column: "student_id", on_delete: :restrict
   add_foreign_key "lessons", "users", column: "teacher_id", on_delete: :restrict
-  add_foreign_key "notions", "users"
   add_foreign_key "reviews", "lessons"
 end

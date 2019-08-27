@@ -1,6 +1,9 @@
 <div class="container">
   <% @notions.each do |notion|%>
-    <h2> <%= notion.name %> </h2>
+    <h2> <%= link_to notion.name, notion_path(notion) %> </h2>
     <p><%= notion.description %></p>
   <% end %>
+
+
+
 </div>

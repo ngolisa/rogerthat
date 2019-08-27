@@ -1,0 +1,14 @@
+<div class="contain">
+
+  <h1>Add a new notion</h1>
+  <div class="container-form-new-spot">
+    <%= simple_form_for @notion do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :video %>
+      <%= f.input :user_id %>
+      <%= f.input :photo %>
+      <%= f.button :submit, class: 'btn btn-light' %>
+    <% end %>
+  </div>
+</div>
