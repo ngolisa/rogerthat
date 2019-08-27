@@ -16,8 +16,15 @@ Notion.destroy_all
 puts "destroying users"
 User.destroy_all
 
-teacher = User.create!(email: "roger@federer.com", password: '123456', teacher: true)
-student = User.create!(email: "novak@djoko", password: '123456')
+teacher = User.new(email: "roger@federer.com", password: '123456', teacher: true)
+url = "https://cdn.images.express.co.uk/img/dynamic/72/590x/Roger-Federer-1169347.jpg?r=1566587000376"
+teacher.remote_avatar_url = url
+teacher.save
+
+student = User.new(email: "novak@djoko", password: '123456')
+url = "https://www.tennisworldusa.org/imgb/80786/atp-us-open-novak-djokovic-downs-carballes-baena-to-open-title-defense.jpg"
+student.remote_avatar_url = url
+student.save
 
 coupdroit = Notion.create!(name: "Coup droit", description: "test", user: teacher)
 revers = Notion.create!(name: "Revers", description: "test", user: teacher)
