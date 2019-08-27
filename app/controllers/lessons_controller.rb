@@ -28,7 +28,7 @@ class LessonsController < ApplicationController
       if @lesson.save
         redirect_to lesson_path(@lesson)
       else
-        redirect_to lesson
+        render 'new'
       end
     end
   end
@@ -46,7 +46,7 @@ class LessonsController < ApplicationController
 
   def lesson_params
     # => Whitelisting
-    params.require(:lesson).permit(:date, :comment, :completed, :teacher_id)
+    params.require(:lesson).permit(:date, :comment, :completed, :teacher)
   end
 
   def set_lesson
