@@ -1,10 +1,17 @@
 class LessonsController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_lesson, only: [:show, :edit, :update, :destroy]
   def index
-    @lessons = current_user.lessons
-      .select { |r| r.date > DateTime.now }
-    @oldlessons = current_user.lessons
-      .select { |r| r.date <= DateTime.now }
+    if current_user.teacher
+      @lessons = Lesson.where(teacher: current_user)
+        .select { |r| r.date > DateTime.now }
+      @passed_lessons = Lesson.where(teacher: current_user)
+        .select { |r| r.date <= DateTime.now }
+    else
+      @lessons = Lesson.where(student: current_user)
+        .select { |r| r.date > DateTime.now }
+      @passed_lessons = Lesson.where(student: current_user)
+        .select { |r| r.date <= DateTime.now }
+    end
   end
 
   def show
@@ -15,13 +22,15 @@ class LessonsController < ApplicationController
   end
 
   def create
-    @lesson = Lesson.new(lesson_params)
-    if @lesson.save
-      redirect_to lesson_path(@lesson)
-    else
-      redirect_to lesson
+    unless current_user.teacher
+      @lesson = Lesson.new(lesson_params)
+      @lesson.student = current_user
+      if @lesson.save
+        redirect_to lesson_path(@lesson)
+      else
+        redirect_to lesson
+      end
     end
-
   end
 
   def edit
@@ -37,7 +46,7 @@ class LessonsController < ApplicationController
 
   def lesson_params
     # => Whitelisting
-    params.require(:lesson).permit(:date, :comment, :completed)
+    params.require(:lesson).permit(:date, :comment, :completed, :teacher_id)
   end
 
   def set_lesson
