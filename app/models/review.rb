@@ -1,3 +1,3 @@
 class Review < ApplicationRecord
-  belongs_to :lesson
+  belongs_to :notion
 end
