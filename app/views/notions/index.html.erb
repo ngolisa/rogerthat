@@ -1,7 +1,21 @@
 <div class="container">
+  <% if current_user.teacher %>
+    <h1>My notions</h1>
+    <% @mynotions.each do |notion| %>
+      <%= link_to notion_path(notion) do  %>
+        <h2><%=  notion.name%></h2>
+        <p><%=  notion.description%></p>
+      <% end %>
+    <% end %>
+  <% end %>
+
+
+
   <% @notions.each do |notion|%>
-    <h2> <%= link_to notion.name, notion_path(notion) %> </h2>
-    <p><%= notion.description %></p>
+    <%= link_to notion_path(notion) do %>
+      <h2>  <%= notion.name %> </h2>
+      <p><%= notion.description %></p>
+      <% end %>
   <% end %>
 
 

@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-  before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+  before_action :set_lesson, only: [:show, :edit, :update, :destroy, :changestatus]
 
   def index
     if current_user.teacher
@@ -38,24 +38,24 @@ class LessonsController < ApplicationController
   end
 
   def update
-    unless current_user.teacher
-      @lesson = Lesson.update(lesson_params)
-      if @lesson.save
-        redirect_to lesson_path(@lesson)
-      else
-        render 'new'
-      end
-    end
+    @lesson = Lesson.update(lesson_params)
+    redirect_to lesson_path(@lesson)
   end
 
   def destroy
+  end
+
+  def changestatus
+    params[:status] == "accepted" ? @lesson.status = "accepted" : @lesson.status = "refused"
+    @lesson.save
+    redirect_to lesson_path(@lesson)
   end
 
   private
 
   def lesson_params
     # => Whitelisting
-    params.require(:lesson).permit(:date, :comment, :completed, :teacher)
+    params.require(:lesson).permit(:date, :comment, :status, :teacher)
   end
 
   def set_lesson

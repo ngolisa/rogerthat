@@ -1,6 +1,7 @@
 class NotionsController < ApplicationController
   def index
     @notions = Notion.all
+    @mynotions = Notion.where(user: current_user)
   end
 
   def show
