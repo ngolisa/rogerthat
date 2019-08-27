@@ -1,0 +1,13 @@
+<div class="container">
+
+  <h1> list review </h1>
+  <ul>
+    <% @reviews.each do |review| %>
+      <li>
+          <%= review.comment %> - <%= review.rating %>
+      </li>
+    <%end%>
+  </ul>
+
+  <%= render "form-review" %>
+</div>
