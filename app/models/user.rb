@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :notions
   has_many :lessons
+
+  mount_uploader :avatar, PhotoUploader
+  validates :avatar, presence: true
 end
