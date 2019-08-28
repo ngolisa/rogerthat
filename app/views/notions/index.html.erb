@@ -1,21 +1,42 @@
 <div class="container">
   <% if current_user.teacher %>
+    <%= link_to "Add a notion", new_notion_path, class: 'btn btn-flat' %>
     <h1>My notions</h1>
     <% @mynotions.each do |notion| %>
       <%= link_to notion_path(notion) do  %>
-        <h2><%=  notion.name%></h2>
-        <p><%=  notion.description%></p>
+
+        <div class="card-notion">
+          <%= cl_image_tag notion.photo%>
+          <div class="card-notion-infos">
+            <div>
+              <h2><%=  notion.name%></h2>
+              <p><%=  notion.description%></p>
+            </div>
+            <%= cl_image_tag notion.user.avatar, class: "card-notion-user avatar-bordered"%>
+          </div>
+        </div>
+
       <% end %>
     <% end %>
   <% end %>
 
 
-
+  <h1>All notions</h1>
   <% @notions.each do |notion|%>
     <%= link_to notion_path(notion) do %>
-      <h2>  <%= notion.name %> </h2>
-      <p><%= notion.description %></p>
-      <% end %>
+
+
+      <div class="card-notion">
+          <%= cl_image_tag notion.photo%>
+          <div class="card-notion-infos">
+            <div>
+              <h2><%=  notion.name%></h2>
+              <p><%=  notion.description%></p>
+            </div>
+            <%= cl_image_tag notion.user.avatar, class: "card-notion-user avatar-bordered"%>
+          </div>
+        </div>
+    <% end %>
   <% end %>
 
 

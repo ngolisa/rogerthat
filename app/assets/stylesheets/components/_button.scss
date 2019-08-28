@@ -2,11 +2,39 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #ffdd41;
+  background: #f7be16;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #ffec29;
+  background: #f7be16;
   color: white;
 }
+
+.btn-confirm {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #293462;
+  transition: background 0.3s ease;
+}
+
+.btn-confirm:hover {
+  background: #f7be16;
+  color: white;
+}
+
+
+.btn-refuse {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #00818a;
+  transition: background 0.3s ease;
+}
+
+.btn-refuse:hover {
+  background: #f7be16;
+  color: white;
+}
+

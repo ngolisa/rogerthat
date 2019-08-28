@@ -1,15 +1,14 @@
-<div class="contain">
-
-  <h1>Add a new notion</h1>
-  <div class="container-form-new-spot">
-    <%= simple_form_for @notion do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-       <%= f.input :photo %>
-       <%= f.input :photo_cache, as: :hidden %>
-      <%= f.input :video %>
-       <%= f.input :video_cache, as: :hidden %>
-      <%= f.button :submit, class: 'btn btn-light' %>
-    <% end %>
-  </div>
+<div class="container">
+  <div class="form-container">
+    <h1>Add a new notion 🗒</h1>
+      <%= simple_form_for @notion do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+         <%= f.input :photo %>
+         <%= f.input :photo_cache, as: :hidden %>
+        <%= f.input :video %>
+         <%= f.input :video_cache, as: :hidden %>
+        <%= f.button :submit, class: 'btn btn-flat' %>
+      <% end %>
+    </div>
 </div>

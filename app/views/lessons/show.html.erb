@@ -1,10 +1,34 @@
 <div class="container">
-  <h1><%= @lesson.notion.name %></h1>
-  <p> <%= @lesson.notion.description %></p>
-  <p><%= @lesson.teacher.full_name %></p>
-  <p><%= @lesson.status %></p>
-  <h3>This is the comment for this lesson</h3>
-  <p><%= @lesson.comment %></p>
+  <div class="rapport-lesson">
+    <%= link_to notion_path(@lesson.notion) do %>
+      <div class="rapport-lesson-notion">
+        <%= cl_image_tag @lesson.notion.photo %>
+        <h1><%= @lesson.notion.name %></h1>
+        <p><%= @lesson.notion.description %></p>
+        <%= cl_image_tag @lesson.notion.user.avatar, class: "card-notion-user avatar-bordered"%>
+
+      </div>
+
+
+    <% end %>
+      <div class="rapport-lesson-date">
+        <h4><%= @lesson.date.strftime('%A %e %B, at %l:%M') %></h4>
+        <h5>In 🕘: <%= distance_of_time_in_words(@lesson.date, DateTime.now) %></h5>
+      </div>
+  </div>
+
+  <% unless @lesson.comment.nil? %>
+    <div class="card-comment">
+      <%= cl_image_tag @lesson.teacher.avatar %>
+      <div class="card-comment-infos">
+        <h2><%= @lesson.teacher.first_name %> said :</h2>
+        <p><%= @lesson.comment %></p>
+      </div>
+    </div>
+
+  <% end %>
+
+
   <br>
 
   <% unless current_user.teacher %>
@@ -13,15 +37,15 @@
 
   <% if current_user == @lesson.teacher && @lesson.status == 'pending'%>
 
-    <button type="button" class="btn btn-ghost">
-      <%= link_to "Confirm", changestatus_lesson_path(@lesson, :status => 'accepted'), method: :POST%>
-    </button>
+      <%= link_to "Confirm", changestatus_lesson_path(@lesson, :status => 'accepted'), method: :POST, class: "btn-confirm"%>
 
 
-    <button type="button" class="btn btn-ghost">
-      <%= link_to "Refuse", changestatus_lesson_path(@lesson, :status => 'refused'), method: :POST %>
-    </button>
+
+      <%= link_to "Refuse", changestatus_lesson_path(@lesson, :status => 'refused'), method: :POST, class: "btn-refuse" %>
+
   <% end %>
+  <br>
+  <br>
   <% if current_user == @lesson.teacher && @lesson.comment.nil? %>
     <%= simple_form_for @lesson do |f| %>
       <%= f.input :comment %>
