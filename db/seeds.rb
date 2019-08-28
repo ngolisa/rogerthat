@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "begin seed"
+Review.destroy_all
 puts "destroying lessons"
 Lesson.destroy_all
 puts "destroying notions"
