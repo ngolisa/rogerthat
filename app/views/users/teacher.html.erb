@@ -1,0 +1,7 @@
+<div class="container">
+  <h1><%= @teacher.first_name %> <%= @teacher.last_name %></h1>
+  <% @reviews.each do |review| %>
+    <%= review.comment %>
+    <%= review.lesson.student.email %>
+  <% end %>
+</div>

@@ -52,4 +52,13 @@
       <%= f.submit %>
     <% end %>
   <%end %>
+
+  <br>
+  <% if @lesson.review == nil && current_user == @lesson.student %>
+    <%= simple_form_for [@lesson, @review] do |f| %>
+      <%= f.input :rating %>
+      <%= f.input :comment %>
+      <%= f.submit %>
+    <% end %>
+  <% end %>
 </div>
