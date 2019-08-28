@@ -12,6 +12,7 @@
 
     <% end %>
       <div class="rapport-lesson-date">
+        <%= cl_image_tag @lesson.teacher.avatar, class: "avatar" %>
         <h4><%= @lesson.date.strftime('%A %e %B, at %l:%M') %></h4>
         <h5>In 🕘: <%= distance_of_time_in_words(@lesson.date, DateTime.now) %></h5>
       </div>
@@ -52,4 +53,13 @@
       <%= f.submit %>
     <% end %>
   <%end %>
+
+  <br>
+  <% if @lesson.review.nil?  && current_user == @lesson.student %>
+    <%= simple_form_for [@lesson, @review] do |f| %>
+      <%= f.input :rating , collection: (0..5).to_a %>
+      <%= f.input :comment %>
+      <%= f.submit %>
+    <% end %>
+  <% end %>
 </div>

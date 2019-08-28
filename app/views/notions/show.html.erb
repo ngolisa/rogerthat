@@ -1,9 +1,12 @@
 <div class="container">
+
   <% if @notion.photo.blank? %>
     <% bg = "" %>
   <% else  %>
     <% bg = "background-image: url( #{cl_image_path @notion.photo})" %>
   <% end %>
+
+
 
   <div class="jumbotron header-notion">
     <div style="<%= bg %>"></div>

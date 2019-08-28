@@ -1,0 +1,16 @@
+<div class="container">
+  <%= cl_image_tag @teacher.avatar, class: "avatar-large" %>
+  <h1><%= @teacher.first_name %> <%= @teacher.last_name %></h1>
+  <% unless @reviews.empty? %>
+    <% @reviews.each do |review| %>
+
+      <div class="card-comment">
+        <%= cl_image_tag review.lesson.student.avatar%>
+        <div class="card-comment-infos">
+          <h2><%= review.rating %></h2>
+          <p><%= review.comment %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

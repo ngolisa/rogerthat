@@ -3,7 +3,7 @@
   <div class="form-container">
     <h1>Create a lesson 👟</h1>
     <%= simple_form_for @lesson do |f| %>
-      <%= f.association :teacher, collection: User.where(teacher: true), label_method: :email %>
+      <%= f.association :teacher, collection: [User.where(teacher: true).map {|u| [u.id, "#{u.first_name} #{u.last_name}"]}] %>
       <%= f.association :notion, collection: Notion.all, label_method: :name %>
       <%= f.input :student, as: :hidden, input_html: { value: current_user }   %>
       <%= f.input :date, as: :datetime, required: false, input_html: {class: "datepicker"} %>

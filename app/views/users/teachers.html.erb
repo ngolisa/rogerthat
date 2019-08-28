@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>All teachers </h1>
+  <% @teachers.each do |teacher| %>
+    <%= link_to teacher_path(teacher) do  %>
+      <div class="card-prof">
+        <%= cl_image_tag teacher.avatar %>
+        <div class="card-prof-infos">
+          <h2><%= teacher.first_name %> <%= teacher.last_name %></h2>
+        </div>
+      </div>
+    <% end %>
+
+  <% end %>
+</div>
