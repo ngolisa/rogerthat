@@ -2,13 +2,15 @@
   <h1>My upcoming lessons</h1>
   <% @lessons.each do |lesson|%>
     <%= link_to lesson_path(lesson) do %>
-
+      <h4><%= lesson.notion.name %></h4>
       <%= lesson.date.strftime('%A %e %B, at %l:%M')%>
     <% end %>
   <% end %>
   <h1>My past lessons</h1>
   <% @passed_lessons.each do |lesson|%>
-    <h4><%= lesson.name %></h4>
-    <%= lesson.date %>
+    <%= link_to lesson_path(lesson) do %>
+      <h4><%= lesson.notion.name %></h4>
+      <%= lesson.date.strftime('%A %e %B, at %l:%M') %>
+    <% end %>
   <% end %>
 </div>

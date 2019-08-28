@@ -7,7 +7,7 @@
   <p><%= @lesson.comment %></p>
   <br>
 
-  <% until current_user.teacher %>
+  <% unless current_user.teacher %>
     <%= link_to "Edit", edit_lesson_path(@lesson) %>
   <% end %>
 
@@ -22,9 +22,9 @@
       <%= link_to "Refuse", changestatus_lesson_path(@lesson, :status => 'refused'), method: :POST %>
     </button>
   <% end %>
-  <% if current_user == @lesson.teacher && @lesson.comment == nil%>
-      <%= simple_form_for @lesson do |f| %>
-        <%= f.input :comment %>
+  <% if current_user == @lesson.teacher && @lesson.comment.nil? %>
+    <%= simple_form_for @lesson do |f| %>
+      <%= f.input :comment %>
       <%= f.submit %>
     <% end %>
   <%end %>
