@@ -23,14 +23,12 @@ class LessonsController < ApplicationController
   end
 
   def create
-    unless current_user.teacher
-      @lesson = Lesson.new(lesson_params)
-      @lesson.student = current_user
-      if @lesson.save
-        redirect_to lesson_path(@lesson)
-      else
-        render 'new'
-      end
+    @lesson = Lesson.new(lesson_params)
+    @lesson.student = current_user
+    if @lesson.save
+      redirect_to lesson_path(@lesson)
+    else
+      render 'new'
     end
   end
 
@@ -54,7 +52,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    # => Whitelisting
     params.require(:lesson).permit(:date, :comment, :status, :teacher_id, :notion_id)
   end
 
