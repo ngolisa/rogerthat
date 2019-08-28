@@ -1,16 +1,21 @@
 <div class="container">
-  <%= link_to notion_path(@lesson.notion) do %>
-    <div class="card-notion">
-      <%= cl_image_tag @lesson.notion.photo%>
-      <div class="card-notion-infos">
-        <div>
-          <h2><%=  @lesson.notion.name%></h2>
-          <p><%=  @lesson.notion.description%></p>
-        </div>
+  <div class="rapport-lesson">
+    <%= link_to notion_path(@lesson.notion) do %>
+      <div class="rapport-lesson-notion">
+        <%= cl_image_tag @lesson.notion.photo %>
+        <h1><%= @lesson.notion.name %></h1>
+        <p><%= @lesson.notion.description %></p>
         <%= cl_image_tag @lesson.notion.user.avatar, class: "card-notion-user avatar-bordered"%>
+
       </div>
-    </div>
-  <% end %>
+
+
+    <% end %>
+      <div class="rapport-lesson-date">
+        <h4><%= @lesson.date.strftime('%A %e %B, at %l:%M') %></h4>
+        <h5>In 🕘: <%= distance_of_time_in_words(@lesson.date, DateTime.now) %></h5>
+      </div>
+  </div>
 
   <% unless @lesson.comment.nil? %>
     <div class="card-comment">

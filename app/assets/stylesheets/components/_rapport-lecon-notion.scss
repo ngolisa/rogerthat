@@ -1,0 +1,22 @@
+.rapport-lesson{
+  display: flex;
+  height: 200px;
+  justify-content: space-around;
+  border: solid 1px green;
+  margin-bottom: 10px;
+
+}
+
+
+.rapport-lesson-notion{
+  border: solid 1px black;
+  padding: 10px;
+
+
+}
+
+.rapport-lesson-date{
+  border: solid 1px red;
+  padding: 10px;
+  text-align: center;
+}
