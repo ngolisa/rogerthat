@@ -6,10 +6,11 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-
-    @review.lesson = Lesson.last
-   if @review.save
-    redirect_to reviews_path
+    @review.lesson = Lesson.find(params[:lesson_id])
+  if @review.save
+    redirect_to teacher_path(@review.lesson.teacher)
+  else
+    redirect_to lesson_path(@review.lesson)
   end
 end
 

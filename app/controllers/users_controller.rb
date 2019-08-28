@@ -6,6 +6,6 @@ class UsersController < ApplicationController
   def teacher
     @teacher = User.find(params[:id])
     @lessons = Lesson.where(teacher: @teacher)
-    @reviews = @lessons.map { |lesson| lesson.reviews }.flatten
+    @reviews = @lessons.map { |lesson| lesson.review }.compact
   end
 end
