@@ -47,12 +47,10 @@ coupdroit1.description = "La gestuelle du bras qui frappe la balle vers l'avant 
 TRANSFORMEZ VOTRE COUP DROIT EN ARME FATALE
 Donner une gifle en coup droit ! Tous les joueurs de tennis rêvent de pouvoir le faire sur le terrain et de lever les bras, victorieux.
 
-Avant tout chose, il convient de faire attention à la technique de base de votre coup droit, sans laquelle vous ne pourrez pas prendre de plaisir à frapper la petite balle jaune.
+Avant tout chose, il convient de faire attention à la technique de base de votre coup droit, sans laquelle vous ne pourrez pas prendre de plaisir à frapper la petite balle jaune."
 
-Damien Caby, notre coach partenaire et Nicolas Escudé, notre partenaire technique, vous proposent donc de découvrir en vidéo leurs conseils qui vous permettront de progresser, corriger vos défauts et prendre conscience de vos faiblesses afin de déterminer comment améliorer votre coup droit."
-
-
-coupdroit1.photo ="https://res.cloudinary.com/dkblfugfl/image/upload/v1566988293/roger_wo0bmd.jpg"
+coupdroit1.photo ="https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566997054/2018-07-07-22.21.09_nor9m6.png"
+coupdroit1.video ="https://res.cloudinary.com/dw4g4hgu2/video/upload/v1566997867/Roger_Federer_Forehand_Slow_Motion_2019_-_Fluid_Relaxation_hd_pvzjie.mp4"
 
 coupdroit2 = Notion.create!(name: "Le Coup Droit - Le timing de la frappe", description: "test", user: arthur)
 coupdroit2.description = "Le coup droit est le coup le plus connu du tennis avec le service. Pourquoi ? Parce qu’il est naturellement effectué par les joueurs qu’ils soient débutants ou experts.
@@ -72,31 +70,46 @@ Pour un coup droit croisé, le plan de frappe doit obligatoirement être devant.
 
 Vers le haut et l’avant, le passage du coude doit entraîner le passage de l’épaule et seulement après le passage de l’appui arrière."
 
-coupdroit2.video = ""
+coupdroit2.photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566997159/Nadal-pr_C3_A9paration-modele-de-coup-droit-par-mirsasha_th7gui.jpg"
+coupdroit2.video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1566999531/Rafa_forehand_nqwdwk.mp4"
 
 coupdroit3 = Notion.create!(name: "Le Coup Droit - Comment se servir des jambes", description: "test", user: roger)
 
-revers1 = Notion.create!(name: "Le Revers - Comment lifter", description: "test", user: arthur)
-revers1.description = ""
-revers1.video = ""
+revers1 = Notion.create!(name: "Le Revers - Comment lifter", user: arthur)
+revers1.description = "Le revers est-il une arme d’attaque ?
+
+Pour beaucoup de joueurs, il n’est que le coup neutre qui permet au mieux de repousser l’adversaire, au pire celui qui permet de simplement remettre la balle dans le court.
+
+Pourtant, même si le revers d’attaque est difficile à réaliser, il n’en est pas moins surprenant et peut se révéler une arme redoutable.
+
+REVERS D'ATTAQUE : « JE ME DÉCALE OU PAS ? »
+L’envie de se décaler lorsqu’une balle assez haute arrive vous démange ? Et c’est normal, mais est ce vraiment le bon moment ? Votre revers peut faire la différence.
+
+Attention cependant aux balles dites “cotonneuses” sans vitesse et sans poids, ne vous précipitez pas !
+
+Préférez un revers lifté long et précis (voir “Le revers lifté”) afin d’obtenir une balle un peu plus consistante et qui vous permettra d’attaquer.
+
+Accélérez une balle haute, au dessus de votre épaule en revers est extrêmement compliqué car il faut bien souvent réalisé un revers sauté où il est difficile de mettre du poids dans la balle et de la vitesse. (Voir “Le revers sauté”). Attendez donc une balle plus propice."
+
+revers1.photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566997212/2607023-54039177-1600-900_zvjlpe.jpg"
+revers1.video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1566997333/Advanced_Tennis_Backhand_-_Drills_2__3_Lifting_The_Ball_xbdfxz.mp4"
 
 revers2 = Notion.create!(name: "Le Revers - Petit slice des familles", description: "test", user: roger)
-revers2.description = ""
-revers2.photo = "https://res.cloudinary.com/dkblfugfl/image/upload/v1566988389/nadal_a4qpui.jpg"
+revers2.photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566997454/2602433-53947377-1600-900_q2z8ck.jpg"
 
-revers3 = Notion.create!(name: "Le Revers- Plutôt une main ou deux mains ?", description: "test", user: roger)
+revers3 = Notion.create!(name: "Le Revers- Plutôt une main ou deux mains ?", user: roger)
 
-service1 = Notion.create!(name: "Service - Comment faire un service au tennis ", description: "test", user: arthur)
-service2 = Notion.create!(name: "Service - Gagner 30 km/h en vitesse", description: "test", user: arthur)
+service1 = Notion.create!(name: "Service - Comment faire un service au tennis ", user: arthur)
+service2 = Notion.create!(name: "Service - Gagner 30 km/h en vitesse", user: arthur)
 
 smash1 = Notion.create!(name: "Smash - Comment réaliser un bon smash", description: "test", user: roger)
-smash2 = Notion.create!(name: "Smash - Équilibre des jambes", description: "test", user: roger)
+smash2 = Notion.create!(name: "Smash - Équilibre des jambes", user: roger)
 
 mental1 = Notion.create!(name: "Le Mental - Se mettre dans de bonnes conditions en rentrant sur le terrain", description: "test", user: roger)
-mental1.video = ""
-mental1.photo ="https://res.cloudinary.com/dkblfugfl/image/upload/v1566988481/federer-roger-050919_outqns.jpg"
+mental1.photo ="https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566997522/t1larg.rfroar.gi_xuzida.jpg"
 
 mental2 = Notion.create!(name: "Le Mental - S'entrainer à penser positif", description: "test", user: roger)
+mental2.photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566998670/roger-federer-mental-conseil-carriere-min_uo30nc.jpg"
 
 # Lesson:
 
