@@ -107,9 +107,9 @@ smash2 = Notion.create!(name: "Smash - Équilibre des jambes", user: roger)
 
 mental1 = Notion.create!(name: "Le Mental - Se mettre dans de bonnes conditions en rentrant sur le terrain", description: "test", user: roger)
 mental1.photo ="https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566997522/t1larg.rfroar.gi_xuzida.jpg"
+mental1.video = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566998670/roger-federer-mental-conseil-carriere-min_uo30nc.jpg"
 
 mental2 = Notion.create!(name: "Le Mental - S'entrainer à penser positif", description: "test", user: roger)
-mental2.photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566998670/roger-federer-mental-conseil-carriere-min_uo30nc.jpg"
 
 # Lesson:
 
