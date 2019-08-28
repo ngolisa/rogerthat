@@ -1,13 +1,42 @@
 <div class="container">
   <h1>Dashboard</h1>
-  <%= current_user.first_name %>
 
-  <div class="next_lesson">
-    <h1> titre lessons </h1>
-    <% @next_lessons.each do |lesson| %>
-      <%= lesson.date %>
-    <% end %>
+ <div class="box0">
 
+    <div class="box1">
+      <h1>All upcoming lessons</h1>
+      <% @all_upcoming_lessons.each do |lesson| %>
+        <ul>
+          <li> <%= lesson.notion.photo %> <p>photo </p> </li>
+          <li> <%= lesson.date %> </li>
+          <li> <%= lesson.student.first_name %> <p> nom eleve </p> </li>
+          <li> <%= lesson.notion.name %> </li>
+        </ul>
+        <% end %>
+    </div>
+
+
+    <div class="box2">
+      <h1>Next notion</h1>
+      <% @all_lessons_upcoming_notion.each do |lesson| %>
+      <ul>
+        <li> <%= notion.photo %> <p>photo </p> </li>
+        <li> <%= notion.name %> </li>
+      </ul>
+       <% end %>
+    </div>
   </div>
-
 </div>
+
+
+<div class="box2">
+      <h1>All past lessons</h1>
+      <% @all_past_lessons.each do |lesson| %>
+      <ul>
+        <li> <%= lesson.notion.photo %> <p>photo </p> </li>
+        <li> <%= lesson.date %> </li>
+        <li> <%= lesson.student.first_name %> <p> nom eleve </p> </li>
+        <li> <%= lesson.notion.name %> </li>
+      </ul>
+       <% end %>
+    </div>
