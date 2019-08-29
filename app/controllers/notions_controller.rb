@@ -6,6 +6,7 @@ class NotionsController < ApplicationController
 
   def show
     @notion = Notion.find(params[:id])
+    @lesson = Lesson.new
   end
 
   def new
