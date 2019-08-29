@@ -26,6 +26,7 @@ class LessonsController < ApplicationController
   def create
     @lesson = Lesson.new(lesson_params)
     @lesson.student = current_user
+    @lesson.notion = Notion.find(params[:lesson][:notion_id])
     if @lesson.save
       redirect_to lesson_path(@lesson)
     else
