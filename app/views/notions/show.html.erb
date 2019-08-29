@@ -1,18 +1,30 @@
 <div class="container">
-  <h1> <%= @notion.name %> </h1>
-  <p><%= @notion.description %></p>
 
-    <%# debug current_user.id %>
+  <% if @notion.photo.blank? %>
+    <% bg = "" %>
+  <% else  %>
+    <% bg = "background-image: url( #{cl_image_path @notion.photo})" %>
+  <% end %>
+
+
+
+  <div class="jumbotron header-notion">
+    <div style="<%= bg %>"></div>
+    <div class="title">
+      <h1><%= @notion.name %></h1>
+      <p><%= @notion.description %></p>
+    </div>
+  </div>
+
+  <div class="banner-notion-video">
     <% if current_user == @notion.user %>
-      <%= link_to "edit notion", edit_notion_path(@notion) %>
+
+  <div class="button-notion">
+      <%= link_to "edit notion", edit_notion_path(@notion),class: "btn btn-flat" %>
       <%= link_to "Delete", notion_path(@notion),
             method: :delete,
-            data: { confirm: "Are you sure?" }, class:"btn-del" %>
-    <% end %>
-
-    <% unless @notion.photo.blank? %>
-      <%#= cl_image_tag @notion.photo %>
-    <% end %>
-
-
+            data: { confirm: "Are you sure?" },class: "btn btn-flat" %>
+  <% end %>
+  </div>
+  </div>
 </div>

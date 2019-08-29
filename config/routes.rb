@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get '/teachers', to: "users#teachers"
+  get '/teachers/:id', to: "users#teacher", as: 'teacher'
+  # resources :users, only: :index do
+  #   collection do
+  #     get 'teachers'
+  #   end
+  # end
   devise_for :users
 
   root to: 'pages#home'
@@ -9,12 +16,12 @@ Rails.application.routes.draw do
   resources :notions
 
   resources :lessons do
+    resources :reviews, only: [:index, :new, :create, :delete ]
     member do
       post 'changestatus'
     end
   end
 
-  resources :reviews, only: [:index, :new, :create, :delete ]
 
   # namespace :teacher do
   #   get 'dashboard', to: 'dashboard#dashboard'
