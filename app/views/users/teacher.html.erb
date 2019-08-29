@@ -5,13 +5,17 @@
   <% m = 0 %>
   <% @reviews.each do |review| %>
     <% m += review.rating %>
-    <%# m = m / @reviews.length %>
+  <% end %>
+  <% if @reviews.length ==0 %>
+    <% s=0 %>
+  <% else %>
+    <% s = m/@reviews.length %>
   <% end %>
 
 
 
 
-  <h4><%= m %></h4>
+  <h4><%= "⭐️"*s %></h4>
   <% unless @reviews.empty? %>
     <% @reviews.each do |review| %>
 
