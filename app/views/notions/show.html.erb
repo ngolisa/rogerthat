@@ -55,23 +55,13 @@
     <div class="title">
       <h1><%= @notion.name %></h1>
       <p><%= @notion.description %></p>
-
     </div>
   </div>
-
-  <div>
-    <video controls width="100%">
-      <source src="<%= cl_video_path @notion.video %>" type="video/webm">
-    </video>
-  </div>
-
 
   <div class="banner-notion-video">
     <% if current_user == @notion.user %>
 
-
       <div class="button-notion">
-
       <%= link_to "edit notion", edit_notion_path(@notion),class: "btn btn-flat" %>
       <%= link_to "Delete", notion_path(@notion),
             method: :delete,
