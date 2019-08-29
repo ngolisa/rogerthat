@@ -2,7 +2,7 @@
   <div class="rapport-lesson">
     <%= link_to notion_path(@lesson.notion) do %>
       <div class="rapport-lesson-notion">
-        <%= cl_image_tag @lesson.notion.photo %>
+        <%#= cl_image_tag @lesson.notion.photo %>
         <h1><%= @lesson.notion.name %></h1>
         <p><%= @lesson.notion.description %></p>
         <%= cl_image_tag @lesson.notion.user.avatar, class: "card-notion-user avatar-bordered"%>
@@ -11,12 +11,14 @@
 
 
     <% end %>
-      <div class="rapport-lesson-date">
-        <%= cl_image_tag @lesson.teacher.avatar, class: "avatar" %>
-        <h4><%= @lesson.date.strftime('%A %e %B, at %l:%M') %></h4>
-        <p><%= @lesson.status %></p>
-        <h5>In 🕘: <%= distance_of_time_in_words(@lesson.date, DateTime.now) %></h5>
-      </div>
+      <%= link_to notion_path(@lesson.notion)  do %>
+        <div class="rapport-lesson-date">
+          <%= cl_image_tag @lesson.teacher.avatar, class: "avatar" %>
+          <h4><%= @lesson.date.strftime('%A %e %B, at %l:%M') %></h4>
+          <h5>In 🕘: <%= distance_of_time_in_words(@lesson.date, DateTime.now) %></h5>
+          <%= link_to "Edit", edit_lesson_path(@lesson) %>
+        </div>
+      <% end %>
   </div>
 
   <% unless @lesson.comment.nil? %>
@@ -33,9 +35,7 @@
 
   <br>
 
-  <% unless current_user.teacher %>
-    <%= link_to "Edit", edit_lesson_path(@lesson) %>
-  <% end %>
+
 
   <% if current_user == @lesson.teacher && @lesson.status == 'pending'%>
 
@@ -49,7 +49,7 @@
   <br>
   <br>
   <% if current_user == @lesson.teacher && @lesson.comment.nil? %>
-    <h1>Comment for <%= "#{@lesson.student.first_name} #{@lesson.student.last_name}" %> %></h1>
+    <h1>Write a comment for <%= @lesson.student.first_name %> <%= @lesson.student.last_name %></h1>
     <%= simple_form_for @lesson do |f| %>
       <%= f.input :comment %>
       <%= f.submit %>
@@ -58,7 +58,7 @@
 
   <br>
   <% if @lesson.review.nil?  && current_user == @lesson.student %>
-    <h1>Rating : <%= "#{@lesson.teacher.first_name} #{@lesson.teacher.last_name}" %></h1>
+    <h1>Rating <%= @lesson.teacher.first_name %> <%= @lesson.teacher.last_name %></h1>
     <%= simple_form_for [@lesson, @review] do |f| %>
       <%= f.input :rating , collection: (0..5).to_a %>
       <%= f.input :comment %>

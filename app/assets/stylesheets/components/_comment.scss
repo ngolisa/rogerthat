@@ -5,11 +5,17 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 2px;
+  padding: 10px;
+  margin: 15px;
 }
 
 .card-comment img {
   height: 100%;
-  width: 120px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
   object-fit: cover;
 }
 

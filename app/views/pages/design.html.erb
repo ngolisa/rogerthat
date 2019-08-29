@@ -69,16 +69,16 @@
 <h1> morceau de code pour afficher les lessons passes</h1>
 <div class="box2">
       <h1>All past lessons</h1>
-      <% @all_past_lessons.each do |lesson| %>
+      <%# @all_past_lessons.each do |lesson| %>
         <div class="little_box">
         <ul>
-          <li> <%= lesson.notion.photo %> <p>photo </p> </li>
-          <li> <%= lesson.date %> </li>
-          <li> <%= lesson.student.first_name %> <p> nom eleve </p> </li>
-          <li> <%= lesson.notion.name %> </li>
+          <li>  <p>photo </p> </li>
+          <li> date </li>
+          <li>  <p> nom eleve </p> </li>
+          <li> notion </li>
         </ul>
         </div>
-       <% end %>
+       <%# end %>
     </div>
 
 <br>

@@ -1,7 +1,6 @@
 <div class="container">
 
   <div class="form-container">
-    <h1>Create a lesson 👟</h1>
     <%= simple_form_for @lesson do |f| %>
       <%= f.association :teacher, collection: User.where(teacher: true), label_method: :email %>
       <%= f.association :notion, collection: Notion.all, label_method: :name %>

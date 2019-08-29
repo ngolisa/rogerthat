@@ -1,5 +1,47 @@
 <div class="container">
 
+  <div class="reserve-notion">
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-flat" data-toggle="modal" data-target="#exampleModalCenter">
+      Take a lesson
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Take a lesson for : <%= @notion.name %></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+              <div class="form-container">
+                <h1>Create a lesson 👟</h1>
+                <%= simple_form_for @lesson do |f| %>
+                  <%= f.association :teacher, collection: User.where(teacher: true), label_method: :email %>
+                  <%= f.input :notion_id, as: :hidden, input_html: { value: @notion.id }   %>
+                  <%= f.input :date, as: :datetime, required: false, input_html: {class: "datepicker"} %>
+                  <%= f.button :submit, class: 'btn btn-flat' %>
+                <% end %>
+              </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
   <% if @notion.photo.blank? %>
     <% bg = "" %>
   <% else  %>
@@ -28,12 +70,13 @@
     <% if current_user == @notion.user %>
 
 
-  <div class="button-notion">
+      <div class="button-notion">
+
       <%= link_to "edit notion", edit_notion_path(@notion),class: "btn btn-flat" %>
       <%= link_to "Delete", notion_path(@notion),
             method: :delete,
             data: { confirm: "Are you sure?" },class: "btn btn-flat" %>
-  <% end %>
-  </div>
+      </div>
+    <% end %>
   </div>
 </div>

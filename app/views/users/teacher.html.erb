@@ -1,6 +1,21 @@
 <div class="container center-text">
   <%= cl_image_tag @teacher.avatar, class: "avatar-large" %>
   <h1><%= @teacher.first_name %> <%= @teacher.last_name %></h1>
+
+  <% m = 0 %>
+  <% @reviews.each do |review| %>
+    <% m += review.rating %>
+  <% end %>
+  <% if @reviews.length ==0 %>
+    <% s=0 %>
+  <% else %>
+    <% s = m/@reviews.length %>
+  <% end %>
+
+
+
+
+  <h4><%= "⭐️"*s %></h4>
   <% unless @reviews.empty? %>
     <% @reviews.each do |review| %>
 
