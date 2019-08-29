@@ -37,7 +37,8 @@ class LessonsController < ApplicationController
   end
 
   def update
-    @lesson = Lesson.update(lesson_params)
+    @lesson[:status] = 'pending'
+    @lesson.update(lesson_params)
     redirect_to lesson_path(@lesson)
   end
 

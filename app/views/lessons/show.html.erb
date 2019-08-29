@@ -14,6 +14,7 @@
       <div class="rapport-lesson-date">
         <%= cl_image_tag @lesson.teacher.avatar, class: "avatar" %>
         <h4><%= @lesson.date.strftime('%A %e %B, at %l:%M') %></h4>
+        <p><%= @lesson.status %></p>
         <h5>In 🕘: <%= distance_of_time_in_words(@lesson.date, DateTime.now) %></h5>
       </div>
   </div>
