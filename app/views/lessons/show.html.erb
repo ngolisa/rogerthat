@@ -48,6 +48,7 @@
   <br>
   <br>
   <% if current_user == @lesson.teacher && @lesson.comment.nil? %>
+    <h1>Write a comment for <%= @lesson.student.first_name %> <%= @lesson.student.last_name  %></h1>
     <%= simple_form_for @lesson do |f| %>
       <%= f.input :comment %>
       <%= f.submit %>
@@ -56,6 +57,7 @@
 
   <br>
   <% if @lesson.review.nil?  && current_user == @lesson.student %>
+    <h1>Rating <%= @lesson.teacher.first_name %> <%= @lesson.teacher.last_name %></h1>
     <%= simple_form_for [@lesson, @review] do |f| %>
       <%= f.input :rating , collection: (0..5).to_a %>
       <%= f.input :comment %>
