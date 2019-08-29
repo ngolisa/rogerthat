@@ -12,5 +12,4 @@ class Lesson < ApplicationRecord
 
   scope :upcoming, ->{ where("DATE(date) > ?", Date.today)}
   scope :past, ->{ where("DATE(date) <= ?", Date.today)}
-
 end
