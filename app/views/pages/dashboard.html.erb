@@ -8,7 +8,6 @@
       <% @all_upcoming_lessons.each do |lesson| %>
        <div class="little_box">
         <ul>
-          <li> <%= lesson.notion.photo %> <p>photo </p> </li>
           <li> <%= lesson.date %> </li>
           <li> <%= lesson.student.first_name %> <p> nom eleve </p> </li>
           <li> <%= lesson.notion.name %> </li>
@@ -23,8 +22,8 @@
       <h1>Next notion</h1>
       <div class="little_box1">
        <ul>
-        <li> <%= @upcoming_lessons_notion.photo %> <p>photo </p> </li>
-        <li> <%= @upcoming_lessons_notion.name %> </li>
+        <li> <%= @all_upcoming_lessons.first.notion.photo %> </li>
+        <li> <%= @all_upcoming_lessons.first.notion.name %> </li>
        </ul>
       </div>
     </div>
@@ -35,9 +34,14 @@
       <h1>Past notion</h1>
       <div class="little_box2">
         <ul>
-          <li> <%= @past_lessons_notion.photo %> <p>photo </p> </li>
-          <li> <%= @past_lessons_notion.name %> </li>
-          <li> <%= @past_lessons_notion.video %> </li>
+          <% if @all_past_lessons.nil? %>
+            <h1>pas de notions</h1>
+          <% else %>
+            <% @all_past_lessons.each do |lesson| %>
+              <%= lesson.notion.name %>
+              <%= lesson.notion.video %>
+            <% end %>
+          <% end %>
         </ul>
       </div>
     </div>

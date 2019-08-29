@@ -161,7 +161,7 @@ Lesson.create!(teacher: roger, student: novak, notion: revers2, date: DateTime.n
 Lesson.create!(teacher: roger, student: novak, notion: coupdroit2, date: DateTime.new(2019,9,2,8))
 Lesson.create!(teacher: arthur, student: hector, notion: coupdroit1, date: DateTime.new(2019,9,3,8))
 Lesson.create!(teacher: arthur, student: hector, notion: service1, date: DateTime.new(2019,9,3,9))
-Lesson.create!(teacher: arthur, student: hector, notion: mental1, date: DateTime.new(2019,9,3,9))
+Lesson.create!(teacher: arthur, student: hector, notion: mental1, date: DateTime.new(2018,9,3,9))
 
 puts "Seed done!"
 
