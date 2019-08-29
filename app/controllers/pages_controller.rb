@@ -21,8 +21,19 @@ class PagesController < ApplicationController
     # @previous_notionT = @past_lessonsT.first.notion
     @lessons = Lesson.filter_by_student_or_teacher(current_user.id)
     @all_upcoming_lessons = @lessons.upcoming.reverse
-    @all_past_lessons = @lessons.past.reverse
-    @upcoming_lessons_notion = @all_upcoming_lessons.first.notion
-    @past_lessons_notion = @all_past_lessons.last.notion
+
+
+    if @lessons.upcoming.blank?
+      @all_upcoming_lessons = []
+    else
+      @all_upcoming_lessons = @lessons.upcoming.where(student_id: current_user.id).reverse
+    end
+
+    if @lessons.past.blank?
+      @all_past_lessons = []
+    else
+      @all_past_lessons = @lessons.past.where(student_id: current_user.id).reverse
+    end
+
   end
 end
