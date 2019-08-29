@@ -147,7 +147,6 @@ service1 = Notion.create!(
 photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567071418/maxresdefault_gyhvch.jpg"
 service2 = Notion.create!(
   name: "Service - Gagner 30 km/h en vitesse",
-  remote_video_url: video,
   remote_photo_url: photo,
   user: arthur
   )
@@ -166,6 +165,7 @@ video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088636/Echauffem
 mental2 = Notion.create!(
   name: "Avant un match - Comment bien s'échauffer ",
   remote_photo_url: photo,
+  remote_video_url: video,
   description: "test",
   user: roger
   )
