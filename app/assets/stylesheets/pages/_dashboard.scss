@@ -6,15 +6,19 @@ justify-content: space-between;
 border: solid black 1px;
 overflow:auto;
 max-height: 358px;
+box-shadow: 0 0 15px rgba(0,0,0,0.2)
 }
 
 .box2 {
 border: solid black 1px;
+margin-left: 15px;
+box-shadow: 0 0 15px rgba(0,0,0,0.2)
 }
 
 .box3{
   border:solid 1px;
   margin-top: 40px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2)
 }
 
 .little_box {

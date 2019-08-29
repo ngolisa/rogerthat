@@ -3,6 +3,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 10px;
+
 }
 
 .card-notion > img {
@@ -30,7 +31,11 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+
 color: black;
+
+  min-height: 90px;
+
 }
 
 .card-notion-infos .card-notion-user {
