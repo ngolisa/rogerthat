@@ -7,7 +7,7 @@
       <div class="card-comment">
         <%= cl_image_tag review.lesson.student.avatar%>
         <div class="card-comment-infos">
-          <h2><%= review.rating %></h2>
+          <h2><%="⭐️"*(review.rating)  %></h2>
           <p><%= review.comment %></p>
         </div>
       </div>
