@@ -9,7 +9,7 @@
        <div class="little_box">
         <ul>
           <li> <%= lesson.date %> </li>
-          <li> <%= lesson.student.first_name %> <p> nom eleve </p> </li>
+          <li> <%= lesson.student.full_name %></li>
           <li> <%= lesson.notion.name %> </li>
           <p class="space"> </p>
         </ul>
@@ -22,7 +22,7 @@
       <h1>Next notion</h1>
       <div class="little_box1">
        <ul>
-        <li> <%= @all_upcoming_lessons.first.notion.photo %> </li>
+        <%= cl_image_tag @all_upcoming_lessons.first.notion.photo, width: 400, height: 300, crop: :fill %>
         <li> <%= @all_upcoming_lessons.first.notion.name %> </li>
        </ul>
       </div>
