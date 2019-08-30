@@ -1,1 +1,13 @@
-// Specific CSS for your home-page
+.mainbanner {
+   background-position: center;
+  background-size: cover;
+  margin-bottom: 58px;
+  padding: 120px 0;
+  text-align: center;
+  vertical-align: center;
+  height: calc(100vh);
+}
+
+#myVideo {
+  width:100%;
+}
