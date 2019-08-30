@@ -56,7 +56,7 @@ novak.save
 hector = User.new(
   email: "hector75@gmail.com",
   password: '123456',
-  first_name: 'hector',
+  first_name: 'Hector',
   last_name: 'Bonvallot'
   )
 url = "https://avatars0.githubusercontent.com/u/51796377?v=4"
@@ -228,11 +228,16 @@ mental2 = Notion.create!(
 # Lesson:
 
 Lesson.create!(teacher: roger, student: novak, notion: revers2, date: DateTime.new(2019,9,2,8))
-Lesson.create!(teacher: roger, student: novak, notion: coupdroit2, date: DateTime.new(2019,9,2,8))
-Lesson.create!(teacher: arthur, student: hector, notion: coupdroit1, date: DateTime.new(2019,9,3,8))
-Lesson.create!(teacher: arthur, student: hector, notion: service1, date: DateTime.new(2019,9,3,9))
-Lesson.create!(teacher: arthur, student: hector, notion: mental2, date: DateTime.new(2018,9,3,9))
 
+lesson = Lesson.new(teacher: arthur, student: novak, notion: coupdroit2, date: DateTime.new(2019,9,2,8), status:"confirmed")
+lesson.save
+lesson1 = Lesson.new(teacher: arthur, student: hector, notion: coupdroit2, date: DateTime.new(2019,8,30,14), status:"confirmed", comment: "Super Nicolas,
+Bravo pour tes premières séances sur le revers, je pense que tu es prêt pour ton prochain tournoi.
+
+La prochaine fois je te montrerai comment améliorer ton coup droit")
+lesson1.save
+
+Review.create!(lesson: lesson, rating: 5, comment: "super cours avec arthur sur le Coup droit")
 puts "Seed done!"
 
 
