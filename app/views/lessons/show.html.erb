@@ -1,7 +1,38 @@
 
 
 
-<%=  render "shared/post-it" %>
+
+
+<div class="total">
+  <div class="en_tete">
+    <h1 class="text_post-it0">MON COURS</h1>
+  </div>
+
+   <div class="corps">
+    <div class="next_to">
+
+         <%= cl_image_tag @lesson.teacher.avatar, class:"avatar" %>
+
+       <div>
+       <p class="text_post-it"> <%= @lesson.teacher.first_name %> <%= @lesson.teacher.last_name %> </p>
+      </div>
+
+    </div>
+
+    <div class="next_to1">
+
+        <%= image_tag "raquettes.svg", class: "test" %>
+
+      <div>
+        <%= @lesson.date.strftime('%A %e %B')%><br>
+        <%= @lesson.date.strftime('%l:%M')%>
+      </div>
+      <%= @lesson.status %>
+    </div>
+  </div>
+
+</div>
+
 
 <div class="container">
   <div class="row">

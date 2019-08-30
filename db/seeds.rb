@@ -56,7 +56,7 @@ novak.save
 hector = User.new(
   email: "hector75@gmail.com",
   password: '123456',
-  first_name: 'hector',
+  first_name: 'Hector',
   last_name: 'Bonvallot'
   )
 url = "https://avatars0.githubusercontent.com/u/51796377?v=4"
