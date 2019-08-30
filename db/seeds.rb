@@ -114,6 +114,7 @@ Pour un coup droit croisé, le plan de frappe doit obligatoirement être devant.
 Vers le haut et l’avant, le passage du coude doit entraîner le passage de l’épaule et seulement après le passage de l’appui arrière."
   )
 
+photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567161627/maxresdefault_knni7y.jpg"
 video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1566997867/Roger_Federer_Forehand_Slow_Motion_2019_-_Fluid_Relaxation_hd_pvzjie.mp4"
 coupdroit3 = Notion.create!(
   name: "Le Coup Droit - Comment se servir des jambes",
@@ -177,7 +178,7 @@ Accélérez une balle haute, au dessus de votre épaule en revers est extrêmeme
   )
 
 video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088445/Coup_droit_muuzjj.mp4"
-photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566997212/2607023-54039177-1600-900_zvjlpe.jpg"
+photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567161568/2414901-50196797-1600-900_xkzijx.jpg"
 revers3 = Notion.create!(
   name: "Le Revers- Plutôt une main ou deux mains ?",
   description: "Le revers comme arme d’attaque
