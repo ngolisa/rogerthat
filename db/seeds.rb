@@ -229,15 +229,15 @@ mental2 = Notion.create!(
 
 Lesson.create!(teacher: roger, student: novak, notion: revers2, date: DateTime.new(2019,9,2,8))
 
-lesson = Lesson.new(teacher: arthur, student: novak, notion: coupdroit2, date: DateTime.new(2019,9,2,8))
+lesson = Lesson.new(teacher: arthur, student: novak, notion: coupdroit2, date: DateTime.new(2019,9,2,8), status:"confirmed")
 lesson.save
-lesson1 = Lesson.new(teacher: arthur, student: hector, notion: coupdroit1, date: DateTime.new(2019,9,3,8))
+lesson1 = Lesson.new(teacher: arthur, student: hector, notion: coupdroit2, date: DateTime.new(2019,8,30,14), status:"confirmed", comment: "Super Nicolas,
+Bravo pour tes premières séances sur le revers, je pense que tu es prêt pour ton prochain tournoi.
+
+La prochaine fois je te montrerai comment améliorer ton coup droit")
 lesson1.save
-lesson2 = Lesson.new(teacher: arthur, student: hector, notion: service1, date: DateTime.new(2019,9,3,9))
-lesson2.save
-Lesson.create!(teacher: arthur, student: hector, notion: mental2, date: DateTime.new(2018,9,3,9))
+
 Review.create!(lesson: lesson, rating: 5, comment: "super cours avec arthur sur le Coup droit")
-Review.create!(lesson: lesson1, rating: 5, comment: "super cours avec arthur sur le Coup droit")
 puts "Seed done!"
 
 
