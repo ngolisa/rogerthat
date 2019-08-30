@@ -49,7 +49,6 @@ novak = User.new(
   first_name: 'Novak',
   last_name: 'Djokovic'
   )
-
 url = "https://www.tennisworldusa.org/imgb/80786/atp-us-open-novak-djokovic-downs-carballes-baena-to-open-title-defense.jpg"
 novak.remote_avatar_url = url
 novak.save
