@@ -42,38 +42,48 @@
 
   </div>
 
-  <% if @notion.photo.blank? %>
-    <% bg = "" %>
-  <% else  %>
-    <% bg = "background-image: url( #{cl_image_path @notion.photo})" %>
-  <% end %>
-
-
-
-  <div class="jumbotron header-notion">
-    <div style="<%= bg %>"></div>
-    <div class="title">
-      <h1><%= @notion.name %></h1>
-      <p><%= @notion.description %></p>
-    </div>
-  </div>
-
- <div>
-   <video controls width="100%">
-     <source src="<%= cl_video_path @notion.video %>" type="video/webm">
-   </video>
- </div>
-
-
-  <div class="banner-notion-video">
-    <% if current_user == @notion.user %>
-
-      <div class="button-notion">
-      <%= link_to "edit notion", edit_notion_path(@notion),class: "btn btn-flat" %>
-      <%= link_to "Delete", notion_path(@notion),
-            method: :delete,
-            data: { confirm: "Are you sure?" },class: "btn btn-flat" %>
+    <div class="row">
+      <div class="col-sm-12">
+        <h1><%= @notion.name %></h1>
       </div>
-    <% end %>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="img-lesson"> <%= cl_image_tag @notion.photo %> </div>
+
+      </div>
+      <div class="col-sm-7">
+        <video controls width="100%">
+          <source src="<%= cl_video_path @notion.video %>" type="video/webm">
+        </video>
+        <p><%= @notion.description %></p>
+      </div>
+    </div>
+
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>

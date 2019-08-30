@@ -3,58 +3,12 @@
 
 <%=  render "shared/post-it" %>
 
-
-
 <div class="container">
-  <div class="rapport-lesson">
-    <%= link_to notion_path(@lesson.notion) do %>
-      <div class="rapport-lesson-notion">
-        <%#= cl_image_tag @lesson.notion.photo %>
-        <h1><%= @lesson.notion.name %></h1>
-        <p><%= @lesson.notion.description %></p>
-        <%= cl_image_tag @lesson.notion.user.avatar, class: "card-notion-user avatar-bordered"%>
-
-      </div>
-
-
-    <% end %>
-      <div class="rapport-lesson-date">
-        <%= link_to notion_path(@lesson.notion)  do %>
-          <div>
-            <%= cl_image_tag @lesson.teacher.avatar, class: "avatar" %>
-            <h4><%= @lesson.date.strftime('%A %e %B, at %l:%M') %></h4>
-            <h5>In 🕘: <%= distance_of_time_in_words(@lesson.date, DateTime.now) %></h5>
-          </div>
-
-
-
-
-
-
-
-        <% end %>
-        <button type="button" class="btn btn-flat" data-toggle="modal" data-target="#exampleModalCenter">
-          Edit a lesson
-        </button>
-      </div>
-  </div>
-
-  <% unless @lesson.comment.nil? %>
-    <div class="card-comment">
-      <%= cl_image_tag @lesson.teacher.avatar %>
-      <div class="card-comment-infos">
-        <h2><%= @lesson.teacher.first_name %> said :</h2>
-        <p><%= @lesson.comment %></p>
-      </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <h1><%= @lesson.notion.name %></h1>
     </div>
-
-  <% end %>
-
-
-  <br>
-
-
-
+  </div>
   <% if current_user == @lesson.teacher && @lesson.status == 'pending'%>
 
       <%= link_to "Confirm", changestatus_lesson_path(@lesson, :status => 'accepted'), method: :POST, class: "btn-confirm"%>
@@ -64,51 +18,67 @@
       <%= link_to "Refuse", changestatus_lesson_path(@lesson, :status => 'refused'), method: :POST, class: "btn-refuse" %>
 
   <% end %>
-  <br>
-  <br>
-  <% if current_user == @lesson.teacher && @lesson.comment.nil? %>
-    <h1>Write a comment for <%= @lesson.student.first_name %> <%= @lesson.student.last_name %></h1>
-    <%= simple_form_for @lesson do |f| %>
-      <%= f.input :comment %>
-      <%= f.submit %>
-    <% end %>
-  <%end %>
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="img-lesson"> <%= cl_image_tag @lesson.notion.photo %> </div>
+      <% unless @lesson.comment.nil? %>
+        <div class="card-comment">
+          <%= cl_image_tag @lesson.teacher.avatar %>
+          <div class="card-comment-infos">
+            <h2><%= @lesson.teacher.first_name %> said :</h2>
+            <p><%= @lesson.comment %></p>
+          </div>
+        </div>
+      <% end %>
+      <% if @lesson.review.nil?  && current_user == @lesson.student %>
+        <h1>Rating <%= @lesson.teacher.first_name %> <%= @lesson.teacher.last_name %></h1>
+        <%= simple_form_for [@lesson, @review] do |f| %>
+          <%= f.input :rating , collection: (0..5).to_a %>
+          <%= f.input :comment %>
+          <%= f.submit %>
+        <% end %>
+      <% end %>
+      <% if current_user == @lesson.teacher && @lesson.comment.nil? %>
+        <h1>Write a comment for <%= @lesson.student.first_name %> <%= @lesson.student.last_name %></h1>
+        <%= simple_form_for @lesson do |f| %>
+          <%= f.input :comment %>
+          <%= f.submit %>
+        <% end %>
+      <%end %>
+    </div>
+    <div class="col-sm-7">
+      <video controls width="100%">
+        <source src="<%= cl_video_path @lesson.notion.video %>" type="video/webm">
+      </video>
+      <p><%= @lesson.notion.description %></p>
+    </div>
+  </div>
 
-  <br>
-  <% if @lesson.review.nil?  && current_user == @lesson.student %>
-    <h1>Rating <%= @lesson.teacher.first_name %> <%= @lesson.teacher.last_name %></h1>
-    <%= simple_form_for [@lesson, @review] do |f| %>
-      <%= f.input :rating , collection: (0..5).to_a %>
-      <%= f.input :comment %>
-      <%= f.submit %>
-    <% end %>
-  <% end %>
 </div>
 
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Take a lesson for : </h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
 
-                    <div class="form-container">
-                      <h1>Edit a lesson 👟</h1>
-                      <%= simple_form_for @lesson do |f| %>
-                        <%= f.association :teacher, collection: User.where(teacher: true), label_method: :email %>
-                        <%= f.input :notion_id, as: :hidden, input_html: { value: @lesson.notion.id }   %>
-                        <%= f.input :date, as: :datetime, required: false, input_html: {class: "datepicker"} %>
-                        <%= f.button :submit, class: 'btn btn-flat' %>
-                      <% end %>
-                    </div>
 
-                </div>
 
-              </div>
-            </div>
-          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
