@@ -1,9 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  // box-shadow: 0px 1px 0px lightgrey;
-  height: 100px;
-  background-image: url("navbarBg.svg");
-  background-size: cover;
+  height: 120px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,3 +12,9 @@
   height: 66px;
 }
 
+.rayure {
+  background-image: url("navbarBg.svg");
+  background-size: 913px 200px;
+  background-repeat: no-repeat;
+  background-position: top -54px left;
+}
