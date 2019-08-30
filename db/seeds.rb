@@ -30,12 +30,12 @@ arthur.save
 
 # Students:
 
-novak = User.new(email: "novakdejokovic@gmail.com", password: '123456')
+novak = User.new(email: "novakdejokovic@gmail.com", password: '123456', first_name: "Novak", last_name: "Djokovic")
 url = "https://www.tennisworldusa.org/imgb/80786/atp-us-open-novak-djokovic-downs-carballes-baena-to-open-title-defense.jpg"
 novak.remote_avatar_url = url
 novak.save
 
-hector = User.new(email: "hector75@gmail.com", password: '123456')
+hector = User.new(email: "hector75@gmail.com", password: '123456', first_name: "Hector", last_name: "Bonvallot")
 url = "https://avatars0.githubusercontent.com/u/51796377?v=4"
 hector.remote_avatar_url = url
 hector.save
