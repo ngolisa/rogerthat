@@ -17,6 +17,9 @@ User.destroy_all
 puts "finish"
 # Teachers:
 
+
+coupdroit = Category.create(name: "coup droit")
+
 roger = User.new(
   email: "rogerfederer@gmail.com",
   password: '123456',
@@ -56,7 +59,7 @@ novak.save
 hector = User.new(
   email: "hector75@gmail.com",
   password: '123456',
-  first_name: 'hector',
+  first_name: 'Hector',
   last_name: 'Bonvallot'
   )
 url = "https://avatars0.githubusercontent.com/u/51796377?v=4"
@@ -69,6 +72,7 @@ video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088445/Coup_droi
 coupdroit1 = Notion.create!(
   name: "Le Coup Droit - Comment frapper en avançant",
   user: arthur,
+  category: coupdroit,
   remote_video_url: video,
   remote_photo_url: photo,
   description:  "Le coup droit est le coup le plus connu du tennis avec le service. Pourquoi ? Parce qu’il est naturellement effectué par les joueurs qu’ils soient débutants ou experts.
@@ -94,6 +98,7 @@ video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1566999531/Rafa_fore
 coupdroit2 = Notion.create!(
   name: "Le Coup Droit - Le timing de la frappe",
   user: arthur,
+  category: coupdroit,
   remote_video_url: video,
   remote_photo_url: photo,
   description: "Le coup droit est le coup le plus connu du tennis avec le service. Pourquoi ? Parce qu’il est naturellement effectué par les joueurs qu’ils soient débutants ou experts.
@@ -135,6 +140,7 @@ Pour un coup droit croisé, le plan de frappe doit obligatoirement être devant.
 
 Vers le haut et l’avant, le passage du coude doit entraîner le passage de l’épaule et seulement après le passage de l’appui arrière.",
   user: roger,
+  category: coupdroit,
   remote_video_url: video,
   remote_photo_url: photo,
   )
@@ -144,6 +150,7 @@ video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088445/Coup_droi
 revers1 = Notion.create!(
   name: "Le Revers - Comment lifter",
   user: arthur,
+  category: coupdroit,
   remote_video_url: video,
   remote_photo_url: photo,
   description: "Le revers comme arme d’attaque
@@ -162,6 +169,7 @@ video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088445/Coup_droi
 photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566997454/2602433-53947377-1600-900_q2z8ck.jpg"
 revers2 = Notion.create!(
   name: "Le Revers - Petit slice des familles",
+  category: coupdroit,
   description: "Le revers comme arme d’attaque
 Pour beaucoup de joueurs, il n’est que le coup neutre qui permet au mieux de repousser l’adversaire, au pire celui qui permet de simplement remettre la balle dans le court.
 Pourtant, même si le revers d’attaque est difficile à réaliser, il n’en est pas moins surprenant et peut se révéler une arme redoutable.
@@ -193,7 +201,8 @@ Préférez un revers lifté long et précis (voir “Le revers lifté”) afin d
 Accélérez une balle haute, au dessus de votre épaule en revers est extrêmement compliqué car il faut bien souvent réalisé un revers sauté où il est difficile de mettre du poids dans la balle et de la vitesse. (Voir “Le revers sauté”). Attendez donc une balle plus propice.",
   remote_video_url: video,
   remote_photo_url: photo,
-  user: roger
+  user: roger,
+  category: coupdroit
   )
 
 video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088445/Coup_droit_muuzjj.mp4"
@@ -203,13 +212,27 @@ service1 = Notion.create!(
   description: "Choisissez une raquette de tennis qui convient à une personne de votre âge et de votre morphologie. Optez pour une raquette légère et ajoutez éventuellement de la bande de plomb en tête pour obtenir un meilleur contrôle. Les raquettes de tennis ont des surfaces de tamis qui sont comprises entre 630 et 645 cm2 pour des poids qui se situent entre 270 et 370 g. Il est toujours préférable de faire corder sa raquette (plutôt que de l'acheter avec un cordage déjà installé) en choisissant un type de cordage et une tension qui convient à votre style de jeu et à votre morphologie (force et puissance). Après avoir utilisé un cordage pendant de nombreuses séances de jeu, si vous sentez que vous contrôlez de moins en moins bien vos frappes de balle, envisagez de faire recorder votre raquette. Demandez des conseils à la personne qui corde votre raquette pour déterminer le type et la tension de cordage qui vous conviennent le mieux.",
   remote_video_url: video,
   remote_photo_url: photo,
+  category: coupdroit,
   user: arthur
   )
 
+<<<<<<< HEAD
+=======
+# video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088445/Coup_droit_muuzjj.mp4"
+# photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566997522/t1larg.rfroar.gi_xuzida.jpg"
+# service2 = Notion.create!(
+#   name: "Service - Gagner 30 km/h en vitesse",
+#   description: "Choisissez une raquette de tennis qui convient à une personne de votre âge et de votre morphologie. Optez pour une raquette légère et ajoutez éventuellement de la bande de plomb en tête pour obtenir un meilleur contrôle. Les raquettes de tennis ont des surfaces de tamis qui sont comprises entre 630 et 645 cm2 pour des poids qui se situent entre 270 et 370 g. Il est toujours préférable de faire corder sa raquette (plutôt que de l'acheter avec un cordage déjà installé) en choisissant un type de cordage et une tension qui convient à votre style de jeu et à votre morphologie (force et puissance). Après avoir utilisé un cordage pendant de nombreuses séances de jeu, si vous sentez que vous contrôlez de moins en moins bien vos frappes de balle, envisagez de faire recorder votre raquette. Demandez des conseils à la personne qui corde votre raquette pour déterminer le type et la tension de cordage qui vous conviennent le mieux.",
+#   remote_photo_url: photo,
+#   user: arthur
+#   )
+
+>>>>>>> 506ae58169cd902f6c00341c1aa476f856e0790d
 photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567069326/102668770_o_dgfolj.jpg"
 video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088636/Echauffement_px56el.mp4"
 mental2 = Notion.create!(
   name: "Avant un match - Comment bien s'échauffer ",
+  category: coupdroit,
   remote_photo_url: photo,
   remote_video_url: video,
   description: "Choisissez une raquette de tennis qui convient à une personne de votre âge et de votre morphologie. Optez pour une raquette légère et ajoutez éventuellement de la bande de plomb en tête pour obtenir un meilleur contrôle. Les raquettes de tennis ont des surfaces de tamis qui sont comprises entre 630 et 645 cm2 pour des poids qui se situent entre 270 et 370 g. Il est toujours préférable de faire corder sa raquette (plutôt que de l'acheter avec un cordage déjà installé) en choisissant un type de cordage et une tension qui convient à votre style de jeu et à votre morphologie (force et puissance). Après avoir utilisé un cordage pendant de nombreuses séances de jeu, si vous sentez que vous contrôlez de moins en moins bien vos frappes de balle, envisagez de faire recorder votre raquette. Demandez des conseils à la personne qui corde votre raquette pour déterminer le type et la tension de cordage qui vous conviennent le mieux.",
@@ -219,11 +242,16 @@ mental2 = Notion.create!(
 # Lesson:
 
 Lesson.create!(teacher: roger, student: novak, notion: revers2, date: DateTime.new(2019,9,2,8))
-Lesson.create!(teacher: roger, student: novak, notion: coupdroit2, date: DateTime.new(2019,9,2,8))
-Lesson.create!(teacher: arthur, student: hector, notion: coupdroit1, date: DateTime.new(2019,9,3,8))
-Lesson.create!(teacher: arthur, student: hector, notion: service1, date: DateTime.new(2019,9,3,9))
-Lesson.create!(teacher: arthur, student: hector, notion: mental2, date: DateTime.new(2018,9,3,9))
 
+lesson = Lesson.new(teacher: arthur, student: novak, notion: coupdroit2, date: DateTime.new(2019,9,2,8), status:"confirmed")
+lesson.save
+lesson1 = Lesson.new(teacher: arthur, student: hector, notion: coupdroit2, date: DateTime.new(2019,8,30,14), status:"confirmed", comment: "Super Nicolas,
+Bravo pour tes premières séances sur le revers, je pense que tu es prêt pour ton prochain tournoi.
+
+La prochaine fois je te montrerai comment améliorer ton coup droit")
+lesson1.save
+
+Review.create!(lesson: lesson, rating: 5, comment: "super cours avec arthur sur le Coup droit")
 puts "Seed done!"
 
 

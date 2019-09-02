@@ -5,7 +5,8 @@ box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 right: 20px;
 position: absolute;
 top: 24px;
-transform: rotate(5deg)
+transform: rotate(5deg);
+z-index:1;
   }
 
 .en_tete {
