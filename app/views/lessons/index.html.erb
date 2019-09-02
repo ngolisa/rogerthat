@@ -40,7 +40,7 @@
           <%= lesson.date.strftime('%A %e %B')%><br>
           <%= lesson.date.strftime('%l:%M')%>
         </li>
-        <li class="list-group-item"><%= lesson.status %></li>
+        <li class="list-group-item"><%= lesson.status.capitalize %></li>
       </ul>
       <% end %>
     <% end %>
@@ -54,6 +54,7 @@
           <%= lesson.date.strftime('%A %e %B')%><br>
           <%= lesson.date.strftime('%l:%M')%>
         </li>
+        <li class="list-group-item">Finished</li>
       </ul>
       <% end %>
     <% end %>

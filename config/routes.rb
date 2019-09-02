@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get '/design', to: "pages#design"
-  get '/dashboard', to: "pages#dashboard"
+  get '/dashboard', to: "pages#dashboard", as: 'dashboard'
 
   resources :notions
 
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     end
   end
 
-
+  get '/test', to: "pages#test"
   # namespace :teacher do
   #   get 'dashboard', to: 'dashboard#dashboard'
   # end
