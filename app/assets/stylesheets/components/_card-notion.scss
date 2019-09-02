@@ -2,6 +2,7 @@
   overflow: hidden;
   text-align: center;
   margin-bottom: 10px;
+  position: relative;
 
 }
 
@@ -49,4 +50,10 @@
 }
 .height{
   background-color: white;
+}
+
+.raquette{
+  position:absolute;
+  top: 46px;
+  right: 48px;
 }
