@@ -7,6 +7,9 @@ class PagesController < ApplicationController
   def design
   end
 
+  def test
+  end
+
   def dashboard
     @user = current_user
 
