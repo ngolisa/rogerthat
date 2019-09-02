@@ -21,10 +21,14 @@
     <div class="box2">
       <h1>Next notion</h1>
       <div class="little_box1">
-       <ul>
-        <%= cl_image_tag @all_upcoming_lessons.first.notion.photo, width: 400, height: 300, crop: :fill %>
-        <li> <%= @all_upcoming_lessons.first.notion.name %> </li>
-       </ul>
+        <% if @all_upcoming_lessons.empty?  %>
+          <h1>pas de upcomming lesson</h1>
+        <% else %>
+         <ul>
+          <%= cl_image_tag @all_upcoming_lessons.first.notion.photo, width: 400, height: 300, crop: :fill %>
+          <li> <%= @all_upcoming_lessons.first.notion.name %> </li>
+         </ul>
+        <% end %>
       </div>
     </div>
 

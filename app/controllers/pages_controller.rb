@@ -7,6 +7,9 @@ class PagesController < ApplicationController
   def design
   end
 
+  def test
+  end
+
   def dashboard
     @user = current_user
 
@@ -22,7 +25,6 @@ class PagesController < ApplicationController
     @lessons = Lesson.filter_by_student_or_teacher(current_user.id)
     @all_upcoming_lessons = @lessons.upcoming.reverse
 
-
     if @lessons.upcoming.blank?
       @all_upcoming_lessons = []
     else
@@ -34,6 +36,5 @@ class PagesController < ApplicationController
     else
       @all_past_lessons = @lessons.past.where(student_id: current_user.id).reverse
     end
-
   end
 end
