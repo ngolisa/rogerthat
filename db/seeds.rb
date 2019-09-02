@@ -206,14 +206,14 @@ service1 = Notion.create!(
   user: arthur
   )
 
-video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088445/Coup_droit_muuzjj.mp4"
-photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566997522/t1larg.rfroar.gi_xuzida.jpg"
-service2 = Notion.create!(
-  name: "Service - Gagner 30 km/h en vitesse",
-  description: "Choisissez une raquette de tennis qui convient à une personne de votre âge et de votre morphologie. Optez pour une raquette légère et ajoutez éventuellement de la bande de plomb en tête pour obtenir un meilleur contrôle. Les raquettes de tennis ont des surfaces de tamis qui sont comprises entre 630 et 645 cm2 pour des poids qui se situent entre 270 et 370 g. Il est toujours préférable de faire corder sa raquette (plutôt que de l'acheter avec un cordage déjà installé) en choisissant un type de cordage et une tension qui convient à votre style de jeu et à votre morphologie (force et puissance). Après avoir utilisé un cordage pendant de nombreuses séances de jeu, si vous sentez que vous contrôlez de moins en moins bien vos frappes de balle, envisagez de faire recorder votre raquette. Demandez des conseils à la personne qui corde votre raquette pour déterminer le type et la tension de cordage qui vous conviennent le mieux.",
-  remote_photo_url: photo,
-  user: arthur
-  )
+# video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088445/Coup_droit_muuzjj.mp4"
+# photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566997522/t1larg.rfroar.gi_xuzida.jpg"
+# service2 = Notion.create!(
+#   name: "Service - Gagner 30 km/h en vitesse",
+#   description: "Choisissez une raquette de tennis qui convient à une personne de votre âge et de votre morphologie. Optez pour une raquette légère et ajoutez éventuellement de la bande de plomb en tête pour obtenir un meilleur contrôle. Les raquettes de tennis ont des surfaces de tamis qui sont comprises entre 630 et 645 cm2 pour des poids qui se situent entre 270 et 370 g. Il est toujours préférable de faire corder sa raquette (plutôt que de l'acheter avec un cordage déjà installé) en choisissant un type de cordage et une tension qui convient à votre style de jeu et à votre morphologie (force et puissance). Après avoir utilisé un cordage pendant de nombreuses séances de jeu, si vous sentez que vous contrôlez de moins en moins bien vos frappes de balle, envisagez de faire recorder votre raquette. Demandez des conseils à la personne qui corde votre raquette pour déterminer le type et la tension de cordage qui vous conviennent le mieux.",
+#   remote_photo_url: photo,
+#   user: arthur
+#   )
 
 photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567069326/102668770_o_dgfolj.jpg"
 video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088636/Echauffement_px56el.mp4"
