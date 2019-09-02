@@ -5,13 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 puts "begin seed"
 Review.destroy_all
 puts "destroying lessons"
 Lesson.destroy_all
 puts "destroying notions"
 Notion.destroy_all
+Category.destroy_all
 puts "destroying users"
 User.destroy_all
 puts "finish"

@@ -4,11 +4,11 @@
     <%= link_to "Add a notion", new_notion_path, class: 'btn btn-flat' %>
   <% end %>
 
-
-  <h1>All notions</h1>
-  <div class="row">
   <% @categories.each do |category| %>
-    <h1><%=  category.name%></h1>
+  <div>
+    <h1 class="text-center"><%= category.name %></h1>
+    <br>
+    <div class="row">
     <% category.notions.each do |notion|%>
       <div class="col-sm-4">
       <%= link_to notion_path(notion) do %>
@@ -25,10 +25,9 @@
             </div>
           </div>
       <% end %>
-      </div>
+    </div>
     <% end %>
+  </div>
   <% end %>
-
-
 </div>
 </div>
