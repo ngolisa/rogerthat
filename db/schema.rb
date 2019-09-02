@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_154224) do
+ActiveRecord::Schema.define(version: 2019_09_02_130736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "lessons", force: :cascade do |t|
     t.datetime "date"
@@ -37,6 +43,8 @@ ActiveRecord::Schema.define(version: 2019_08_27_154224) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_notions_on_category_id"
     t.index ["user_id"], name: "index_notions_on_user_id"
   end
 
@@ -68,6 +76,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_154224) do
   add_foreign_key "lessons", "notions"
   add_foreign_key "lessons", "users", column: "student_id", on_delete: :restrict
   add_foreign_key "lessons", "users", column: "teacher_id", on_delete: :restrict
+  add_foreign_key "notions", "categories"
   add_foreign_key "notions", "users"
   add_foreign_key "reviews", "lessons"
 end
