@@ -1,21 +1,27 @@
 .card-notion {
   overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
   margin-bottom: 10px;
 
 }
 
 .card-notion > img {
   height: 200px;
-  width: 100%;
+  width: 200px;
   object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+
 }
 
 .card-notion h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin: 15px;
+  background-color: #efefef;
+  padding: 25px;
+  width: 302px;
+  height: 80px;
 }
 
 .card-notion p {
@@ -26,15 +32,12 @@
 
 
 .card-notion .card-notion-infos {
-  padding: 16px;
+  padding: 0px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-
-color: black;
-
-  min-height: 90px;
+  color: black;min-height: 90px;
 
 }
 
@@ -43,4 +46,7 @@ color: black;
   right: 16px;
   top: -20px;
   width: 40px;
+}
+.height{
+  background-color: white;
 }

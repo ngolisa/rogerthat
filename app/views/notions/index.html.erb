@@ -1,32 +1,14 @@
+<div class="container-index-lesson">
 <div class="container">
   <% if current_user.teacher %>
     <%= link_to "Add a notion", new_notion_path, class: 'btn btn-flat' %>
-    <h1>My notions</h1>
-    <div class="row">
-    <% @mynotions.each do |notion| %>
-      <div class="col-sm-3">
-      <%= link_to notion_path(notion) do  %>
-        <div class="card-notion">
-          <%= cl_image_tag notion.photo%>
-          <div class="card-notion-infos">
-            <div class="height">
-              <h2><%=  notion.name%></h2>
-              <!-- <p><%=  notion.description%></p> -->
-            </div>
-            <%= cl_image_tag notion.user.avatar, class: "card-notion-user avatar-bordered"%>
-          </div>
-        </div>
-      <% end %>
-  </div>
-    <% end %>
-  </div>
   <% end %>
 
 
   <h1>All notions</h1>
   <div class="row">
   <% @notions.each do |notion|%>
-    <div class="col-sm-3">
+    <div class="col-sm-4">
     <%= link_to notion_path(notion) do %>
 
 
@@ -35,7 +17,7 @@
           <div class="card-notion-infos">
             <div>
               <h2><%=  notion.name%></h2>
-              <!-- <p><%=  notion.description%></p> -->
+
             </div>
             <%= cl_image_tag notion.user.avatar, class: "card-notion-user avatar-bordered"%>
           </div>
@@ -45,5 +27,5 @@
   <% end %>
 
 
-
+</div>
 </div>
