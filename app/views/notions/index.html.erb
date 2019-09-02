@@ -7,23 +7,26 @@
 
   <h1>All notions</h1>
   <div class="row">
-  <% @notions.each do |notion|%>
-    <div class="col-sm-4">
-    <%= link_to notion_path(notion) do %>
+  <% @categories.each do |category| %>
+    <h1><%=  category.name%></h1>
+    <% category.notions.each do |notion|%>
+      <div class="col-sm-4">
+      <%= link_to notion_path(notion) do %>
 
 
-      <div class="card-notion">
-          <%= cl_image_tag notion.photo%>
-          <div class="card-notion-infos">
-            <div>
-              <h2><%=  notion.name%></h2>
+        <div class="card-notion">
+            <%= cl_image_tag notion.photo%>
+            <div class="card-notion-infos">
+              <div>
+                <h2><%=  notion.name%></h2>
 
+              </div>
+              <%= cl_image_tag notion.user.avatar, class: "card-notion-user avatar-bordered"%>
             </div>
-            <%= cl_image_tag notion.user.avatar, class: "card-notion-user avatar-bordered"%>
           </div>
-        </div>
+      <% end %>
+      </div>
     <% end %>
-  </div>
   <% end %>
 
 
