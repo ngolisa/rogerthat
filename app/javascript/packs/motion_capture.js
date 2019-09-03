@@ -87,4 +87,4 @@ function initMotionCapture() {
 
 
 
-export {initMotionCapture}
+initMotionCapture()
