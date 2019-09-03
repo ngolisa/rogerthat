@@ -1,4 +1,6 @@
 <div class="container-index-lesson">
+ <!--  <%= image_tag "rectangle-blanc.svg", class: "rectangle-blanc" %>
+  <%= image_tag "rectangle-blanc.svg", class: "rectangle-blanc2" %> -->
 <div class="container">
   <% if current_user.teacher %>
     <%= link_to "Add a notion", new_notion_path, class: 'btn btn-flat' %>
@@ -6,7 +8,11 @@
 
   <% @categories.each do |category| %>
     <div>
-      <h1 class="text-center"><%= category.name %></h1>
+      <h2 class="text-center">
+          <%= image_tag "rectangle-blanc.svg", class: "rectangle-blanc" %>
+          <%= category.name%>
+          <%= image_tag "rectangle-blanc.svg", class: "rectangle-blanc2" %>
+      </h2>
       <div class="row">
         <% category.notions.each do |notion|%>
           <div class="col-sm-4">
