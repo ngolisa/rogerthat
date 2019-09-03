@@ -23,11 +23,10 @@
 
         <%= image_tag "raquettes.svg", class: "test" %>
 
-      <div>
+      <div class="ppostit">
         <%= @lesson.date.strftime('%A %e %B')%><br>
         <%= @lesson.date.strftime('%l:%M')%>
       </div>
-      <%= @lesson.status %>
     </div>
   </div>
 
@@ -56,24 +55,24 @@
         <div class="card-comment">
           <%= cl_image_tag @lesson.teacher.avatar %>
           <div class="card-comment-infos">
-            <h2><%= @lesson.teacher.first_name %> said :</h2>
+            <h2>Conseil d'<%= @lesson.teacher.first_name %> :</h2>
             <p><%= @lesson.comment %></p>
           </div>
         </div>
       <% end %>
       <% if @lesson.review.nil?  && current_user == @lesson.student %>
-        <h1>Rating <%= @lesson.teacher.first_name %> <%= @lesson.teacher.last_name %></h1>
+        <h1>Laisser un avis pour <%= @lesson.teacher.first_name %> <%= @lesson.teacher.last_name %></h1>
         <%= simple_form_for [@lesson, @review] do |f| %>
-          <%= f.input :rating , collection: (0..5).to_a %>
-          <%= f.input :comment %>
-          <%= f.submit %>
+          <%= f.input :rating, label: "Note" , collection: (0..5).to_a %>
+          <%= f.input :comment, label: "Commentaire" %>
+          <%= f.submit "Envoyer" %>
         <% end %>
       <% end %>
       <% if current_user == @lesson.teacher && @lesson.comment.nil? %>
-        <h1>Write a comment for <%= @lesson.student.first_name %> <%= @lesson.student.last_name %></h1>
+        <h1>Laisser un commentaire pour <%= @lesson.student.first_name %> <%= @lesson.student.last_name %></h1>
         <%= simple_form_for @lesson do |f| %>
-          <%= f.input :comment %>
-          <%= f.submit %>
+          <%= f.input :comment, label: "Commentaire" %>
+          <%= f.submit "Envoyer" %>
         <% end %>
       <%end %>
     </div>

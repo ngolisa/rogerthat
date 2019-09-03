@@ -541,13 +541,11 @@ Bravo pour tes premières séances sur le revers, je pense que tu es prêt pour 
 La prochaine fois je te montrerai comment améliorer ton coup droit")
 lesson2.save!
 
-lesson3 = Lesson.new(teacher: arthur, student: elisabeth, notion: revers2, date: DateTime.new(2019,9,03,14), status:"confirmed", comment: "Super Elisabeth,
-Bravo pour tes premières séances sur le revers, je pense que tu es prêt pour ton prochain tournoi.
-La prochaine fois je te montrerai comment améliorer ton coup droit")
+lesson3 = Lesson.new(teacher: arthur, student: novak, notion: mental2, date: DateTime.new(2019,9,03,14), status:"confirmed")
 lesson3.save!
 
 Review.create!(lesson: lesson1, rating: 5, comment: "Arthur est un excellent professeur: sympathique et de très bon conseil, idéal pour progresser rapidement!")
-Review.create!(lesson: lesson2, rating: 5, comment: "Premier cours ce weekend avec Arthur, je recommande vivement. Un peu stressée car complètement débutante, mais grâce à sa gentillesse et sa patience vous vous sentez rapidement à l'aise et il vous donne envie de persévérer.")
+Review.create!(lesson: lesson3, rating: 5, comment: "Premier cours ce weekend avec Arthur, je recommande vivement. Un peu stressée car complètement débutante, mais grâce à sa gentillesse et sa patience vous vous sentez rapidement à l'aise et il vous donne envie de persévérer.")
 
 puts "Seed done!"
 

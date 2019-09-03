@@ -1,6 +1,6 @@
 <div class="container">
   <% if current_user.teacher %>
-    <h1>My upcoming lessons</h1>
+    <h1>Mes prochaines leçons</h1>
     <% @lessons.each do |lesson|%>
 
       <%= link_to lesson_path(lesson) do %>
@@ -15,7 +15,7 @@
       <% end %>
     <% end %>
 
-    <h1>My past lessons</h1>
+    <h1>Mes anciennes leçons</h1>
     <% @passed_lessons.each do |lesson|%>
       <%= link_to lesson_path(lesson) do %>
        <ul class="list-group list-group-horizontal-lg card-index-lesson">
@@ -30,7 +30,7 @@
     <% end %>
 
   <% else %>
-    <h1>My upcoming lessons</h1>
+    <h1>Mes prochaines leçons</h1>
     <% @lessons.each do |lesson|%>
       <%= link_to lesson_path(lesson) do %>
         <ul class="list-group list-group-horizontal-lg card-index-lesson">
@@ -44,7 +44,7 @@
       </ul>
       <% end %>
     <% end %>
-    <h1>My past lessons</h1>
+    <h1>Mes anciennes leçons</h1>
     <% @passed_lessons.each do |lesson|%>
       <%= link_to lesson_path(lesson) do %>
         <ul class="list-group list-group-horizontal-lg card-index-lesson">

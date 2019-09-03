@@ -13,16 +13,13 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "All Notions", notions_path, class: "nav-link" %>
+          <%= link_to "LES NOTIONS", notions_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
+          <%= link_to "MES LECONS", lessons_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Create a lesson", new_lesson_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "lessons", lessons_path, class: "nav-link" %>
+          <%= link_to "MON DASHBOARD", dashboard_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
