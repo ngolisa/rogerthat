@@ -541,8 +541,7 @@ Bravo pour tes premières séances sur le revers, je pense que tu es prêt pour 
 La prochaine fois je te montrerai comment améliorer ton coup droit")
 lesson2.save!
 
-lesson3 = Lesson.new(teacher: roger, student: novak, notion: revers2, date: DateTime.new(2019,9,2,8))
-Lesson.create(teacher: arthur, student: elisabeth, notion: revers2, date: DateTime.new(2019,9,03,14), status:"confirmed", comment: "Super Elisabeth,
+lesson3 = Lesson.new(teacher: arthur, student: elisabeth, notion: revers2, date: DateTime.new(2019,9,03,14), status:"confirmed", comment: "Super Elisabeth,
 Bravo pour tes premières séances sur le revers, je pense que tu es prêt pour ton prochain tournoi.
 La prochaine fois je te montrerai comment améliorer ton coup droit")
 lesson3.save!
