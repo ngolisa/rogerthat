@@ -24,6 +24,7 @@ revers = Category.create(name: "Revers")
 echauffement = Category.create(name: "Échauffement")
 service = Category.create(name: "Service")
 
+
 # Teachers------------------------------------------------------------------
 
 roger = User.new(
@@ -84,14 +85,13 @@ elisabeth.save
 
 
 
-
 # ALL Notions-----------------------------------------------------------------------:
 # Notion coup droit 1-------------------------------------------------------------------:
 
 photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566997054/2018-07-07-22.21.09_nor9m6.png"
 video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088445/Coup_droit_muuzjj.mp4"
 coupdroit1 = Notion.create!(
-  name: "Comment frapper en avançant",
+  name: "Comment frapper en avançant ?",
   user: arthur,
   category: coupdroit,
   remote_video_url: video,
@@ -138,7 +138,7 @@ S’organiser assez vite pour que la fin de préparation se fasse au plus tard a
 photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566997159/Nadal-pr_C3_A9paration-modele-de-coup-droit-par-mirsasha_th7gui.jpg"
 video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1566999531/Rafa_forehand_nqwdwk.mp4"
 coupdroit3 = Notion.create!(
-  name: "Le timing de la frappe",
+  name: "Le timing à frappe",
   user: arthur,
   category: coupdroit,
   remote_video_url: video,
@@ -166,7 +166,7 @@ Vers le haut et l’avant, le passage du coude doit entraîner le passage de l�
 photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567161627/maxresdefault_knni7y.jpg"
 video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1566997867/Roger_Federer_Forehand_Slow_Motion_2019_-_Fluid_Relaxation_hd_pvzjie.mp4"
 coupdroit4 = Notion.create!(
-  name: "Comment se servir des jambes",
+  name: "Comment se servir des jambes ? ",
   description: "Le coup droit est le coup le plus connu du tennis avec le service. Pourquoi ? Parce qu’il est naturellement effectué par les joueurs qu’ils soient débutants ou experts.
 Tous les joueurs ont la facilité d’effectuer ce coup. Mais avant toute chose, reprenons les bases du coup droit croisé en 5 points clés.
 
@@ -222,7 +222,7 @@ Vers le haut et l’avant, le passage du coude doit entraîner le passage de l�
 photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567435334/Coup%20droit/gael-monfils-rogers-cup-hotshots_rhz2vi.jpg"
 video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1566997867/Roger_Federer_Forehand_Slow_Motion_2019_-_Fluid_Relaxation_hd_pvzjie.mp4"
 coupdroit6 = Notion.create!(
-  name: "A quel moment faire l'amorti?",
+  name: "A quel moment faire l'amorti ?",
   description: "Le coup droit est le coup le plus connu du tennis avec le service. Pourquoi ? Parce qu’il est naturellement effectué par les joueurs qu’ils soient débutants ou experts.
 Tous les joueurs ont la facilité d’effectuer ce coup. Mais avant toute chose, reprenons les bases du coup droit croisé en 5 points clés.
 
@@ -250,7 +250,7 @@ Vers le haut et l’avant, le passage du coude doit entraîner le passage de l�
 photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567438065/Revers/gnm0jt7ynadb9r2z3dh0.jpg"
 video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088445/Coup_droit_muuzjj.mp4"
 revers1 = Notion.create!(
-  name: "Comment lifter",
+  name: "Comment lifter et faire reculer l'adversaire ?",
   user: arthur,
   category: revers,
   remote_video_url: video,
@@ -314,9 +314,9 @@ Accélérez une balle haute, au dessus de votre épaule en revers est extrêmeme
 # Notion Revers 4-------------------------------------------------------------------:
 
 video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088445/Coup_droit_muuzjj.mp4"
-photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567435712/Revers/monfils-indian-wells-2019-wednesday-backhand_nqq8fk.jpg"
+photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567438270/Revers/Maria_SHARAPOVA_wqiobo.jpg"
 revers4 = Notion.create!(
-  name: "Comment défendre efficacement",
+  name: "Comment défendre efficacement et avancer dans le terrain ?",
   description: "Le revers comme arme d’attaque
 Pour beaucoup de joueurs, il n’est que le coup neutre qui permet au mieux de repousser l’adversaire, au pire celui qui permet de simplement remettre la balle dans le court.
 Pourtant, même si le revers d’attaque est difficile à réaliser, il n’en est pas moins surprenant et peut se révéler une arme redoutable.
@@ -382,7 +382,7 @@ Accélérez une balle haute, au dessus de votre épaule en revers est extrêmeme
 video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088445/Coup_droit_muuzjj.mp4"
 photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567071418/maxresdefault_gyhvch.jpg"
 service1 = Notion.create!(
-  name: "Comment faire un service au tennis",
+  name: "Comment faire un service au tennis ?",
   description: "Choisissez une raquette de tennis qui convient à une personne de votre âge et de votre morphologie. Optez pour une raquette légère et ajoutez éventuellement de la bande de plomb en tête pour obtenir un meilleur contrôle. Les raquettes de tennis ont des surfaces de tamis qui sont comprises entre 630 et 645 cm2 pour des poids qui se situent entre 270 et 370 g. Il est toujours préférable de faire corder sa raquette (plutôt que de l'acheter avec un cordage déjà installé) en choisissant un type de cordage et une tension qui convient à votre style de jeu et à votre morphologie (force et puissance). Après avoir utilisé un cordage pendant de nombreuses séances de jeu, si vous sentez que vous contrôlez de moins en moins bien vos frappes de balle, envisagez de faire recorder votre raquette. Demandez des conseils à la personne qui corde votre raquette pour déterminer le type et la tension de cordage qui vous conviennent le mieux.",
   remote_video_url: video,
   remote_photo_url: photo,
@@ -445,7 +445,7 @@ service5 = Notion.create!(
 video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088445/Coup_droit_muuzjj.mp4"
 photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567071418/maxresdefault_gyhvch.jpg"
 service6 = Notion.create!(
-  name: "Comment faire un service comme Roger",
+  name: "Vous souhaitez un service à la Roger ?",
   description: "Choisissez une raquette de tennis qui convient à une personne de votre âge et de votre morphologie. Optez pour une raquette légère et ajoutez éventuellement de la bande de plomb en tête pour obtenir un meilleur contrôle. Les raquettes de tennis ont des surfaces de tamis qui sont comprises entre 630 et 645 cm2 pour des poids qui se situent entre 270 et 370 g. Il est toujours préférable de faire corder sa raquette (plutôt que de l'acheter avec un cordage déjà installé) en choisissant un type de cordage et une tension qui convient à votre style de jeu et à votre morphologie (force et puissance). Après avoir utilisé un cordage pendant de nombreuses séances de jeu, si vous sentez que vous contrôlez de moins en moins bien vos frappes de balle, envisagez de faire recorder votre raquette. Demandez des conseils à la personne qui corde votre raquette pour déterminer le type et la tension de cordage qui vous conviennent le mieux.",
   remote_video_url: video,
   remote_photo_url: photo,
@@ -458,8 +458,8 @@ service6 = Notion.create!(
 photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567436262/%C3%A9chauffement/Capture_d_e%CC%81cran_2019-09-02_a%CC%80_16.57.13_m09xwy.png"
 video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1567088636/Echauffement_px56el.mp4"
 mental2 = Notion.create!(
-  name: "Comment bien s'échauffer",
-  category: revers,
+  name: "Comment bien s'échauffer ?",
+  category: echauffement,
   remote_photo_url: photo,
   remote_video_url: video,
   description: "Choisissez une raquette de tennis qui convient à une personne de votre âge et de votre morphologie. Optez pour une raquette légère et ajoutez éventuellement de la bande de plomb en tête pour obtenir un meilleur contrôle. Les raquettes de tennis ont des surfaces de tamis qui sont comprises entre 630 et 645 cm2 pour des poids qui se situent entre 270 et 370 g. Il est toujours préférable de faire corder sa raquette (plutôt que de l'acheter avec un cordage déjà installé) en choisissant un type de cordage et une tension qui convient à votre style de jeu et à votre morphologie (force et puissance). Après avoir utilisé un cordage pendant de nombreuses séances de jeu, si vous sentez que vous contrôlez de moins en moins bien vos frappes de balle, envisagez de faire recorder votre raquette. Demandez des conseils à la personne qui corde votre raquette pour déterminer le type et la tension de cordage qui vous conviennent le mieux.",
@@ -533,17 +533,26 @@ mental2 = Notion.create!(
 
 # Lesson:
 
-Lesson.create!(teacher: roger, student: novak, notion: revers2, date: DateTime.new(2019,9,2,8))
+lesson1 = Lesson.new(teacher: roger, student: novak, notion: revers2, date: DateTime.new(2019,9,2,8))
+lesson1.save!
 
-lesson = Lesson.new(teacher: arthur, student: novak, notion: coupdroit2, date: DateTime.new(2019,9,2,8), status:"confirmed")
-lesson.save
-lesson1 = Lesson.new(teacher: arthur, student: hector, notion: coupdroit2, date: DateTime.new(2019,8,30,14), status:"confirmed", comment: "Super Nicolas,
+lesson2 = Lesson.new(teacher: arthur, student: elisabeth, notion: revers2, date: DateTime.new(2019,9,03,14), status:"confirmed", comment: "Super Elisabeth,
 Bravo pour tes premières séances sur le revers, je pense que tu es prêt pour ton prochain tournoi.
-
 La prochaine fois je te montrerai comment améliorer ton coup droit")
-lesson1.save
+lesson2.save!
 
-Review.create!(lesson: lesson, rating: 5, comment: "super cours avec arthur sur le Coup droit")
+lesson3 = Lesson.new(teacher: roger, student: novak, notion: revers2, date: DateTime.new(2019,9,2,8))
+Lesson.create(teacher: arthur, student: elisabeth, notion: revers2, date: DateTime.new(2019,9,03,14), status:"confirmed", comment: "Super Elisabeth,
+Bravo pour tes premières séances sur le revers, je pense que tu es prêt pour ton prochain tournoi.
+La prochaine fois je te montrerai comment améliorer ton coup droit")
+lesson3.save!
+
+Review.create!(lesson: lesson1, rating: 5, comment: "Arthur est un excellent professeur: sympathique et de très bon conseil, idéal pour progresser rapidement!")
+Review.create!(lesson: lesson2, rating: 5, comment: "Premier cours ce weekend avec Arthur, je recommande vivement. Un peu stressée car complètement débutante, mais grâce à sa gentillesse et sa patience vous vous sentez rapidement à l'aise et il vous donne envie de persévérer.")
+Review.create!(lesson: lesson3, rating: 5, comment: "Arthur est un fantastique joueur de tennis. Il est capable de s'adapter a tous les niveaux et de monter en puissance si vous voulez accélérer le rythme. Ses indications sont claires et précises et vous ferez de rapide progrès avec lui.")
+
 puts "Seed done!"
+
+
 
 
