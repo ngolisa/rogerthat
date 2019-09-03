@@ -1,14 +1,30 @@
-<canvas width="240" height="180" id="motion"> </canvas>
+<div class="videotoinsert">
 
-<video width="240" height="180" id="video-motion" autoplay> </video>
+  <canvas width="240" height="180" id="motion"> </canvas>
+
+  <video width="240" height="180" id="video-motion" autoplay> </video>
+</div>
+
+<div class="videotoinsert">
+
+  <canvas width="240" height="180" id="motion-teacher"> </canvas>
+
+  <video width="240" height="180" id="video-motion-teacher" autoplay loop> </video>
+</div>
+
 
 <div>
   <label for="hue"></label>
-  <input type="range" min=0 max=360 name="hue" id="hue-c">
+  <input type="range" min=0 max=360 name="hue" id="hue-c" value='250'>
+
   <label for="tolerances"></label>
-  <input type="range" min=0 max=360 name="tolerances" id="tolerences-c">
+  <input type="range" min=0 max=360 name="tolerances" id="tolerences-c" value='75'>
 </div>
 
+<button class ="play">Play </button>
+
+<button class ="record">Record </button>
+<button class ="stop">Stop </button>
 
 
 
