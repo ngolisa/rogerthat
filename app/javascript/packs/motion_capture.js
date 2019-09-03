@@ -1,9 +1,20 @@
   const motion = document.querySelector('#motion');
   const contextMotion = motion.getContext('2d');
   const video = document.querySelector('#video-motion');
+  const canvasTeacher = document.querySelector('#motion-teacher');
+  const contextTeacher = canvasTeacher.getContext('2d');
+  const videoTeacher = document.querySelector('#video-motion-teacher');
 
-  const huec = document.querySelector('#hue-c')
-  const tolc = document.querySelector('#tolerences-c')
+  const canvas1 = document.querySelector('#canvas1');
+  const contextCanvas1 = canvas1.getContext('2d');
+  const canvas2 = document.querySelector('#canvas2');
+  const contextCanvas2 = canvas2.getContext('2d');
+
+  const huec = document.querySelector('#hue-c');
+  const tolc = document.querySelector('#tolerences-c');
+
+  contextCanvas1.globalCompositeOperation = "hue";
+  contextCanvas2.globalCompositeOperation = "xor";
 
   let chunks = [];
   let recorder;
@@ -77,6 +88,14 @@
     const iT = new ImageData(eT, 240, 180)
     contextTeacher.putImageData(iT, 0, 0);
 
+    contextCanvas1.clearRect(0, 0, 240, 180);
+    contextCanvas1.drawImage(video, 0, 0, 240, 180);
+    contextCanvas1.drawImage(canvasTeacher, 0, 0, 240, 180);
+
+    contextCanvas2.clearRect(0, 0, 240, 180);
+    contextCanvas2.drawImage(motion, 0, 0, 240, 180);
+    contextCanvas2.drawImage(canvasTeacher, 0, 0, 240, 180);
+
 
     setTimeout(function() {
       copy()
@@ -93,9 +112,6 @@
   }
 
 
-const canvasTeacher = document.querySelector('#motion-teacher');
-const contextTeacher = canvasTeacher.getContext('2d');
-const videoTeacher = document.querySelector('#video-motion-teacher')
 
 
 const clickPlay = document.querySelector('.play');
