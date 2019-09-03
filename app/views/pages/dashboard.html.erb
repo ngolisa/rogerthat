@@ -1,6 +1,6 @@
 <div class="container">
   <div class="containerD">
-  <h1>Dashboard</h1>
+  <h1 class="text-color">Dashboard</h1>
 
  <div class="box0">
 
@@ -21,7 +21,7 @@
 
     <div class="box2">
       <div class="titre2">
-      <h1>Next notion</h1>
+       <h1> Next notion </h1>
       </div>
       <div class="little_box1">
         <% if @all_upcoming_lessons.empty?  %>
@@ -42,18 +42,19 @@
   </div>
 
     <div class="box3">
-      <h1>Past notion</h1>
+      <div class="testbox">
+      <h1 class="titre3">Past notion</h1>
+     </div>
       <div class="little_box2">
-        <ul>
           <% if @all_past_lessons.nil? %>
             <h1>pas de notions</h1>
           <% else %>
+            <ul>
             <% @all_past_lessons.each do |lesson| %>
-              <%= lesson.notion.name %>
-              <%= lesson.notion.video %>
+              <li class="list"> lesson.notion.name </li> <br>
             <% end %>
+            </ul>
           <% end %>
-        </ul>
       </div>
     </div>
   </div>

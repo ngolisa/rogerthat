@@ -5,24 +5,38 @@ margin-top: -30px;
 .box0{
 display: flex;
 justify-content: space-between;
+color:white;
 }
 .box1 {
 overflow:auto;
 max-height: 415px;
 box-shadow: 0 0 15px rgba(0,0,0,0.2);
 width: 460px;
+background-color: white;
 }
 
 .box2 {
 margin-left: 15px;
 box-shadow: 0 0 15px rgba(0,0,0,0.2);
 width: 590px;
+background-color: white;
 }
 
 .box3{
-  border:solid 1px;
+
   margin-top: 40px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2)
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: white;
+  background-image: url(https://images.unsplash.com/photo-1514561223688-79bce327ef1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 45px;
+}
+
+.testbox {
+
+  padding: 1px;
+  background-color: white;
 }
 
 .img_notion {
@@ -39,6 +53,10 @@ background-color: #40A195;
 color: white;
 font-size: bold;
 font-size: larger;
+}
+
+.text-color {
+  color:white;
 }
 
 .little_box {
@@ -68,10 +86,27 @@ font-size: larger;
   padding-right: 44px;
 }
 
+.titre3 {
+text-align: center;
+    margin-left: 429px;
+    padding-right: 470px;
+
+}
+
+.list {
+    margin-left: 330px;
+    padding-right: 344px;
+    font-weight: 600;
+}
+
 .little_box1 {
 
 }
 
 .little_box2 {
-  border:solid;
+text-align: center;
+overflow:auto;
+max-height: 160px;
+padding-top: 18px;
 }
+
