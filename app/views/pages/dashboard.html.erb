@@ -51,7 +51,7 @@
           <% else %>
             <ul>
             <% @all_past_lessons.each do |lesson| %>
-              <li class="list"> lesson.notion.name </li> <br>
+              <li class="list"> <%= lesson.notion.name %> </li> <br>
             <% end %>
             </ul>
           <% end %>
