@@ -1,33 +1,40 @@
 <div class="container">
+  <div class="containerD">
   <h1>Dashboard</h1>
 
  <div class="box0">
 
     <div class="box1">
+      <div class="titre1">
       <h1>All upcoming lessons</h1>
+      </div>
       <% @all_upcoming_lessons.each do |lesson| %>
        <div class="little_box">
-        <ul>
-          <li> <%= lesson.date %> </li>
-          <li> <%= lesson.student.full_name %></li>
-          <li> <%= lesson.notion.name %> </li>
-          <p class="space"> </p>
-        </ul>
-       </div>
+           <%= lesson.date %> <br>
+           <%= lesson.teacher.full_name %> <br>
+           <%= lesson.notion.name %>
+        </div>
+        <p class="space"> 🎾 </p>
         <% end %>
     </div>
 
 
     <div class="box2">
+      <div class="titre2">
       <h1>Next notion</h1>
+      </div>
       <div class="little_box1">
         <% if @all_upcoming_lessons.empty?  %>
           <h1>pas de upcomming lesson</h1>
         <% else %>
-         <ul>
+
+          <div class="img_notion">
           <%= cl_image_tag @all_upcoming_lessons.first.notion.photo, width: 400, height: 300, crop: :fill %>
-          <li> <%= @all_upcoming_lessons.first.notion.name %> </li>
-         </ul>
+          </div>
+          <div class="info">
+           <%= @all_upcoming_lessons.first.notion.name %>
+         </div>
+
         <% end %>
       </div>
     </div>
@@ -49,6 +56,6 @@
         </ul>
       </div>
     </div>
-
+  </div>
 </div>
 

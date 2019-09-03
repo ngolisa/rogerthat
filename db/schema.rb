@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(version: 2019_09_02_130736) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.datetime "date"
     t.bigint "notion_id"
@@ -33,6 +39,15 @@ ActiveRecord::Schema.define(version: 2019_09_02_130736) do
     t.index ["notion_id"], name: "index_lessons_on_notion_id"
     t.index ["student_id"], name: "index_lessons_on_student_id"
     t.index ["teacher_id"], name: "index_lessons_on_teacher_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "chat_room_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "notions", force: :cascade do |t|
@@ -76,6 +91,7 @@ ActiveRecord::Schema.define(version: 2019_09_02_130736) do
   add_foreign_key "lessons", "notions"
   add_foreign_key "lessons", "users", column: "student_id", on_delete: :restrict
   add_foreign_key "lessons", "users", column: "teacher_id", on_delete: :restrict
+  add_foreign_key "messages", "users"
   add_foreign_key "notions", "categories"
   add_foreign_key "notions", "users"
   add_foreign_key "reviews", "lessons"
