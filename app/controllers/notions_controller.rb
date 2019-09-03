@@ -3,6 +3,7 @@ class NotionsController < ApplicationController
     @notions = Notion.all
     @mynotions = Notion.where(user: current_user)
     @categories = Category.all
+    @lesson = Lesson.new
   end
 
   def show
