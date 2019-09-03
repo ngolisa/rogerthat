@@ -13,7 +13,7 @@
   const huec = document.querySelector('#hue-c');
   const tolc = document.querySelector('#tolerences-c');
 
-  contextCanvas1.globalCompositeOperation = "hue";
+  contextCanvas1.globalCompositeOperation = "multiply";
   contextCanvas2.globalCompositeOperation = "xor";
 
   let chunks = [];
@@ -96,11 +96,11 @@
     contextCanvas2.drawImage(motion, 0, 0, 240, 180);
     contextCanvas2.drawImage(canvasTeacher, 0, 0, 240, 180);
 
-
+    calcul(contextCanvas2.getImageData(0,0,240,180));
     setTimeout(function() {
       copy()
     }, 50);
-  }
+  };
 
 
   function initMotionCapture() {
@@ -119,7 +119,6 @@ clickPlay.addEventListener('click', initMotionCapture);
 
 
 function startRecord(){
-  console.log('start')
   navigator.mediaDevices.getUserMedia(constraints)
     .then((stream)=>{
       chunks = [];
@@ -131,18 +130,17 @@ function startRecord(){
       recorder.addEventListener('stop', onStop)
       recorder.start();
     })
-  console.log('end')
+
 
 };
 
 function onDataavailable(event){
-  console.log(event)
   chunks.push(event.data)
 
 };
 
 function onStop(event){
-  console.log(event)
+
   videoTeacher.srcObject.getTracks().forEach(track => track.stop());
   videoTeacher.srcObject = null;
 
@@ -152,6 +150,24 @@ function onStop(event){
 
 
 };
+
+function calcul(imagedata){
+
+  let score = 0;
+  const data = imagedata.data
+  for (let i = 0; i < data.length; i += 4){
+    if (data[i+3] === 0) {
+      score += 1
+    }
+  }
+  s = document.querySelector('.score')
+  score = Math.round((score/(data.length/4))*100);
+  s.innerText = score;
+  return score;
+};
+
+
+
 
 const record = document.querySelector('.record');
 record.addEventListener('click',startRecord);
