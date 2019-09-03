@@ -19,8 +19,8 @@
 .card-notion h2 {
     font-size: 15px;
     font-weight: bold;
-    margin: 15px;
-    background-color: #ffffffcf;
+    margin: 53px;
+    background-color: rgb(218, 167, 121);
     padding: 10px;
     width: 302px;
     display: flex;
@@ -28,8 +28,10 @@
     justify-content: center;
     align-items: center;
     width: 250px;
-    font-weight: 500;
+    font-weight: 400;
     color: #171d58;
+    border-radius: 1px;
+    box-shadow: 1px 6px 11px #3a38374d;
 }
 
 .card-notion p {
@@ -55,6 +57,7 @@
   right: 16px;
   top: -20px;
   width: 40px;
+
 }
 .height{
   background-color: white;
@@ -68,6 +71,19 @@
 
 .raquet{
   background:url(raquetvert.svg);
-  background-size: 46px 48px;
+  background-size: 45px 52px;
   background-position: center;
+  border: solid 2px white;
+}
+
+.rectangle-blanc {
+  width: 28%;
+  height: 143px;
+  margin-left: 83px;
+}
+.rectangle-blanc2 {
+  width: 28%;
+  height: 143px;
+  margin-right: 83px;
+
 }
