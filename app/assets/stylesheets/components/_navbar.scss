@@ -1,6 +1,10 @@
 .navbar-lewagon {
   // justify-content: space-between;
-  height: 120px;
+  height: 139px;
+  background-image: image-url("coin-nav-green.svg");
+  background-repeat: no-repeat;
+  background-position: top -54px left;
+  background-size: 913px 200px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -18,8 +22,7 @@
 // }
 
 .rayure {
-  background-image: image-url("coin-nav-green.svg");
-  background-size: 913px 200px;
-  background-repeat: no-repeat;
-  background-position: top -54px left;
+  background: linear-gradient(-0.4turn, #d86017 48%, #642A06);
+  background-attachment: fixed;
 }
+
