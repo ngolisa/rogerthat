@@ -151,6 +151,14 @@ function onStop(event){
 
 };
 
+function emoji(score){
+  if (score > 70){
+    return "👍"
+  } else {
+    return "😢"
+  }
+}
+
 function calcul(imagedata){
 
   let score = 0;
@@ -162,9 +170,10 @@ function calcul(imagedata){
   }
   s = document.querySelector('.score')
   score = Math.round((score/(data.length/4))*100);
-  s.innerText = score;
+  s.innerText = emoji(score);
   return score;
 };
+
 
 
 
