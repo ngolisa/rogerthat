@@ -3,6 +3,7 @@
   text-align: center;
   margin-bottom: 10px;
   position: relative;
+      background-color: #42a19517;
 
 }
 
@@ -48,8 +49,17 @@
   align-items: flex-end;
   position: relative;
   color: black;min-height: 90px;
+}
 
-
+  .card-notion-infos2 {
+        position: absolute;
+    top: 19px;
+    left: 84px;
+    color: black;
+    min-height: 51px;
+    width: 189px;
+    background-color: #eff6f5;
+    justify-content: center;
 }
 
 .card-notion-infos .card-notion-user {
@@ -66,7 +76,7 @@
 .raquette{
   position:absolute;
   top: 46px;
-  right: 48px;
+  right: -13px;
 }
 
 .raquet{

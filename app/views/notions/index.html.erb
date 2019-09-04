@@ -16,24 +16,22 @@
           <% category.notions.each do |notion|%>
             <div class="col-sm-4">
 
-              <%= link_to notion_path(notion) do %>
                 <div class="card-notion">
-                  <%= cl_image_tag notion.photo%>
-                  <div class="card-notion-infos">
-                    <div>
-                      <h2><%=  notion.name %></h2>
+                  <div class="card-img" style="background: url('<%= cl_image_path notion.photo%>')">
 
+                    <div class="raquette">
+                      <%#= image_tag "raquetvert", input_html: {class: "avatar"} %>
+                      <button type="button" class=" avatar raquet" data-toggle="modal" data-target=<%="#exampleModalCenter#{notion.id}"%> >
+                      </button>
                     </div>
                   </div>
+                  <div class="card-notion-infos">
+                    <%= link_to notion_path(notion), class: "card-notion-infos2" do %>
+                        <%=  notion.name %></button>
+                    <% end %>
+                  </div>
                 </div>
-              <% end %>
 
-              <div class="raquette">
-                <%#= image_tag "raquetvert", input_html: {class: "avatar"} %>
-                <button type="button" class=" avatar raquet" data-toggle="modal" data-target=<%="#exampleModalCenter#{notion.id}"%> >
-
-                </button>
-              </div>
 
             </div>
 

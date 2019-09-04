@@ -1,4 +1,16 @@
 img{
   width:100%;
+  margin-bottom: 23px;
   }
 
+.card-img {
+        height: 200px;
+    background-size: cover !important;
+    border-radius: 100%;
+    width: 200px;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 10px;
+    box-shadow: 5px 2px 8px grey;
+}
