@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   def test
   end
 
+  def record
+  end
+
   def dashboard
     @user = current_user
 
