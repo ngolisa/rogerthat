@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   end
 
   get '/test', to: "pages#test"
+  get '/record', to:"pages#record"
   # namespace :teacher do
   #   get 'dashboard', to: 'dashboard#dashboard'
   # end
