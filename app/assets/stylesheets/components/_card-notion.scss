@@ -80,15 +80,37 @@
   right: -13px;
 
   left: 263px;
-
-
 }
 
-.raquet{
-  background:image-url(raquetvert);
-  background-size: 45px 52px;
+.calendar{
+  background:image-url(calendar-with-a-clock-time-tools);
+
   background-position: center;
   border: solid 2px white;
+  background-repeat: no-repeat;
+  background-color: #1FBDAA;
+  background-size: 36px 36px;
+  background-position: center
+}
+
+
+.raquet{
+  background:image-url(tennis);
+
+  background-position: center;
+  border: solid 2px white;
+  background-repeat: no-repeat;
+  background-color: #1FBDAA;
+  background-size: 36px 36px;
+  background-position: center
+}
+
+.btn-index{
+
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+
 }
 
 .rectangle-blanc {
@@ -105,4 +127,68 @@
 
 .img-lesson {
   text-align:center;
+}
+
+
+
+.card-product {
+  width: 280px;
+  height: 310px;
+  margin: 32px auto !important;
+  border-radius: 10px;
+  background-color: $blue;
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 100%;
+  position: relative;
+  margin: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1);
+  transition: all 200ms ease-in;
+  transform: scale(1);
+  &:hover {
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.02);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.02);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.1);
+    transition: all 200ms ease-in;
+    transform: scale(1.02);
+  }
+}
+
+.card-product-description {
+  background-color: white;
+  width: 100%;
+  font-size: 12px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0px;
+  padding: 16px;
+  text-align: center;
+  h3 {
+    font-size: 18px;
+  }
+  h5 {
+    color: rgb(50,50,50);
+    font-size: 14px;
+  }
+  .fas {
+    color: rgb(200, 200, 200);
+    margin-right: 8px;
+  }
+}
+
+.card-product-description:hover {
+  .btn-book {
+    display: block;
+    margin: 0 auto;
+  }
 }
