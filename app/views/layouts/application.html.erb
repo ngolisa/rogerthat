@@ -11,7 +11,7 @@
    <!--  , media: 'all' %>  --><!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body class="rayure">
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' unless action_name == 'home' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
