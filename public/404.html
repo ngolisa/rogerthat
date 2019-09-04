@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>Page introuvable (404)</title>
+  <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
+
+    .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  }
+  @media (min-width: 768px) {
+    .container {
+    width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+    width: 970px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+    width: 1170px;
+    }
+  }
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  /* .rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
     text-align: center;
@@ -50,18 +80,16 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  } */
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body>
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+    <div style="margin-bottom:100px;">
+      <center><h1>La page que vous recherchez n'existe pas. 404.</h1>
+      <p>Vous avez sûrement mal écrit l'URL ou la page n'existe plus.</p> <center>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+      <img src="logo.png" height="325px" class="center">
 </body>
 </html>
