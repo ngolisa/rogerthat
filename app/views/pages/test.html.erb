@@ -1,43 +1,45 @@
  <div class="container">
-  <div class="d-flex">
-  <div>
 
-    <canvas style="display: none" width="320" height="240" id="motion-teacher">
+  <h1>Entraine-toi grâce à l'E-MOTION</h1>
+  <div class="d-flex" style="justify-content: space-around">
+
+    <canvas style="display: none" width="400" height="320" id="motion-teacher">
     </canvas>
+    <div class="video1">
+      <video width="400" height="320" id="video-motion-teacher" class="video-test" autoplay loop>
+      </video>
+    </div>
 
+    <div class = "score" id= "score_bar">
 
-  </div>
-    <video width="320" height="240" id="video-motion-teacher" autoplay loop>
-    </video>
+    </div>
 
-  <div class = "score" id= "score_bar"></div>
-  <div>
+    <canvas style="display:none" width="400" height="320" id="motion"> </canvas>
 
-    <canvas style="display:none" width="320" height="240" id="motion"> </canvas>
+    <video style="display:none" width="400" height="320" id="video-motion" autoplay> </video>
 
-    <video style="display:none" width="320" height="240" id="video-motion" autoplay> </video>
-  </div>
-
-
-  <canvas width="320" style="" height="240" id="canvas1"></canvas>
-
-  <canvas width="320" style="display:none" height="240" id="canvas2"></canvas>
-
-
-
-
-
-
-  </div>
-  <div class="d-flex">
-
-    <button class ="record">Record </button>
-    <button class ="stop">Stop </button>
-    <button class ="play">Play </button>
-
-  </div>
 
   <div>
+    <canvas width="400" style="" height="320" class="video-test" id="canvas1"></canvas>
+  </div>
+
+  <canvas width="400" style="display:none" height="320" id="canvas2"></canvas>
+
+
+
+
+
+
+  </div>
+  <div class="d-flex justify-content-center">
+
+    <button class ="record btn btn-primary mr-2"><i class="fas fa-video"></i> </button>
+    <button class ="stop btn btn-primary mr-2"><i class="fas fa-stop"></i></button>
+    <button class ="play btn btn-primary mr-2"><i class="fas fa-play"></i> </button>
+
+  </div>
+
+  <div style = "display:none">
     <label for="hue"></label>
     <input type="range" min=0 max=360 name="hue" id="hue-c" value='110'>
 

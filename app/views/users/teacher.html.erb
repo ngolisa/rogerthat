@@ -1,31 +1,62 @@
-<div class="container center-text">
-  <%= cl_image_tag @teacher.avatar, class: "avatar-large" %>
-  <h1><%= @teacher.first_name %> <%= @teacher.last_name %></h1>
+<div class="container">
 
-  <% m = 0 %>
-  <% @reviews.each do |review| %>
-    <% m += review.rating %>
-  <% end %>
-  <% if @reviews.length ==0 %>
-    <% s=0 %>
-  <% else %>
-    <% s = m/@reviews.length %>
-  <% end %>
+  <div class="center-text mb-5">
+    <%= cl_image_tag @teacher.avatar, class: "avatar-large" %>
+    <h2 class="mb-0 pb-1"><%= @teacher.first_name %> <%= @teacher.last_name %></h2>
+
+    <% m = 0 %>
+    <% @reviews.each do |review| %>
+      <% m += review.rating %>
+    <% end %>
+    <% if @reviews.length ==0 %>
+      <% s=0 %>
+    <% else %>
+      <% s = m/@reviews.length %>
+    <% end %>
+
+    <% s.times do %>
+      <%='<i class="fas fa-baseball-ball text-warning"></i>'.html_safe %>
+    <% end %>
+
+    <h4> <%=s %>/5</h4>
+  </div>
 
 
 
 
-  <h4><%= "⭐️"*s %></h4>
   <% unless @reviews.empty? %>
     <% @reviews.each do |review| %>
 
-      <div class="card-comment">
-        <%= cl_image_tag review.lesson.student.avatar%>
-        <div class="card-comment-infos">
-          <h2><%="⭐️"*(review.rating)  %></h2>
-          <p><%= review.comment %></p>
+      <div class="mb-5">
+
+        <div class="d-flex">
+          <%= cl_image_tag review.lesson.student.avatar, class: 'avatar-comment'%>
+          <div>
+            <div>
+              <h5>
+                <%= review.lesson.student.first_name %> <%= review.lesson.student.last_name %>
+              </h5>
+            </div>
+            <div>
+              <% review.rating.times do  %>
+                <%='<i class="fas fa-baseball-ball text-warning"></i>'.html_safe %>
+              <% end %>
+              <h5><%= review.rating %>/5</h5>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>"<%= review.comment %>"</p>
+        </div>
+        <div>
+          <p style="color:grey"><%= review.created_at.strftime('%A %e %B') %></p>
         </div>
       </div>
+
+
+
+
+
     <% end %>
   <% end %>
 </div>

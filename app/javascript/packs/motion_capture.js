@@ -7,6 +7,11 @@ var line = new ProgressBar.Line('#score_bar');
   const canvasTeacher = document.querySelector('#motion-teacher');
   const contextTeacher = canvasTeacher.getContext('2d');
   const videoTeacher = document.querySelector('#video-motion-teacher');
+  const minl = 20;
+  const maxl= 90;
+  const mins = 20;
+  const maxs = 90;
+
 
   const canvas1 = document.querySelector('#canvas1');
   const contextCanvas1 = canvas1.getContext('2d');
@@ -23,7 +28,7 @@ var line = new ProgressBar.Line('#score_bar');
   let recorder;
   const constraints = {
     audio: false,
-    video: {width: 320, height: 240}
+    video: {width: 400, height: 320}
   }
 
   function extract(data) {
@@ -33,73 +38,125 @@ var line = new ProgressBar.Line('#score_bar');
       const red = data[i + 0];
       const green = data[i + 1];
       const blue = data[i + 2];
-      const hue = RGBToH(red, green, blue);
-      if ((hue < min) || (hue > max)){
+      const object = RGBToHSL(red, green, blue);
+      if ((object.h > min) && (object.h < max)
+        && (object.l > minl) && (object.l < maxl)
+        && (object.s > mins) && (object.s < maxs) ){
+
+      } else {
         data[i+3] = 0;
       }
     }
     return data;
   }
 
-  function RGBToH(r,g,b) {
-   // Make r, g, and b fractions of 1
-   r /= 255;
-   g /= 255;
-   b /= 255;
+  // function RGBToH(r,g,b) {
+  //  // Make r, g, and b fractions of 1
+  //  r /= 255;
+  //  g /= 255;
+  //  b /= 255;
 
-   // Find greatest and smallest channel values
-   let cmin = Math.min(r,g,b),
-       cmax = Math.max(r,g,b),
-       delta = cmax - cmin,
-       h = 0,
-       s = 0,
-       l = 0;
+  //  // Find greatest and smallest channel values
+  //  let cmin = Math.min(r,g,b),
+  //      cmax = Math.max(r,g,b),
+  //      delta = cmax - cmin,
+  //      h = 0,
+  //      s = 0,
+  //      l = 0;
 
-   // Calculate hue
-   // No difference
-   if (delta == 0)
-     h = 0;
-   // Red is max
-   else if (cmax == r)
-     h = ((g - b) / delta) % 6;
-   // Green is max
-   else if (cmax == g)
-     h = (b - r) / delta + 2;
-   // Blue is max
-   else
-     h = (r - g) / delta + 4;
+  //  // Calculate hue
+  //  // No difference
+  //  if (delta == 0)
+  //    h = 0;
+  //  // Red is max
+  //  else if (cmax == r)
+  //    h = ((g - b) / delta) % 6;
+  //  // Green is max
+  //  else if (cmax == g)
+  //    h = (b - r) / delta + 2;
+  //  // Blue is max
+  //  else
+  //    h = (r - g) / delta + 4;
 
-   h = Math.round(h * 60);
+  //  h = Math.round(h * 60);
 
-   // Make negative hues positive behind 360°
-   if (h < 0)
-       h += 360;
-   return h;
+  //  // Make negative hues positive behind 360°
+  //  if (h < 0)
+  //      h += 360;
+  //  return h;
+  // }
+
+  function RGBToHSL(r,g,b) {
+    // Make r, g, and b fractions of 1
+    r /= 255;
+    g /= 255;
+    b /= 255;
+
+    // Find greatest and smallest channel values
+    let cmin = Math.min(r,g,b),
+        cmax = Math.max(r,g,b),
+        delta = cmax - cmin,
+        h = 0,
+        s = 0,
+        l = 0;
+
+    // Calculate hue
+    // No difference
+    if (delta == 0)
+      h = 0;
+    // Red is max
+    else if (cmax == r)
+      h = ((g - b) / delta) % 6;
+    // Green is max
+    else if (cmax == g)
+      h = (b - r) / delta + 2;
+    // Blue is max
+    else
+      h = (r - g) / delta + 4;
+
+    h = Math.round(h * 60);
+
+    // Make negative hues positive behind 360°
+    if (h < 0){
+      h += 360;
+    }
+
+    // Calculate lightness
+    l = (cmax + cmin) / 2;
+
+    // Calculate saturation
+    s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+
+    // Multiply l and s by 100
+    s = +(s * 100).toFixed(1);
+    l = +(l * 100).toFixed(1);
+
+    return {h, s, l};
   }
 
 
   function copy() {
-    contextMotion.drawImage(video, 0, 0, 320, 240);
-    let pixels = contextMotion.getImageData(0, 0, 320, 240);
+    contextMotion.drawImage(video, 0, 0, 400, 320);
+    let pixels = contextMotion.getImageData(0, 0, 400, 320);
     const e = extract(pixels.data);
-    const i = new ImageData(e, 320, 240)
+    const i = new ImageData(e, 400, 320)
     contextMotion.putImageData(i, 0, 0);
 
-    contextTeacher.drawImage(videoTeacher, 0, 0, 320, 240);
-    let pixelsT = contextTeacher.getImageData(0, 0, 320, 240);
+    contextTeacher.drawImage(videoTeacher, 0, 0, 400, 320);
+    let pixelsT = contextTeacher.getImageData(0, 0, 400, 320);
     const eT = extract(pixelsT.data);
-    const iT = new ImageData(eT, 320, 240)
+    const iT = new ImageData(eT, 400, 320)
     contextTeacher.putImageData(iT, 0, 0);
 
-    contextCanvas1.clearRect(0, 0, 320, 240);
-    contextCanvas1.drawImage(video, 0, 0, 320, 240);
-    contextCanvas1.drawImage(canvasTeacher, 0, 0, 320, 240);
+    contextCanvas1.clearRect(0, 0, 400, 320);
+    contextCanvas1.drawImage(video, 0, 0, 400, 320);
+    contextCanvas1.drawImage(canvasTeacher, 0, 0, 400, 320);
 
-    contextCanvas2.clearRect(0, 0, 320, 240);
-    contextCanvas2.drawImage(motion, 0, 0, 320, 240);
-    contextCanvas2.drawImage(canvasTeacher, 0, 0, 320, 240);
+    contextCanvas2.clearRect(0, 0, 400, 320);
+    contextCanvas2.drawImage(motion, 0, 0, 400, 320);
+    contextCanvas2.drawImage(canvasTeacher, 0, 0, 400, 320);
 
-    calcul(contextCanvas2.getImageData(0,0,320,240));
+    calcul(contextCanvas2.getImageData(0,0,400,320));
     setTimeout(function() {
       copy();
       // huecfunction();
@@ -224,9 +281,11 @@ function calcul(imagedata){
       score += 1
     }
   }
+  score = Math.round((((score/(data.length/4))*100)-60)*2.5);
+
   s = document.querySelector('.score')
-  score = (Math.round((score/(data.length/4))*100)-30)*2;
-  s.innerText = emoji(score);
+  s = document.querySelector('.score')
+  s.innerText = ''
   progress(score);
   return score;
 };

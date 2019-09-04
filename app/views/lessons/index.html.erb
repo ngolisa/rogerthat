@@ -30,18 +30,20 @@
     <% end %>
 
   <% else %>
-    <h1>Mes prochaines leçons</h1>
-    <% @lessons.each do |lesson|%>
-      <%= link_to lesson_path(lesson) do %>
-        <ul class="list-group list-group-horizontal-lg card-index-lesson">
-        <li class="list-group-item"><%= lesson.notion.name %></li>
-        <li class="list-group-item"><%= "#{lesson.teacher.first_name} #{lesson.teacher.last_name}" %></li>
-        <li class="list-group-item">
-          <%= lesson.date.strftime('%A %e %B')%><br>
-          <%= lesson.date.strftime('%l:%M')%>
-        </li>
-        <li class="list-group-item"><%= lesson.status.capitalize %></li>
-      </ul>
+    <% unless @lessons.empty? %>
+      <h1>Mes prochaines leçons</h1>
+      <% @lessons.each do |lesson|%>
+        <%= link_to lesson_path(lesson) do %>
+          <ul class="list-group list-group-horizontal-lg card-index-lesson">
+          <li class="list-group-item"><%= lesson.notion.name %></li>
+          <li class="list-group-item"><%= "#{lesson.teacher.first_name} #{lesson.teacher.last_name}" %></li>
+          <li class="list-group-item">
+            <%= lesson.date.strftime('%A %e %B')%><br>
+            <%= lesson.date.strftime('%l:%M')%>
+          </li>
+          <li class="list-group-item"><%= lesson.status.capitalize %></li>
+        </ul>
+        <% end %>
       <% end %>
     <% end %>
     <h1>Mes anciennes leçons</h1>
