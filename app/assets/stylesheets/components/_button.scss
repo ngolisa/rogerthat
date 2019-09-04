@@ -51,3 +51,19 @@
   color: white;
 }
 
+.btn-roger-green {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #42a195e0;
+  border: none;
+  transition: background 0.3s ease;
+  margin: auto;
+
+  &:hover {
+  background: #42afa8;
+  color: white;
+}
+}
+
+

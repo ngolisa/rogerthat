@@ -1,13 +1,13 @@
 .card-comment {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  border-radius: 2px;
-  padding: 10px;
-  margin: 15px;
+     overflow: hidden;
+    height: 189px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    padding: 13px;
+    margin: 0px;
 }
 
 .card-comment img {
@@ -20,17 +20,23 @@
 }
 
 .card-comment h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: -91px;
+    margin-bottom: 71px;
 }
 
 .card-comment p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+    position: absolute;
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: -1px;
+    margin-left: 6px;
+    margin-right: 45px;
+    margin-top: -27px;
 }
 
 .card-comment .card-comment-infos {
