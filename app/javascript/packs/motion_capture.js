@@ -1,3 +1,6 @@
+var ProgressBar = require('progressbar.js')
+var line = new ProgressBar.Line('#score_bar');
+
   const motion = document.querySelector('#motion');
   const contextMotion = motion.getContext('2d');
   const video = document.querySelector('#video-motion');
@@ -20,7 +23,7 @@
   let recorder;
   const constraints = {
     audio: false,
-    video: {width: 240, height: 180}
+    video: {width: 320, height: 240}
   }
 
   function extract(data) {
@@ -76,29 +79,30 @@
 
 
   function copy() {
-    contextMotion.drawImage(video, 0, 0, 240, 180);
-    let pixels = contextMotion.getImageData(0, 0, 240, 180);
+    contextMotion.drawImage(video, 0, 0, 320, 240);
+    let pixels = contextMotion.getImageData(0, 0, 320, 240);
     const e = extract(pixels.data);
-    const i = new ImageData(e, 240, 180)
+    const i = new ImageData(e, 320, 240)
     contextMotion.putImageData(i, 0, 0);
 
-    contextTeacher.drawImage(videoTeacher, 0, 0, 240, 180);
-    let pixelsT = contextTeacher.getImageData(0, 0, 240, 180);
+    contextTeacher.drawImage(videoTeacher, 0, 0, 320, 240);
+    let pixelsT = contextTeacher.getImageData(0, 0, 320, 240);
     const eT = extract(pixelsT.data);
-    const iT = new ImageData(eT, 240, 180)
+    const iT = new ImageData(eT, 320, 240)
     contextTeacher.putImageData(iT, 0, 0);
 
-    contextCanvas1.clearRect(0, 0, 240, 180);
-    contextCanvas1.drawImage(video, 0, 0, 240, 180);
-    contextCanvas1.drawImage(canvasTeacher, 0, 0, 240, 180);
+    contextCanvas1.clearRect(0, 0, 320, 240);
+    contextCanvas1.drawImage(video, 0, 0, 320, 240);
+    contextCanvas1.drawImage(canvasTeacher, 0, 0, 320, 240);
 
-    contextCanvas2.clearRect(0, 0, 240, 180);
-    contextCanvas2.drawImage(motion, 0, 0, 240, 180);
-    contextCanvas2.drawImage(canvasTeacher, 0, 0, 240, 180);
+    contextCanvas2.clearRect(0, 0, 320, 240);
+    contextCanvas2.drawImage(motion, 0, 0, 320, 240);
+    contextCanvas2.drawImage(canvasTeacher, 0, 0, 320, 240);
 
-    calcul(contextCanvas2.getImageData(0,0,240,180));
+    calcul(contextCanvas2.getImageData(0,0,320,240));
     setTimeout(function() {
-      copy()
+      copy();
+      // huecfunction();
     }, 50);
   };
 
@@ -151,8 +155,60 @@ function onStop(event){
 
 };
 
+
+const progress = (score) => {
+  var bar = new ProgressBar.Circle(score_bar, {
+        number: score,
+        color: '#727272',
+        // This has to be the same size as the maximum width to
+        // prevent clipping
+        strokeWidth: 4,
+        trailWidth: 1,
+        easing: 'linear',
+        duration: 0.1,
+        text: {
+          autoStyleContainer: true
+        },
+        from: { color: '#E80909', width: 1 },
+        to: { color: '#09E85E', width: 4 },
+
+        // Set default step function for all animate calls
+        step: function(state, circle) {
+          circle.path.setAttribute('stroke', state.color);
+          circle.path.setAttribute('stroke-width', state.width);
+          var value = score;
+          if (value <= 0) {
+            circle.setText(0);
+          } else if (value > 100) {
+            circle.setText(100)
+          } else {
+            circle.setText(value);
+          }
+
+        }
+      });
+      bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+      bar.text.style.fontSize = '2rem';
+
+
+      const res = (score) => {
+        if (score > 100) {
+          return 1
+        } else if (score < 0) {
+          return 0
+        } else {
+          return score/100
+        }
+      };
+
+      bar.animate(res(score));  // Number from 0.0 to 1.0
+
+};
+
+
+
 function emoji(score){
-  if(score<60){
+  if(score<80){
     return '😢'
   } else {
     return '👍'
@@ -169,9 +225,17 @@ function calcul(imagedata){
     }
   }
   s = document.querySelector('.score')
-  score = Math.round((score/(data.length/4))*100);
+  score = (Math.round((score/(data.length/4))*100)-30)*2;
   s.innerText = emoji(score);
+  progress(score);
   return score;
+};
+
+const huecfunction = () => {
+  const huec = document.querySelector('#hue-c');
+  const tolc = document.querySelector('#tolerences-c');
+  // console.log(huec.value)
+  // console.log(tolc.value)
 };
 
 
