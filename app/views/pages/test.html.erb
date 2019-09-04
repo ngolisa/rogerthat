@@ -1,38 +1,48 @@
  <div class="container">
-
+  <div class="d-flex">
   <div>
 
-    <canvas width="240" height="180" id="motion"> </canvas>
+    <canvas style="display: none" width="320" height="240" id="motion-teacher">
+    </canvas>
 
-    <video width="240" height="180" id="video-motion" autoplay> </video>
+
   </div>
+    <video width="320" height="240" id="video-motion-teacher" autoplay loop>
+    </video>
 
+  <div class = "score" id= "score_bar"></div>
   <div>
 
-    <canvas width="240" height="180" id="motion-teacher"> </canvas>
+    <canvas style="display:none" width="320" height="240" id="motion"> </canvas>
 
-    <video width="240" height="180" id="video-motion-teacher" autoplay loop> </video>
-  <button class ="record">Record </button>
-  <button class ="stop">Stop </button>
+    <video style="display:none" width="320" height="240" id="video-motion" autoplay> </video>
   </div>
 
-  <canvas width="240" height="180" id="canvas1"></canvas>
 
-  <canvas width="240" height="180" id="canvas2"></canvas>
+  <canvas width="320" style="" height="240" id="canvas1"></canvas>
 
+  <canvas width="320" style="display:none" height="240" id="canvas2"></canvas>
+
+
+
+
+
+
+  </div>
+  <div class="d-flex">
+
+    <button class ="record">Record </button>
+    <button class ="stop">Stop </button>
+    <button class ="play">Play </button>
+
+  </div>
 
   <div>
     <label for="hue"></label>
-    <input type="range" min=0 max=360 name="hue" id="hue-c" value='250'>
+    <input type="range" min=0 max=360 name="hue" id="hue-c" value='110'>
 
     <label for="tolerances"></label>
-    <input type="range" min=0 max=360 name="tolerances" id="tolerences-c" value='75'>
+    <input type="range" min=0 max=360 name="tolerances" id="tolerences-c" value='48'>
   </div>
-
-  <button class ="play">Play </button>
-
-
-  <div class = "score emoji"></div>
-
   <%= javascript_pack_tag 'motion_capture' %>
 </div>
