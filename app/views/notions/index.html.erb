@@ -14,25 +14,23 @@
         </h2>
         <div class="row">
           <% category.notions.each do |notion|%>
-            <div class="col-sm-4">
 
-                <div class="card-notion">
-                  <div class="card-img" style="background: url('<%= cl_image_path notion.photo%>')">
 
-                    <div class="raquette">
-                      <%#= image_tag "raquetvert", input_html: {class: "avatar"} %>
-                      <button type="button" class=" avatar raquet" data-toggle="modal" data-target=<%="#exampleModalCenter#{notion.id}"%> >
+
+            <div class="col-12 col-lg-4 col-md-6 col-sm-12">
+              <div class="card-product" style="background-image: url('<%= cl_image_path notion.photo, height: 300, width: 400, crop: :fill %>')">
+                  <div class="card-product-description">
+                    <h3><%= notion.name %></h3>
+                    <h5><%= truncate(notion.description, length: 30) %></h5>
+                    <div class="d-flex">
+                      <%= link_to notion_path(notion) do %>
+                        <button class="avatar raquet"></button>
+                      <% end %>
+                      <button type="button" class="avatar calendar" data-toggle="modal" data-target=<%="#exampleModalCenter#{notion.id}"%> >
                       </button>
                     </div>
-                  </div>
-                  <div class="card-notion-infos">
-                    <%= link_to notion_path(notion), class: "card-notion-infos2" do %>
-                        <%=  notion.name %></button>
-                    <% end %>
-                  </div>
                 </div>
-
-
+              </div>
             </div>
 
             <!-- <p><%#= notion.id %></p> -->

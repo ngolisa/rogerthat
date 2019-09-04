@@ -15,7 +15,7 @@
     <% end %>
 
     <% s.times do %>
-      <%='<i class="fas fa-baseball-ball text-warning"></i>'.html_safe %>
+      <%=image_tag 'ballverte', style: 'height:30px;width:30px;'%>
     <% end %>
 
     <h4> <%=s %>/5</h4>
@@ -39,7 +39,7 @@
             </div>
             <div>
               <% review.rating.times do  %>
-                <%='<i class="fas fa-baseball-ball text-warning"></i>'.html_safe %>
+                <%=image_tag 'ballverte', style: 'height:18px;width:18px;'%>
               <% end %>
               <h5><%= review.rating %>/5</h5>
             </div>
