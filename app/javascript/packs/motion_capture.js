@@ -23,7 +23,7 @@ const contextCanvas2 = canvas2.getContext('2d');
 const huec = document.querySelector('#hue-c');
 const tolc = document.querySelector('#tolerences-c');
 
-contextCanvas1.globalCompositeOperation = "multiply";
+contextCanvas1.globalCompositeOperation = "source-over";
 contextCanvas2.globalCompositeOperation = "xor";
 
 let chunks = [];
@@ -44,12 +44,14 @@ function extract(data) {
     if ((object.h > min) && (object.h < max)
       && (object.l > minl) && (object.l < maxl)
       && (object.s > mins) && (object.s < maxs) ){
-
-    } else {
-      data[i+3] = 0;
-    }
+      data[i] = 65;
+    data[i+1] =255;
+    data[i+2] = 38;
+  } else {
+    data[i+3] = 0;
   }
-  return data;
+}
+return data;
 }
 
   // function RGBToH(r,g,b) {
