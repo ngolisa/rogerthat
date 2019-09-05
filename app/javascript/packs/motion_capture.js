@@ -1,39 +1,3 @@
-// navbar
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// fin navbar
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 var ProgressBar = require('progressbar.js')
