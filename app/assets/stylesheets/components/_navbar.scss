@@ -1,29 +1,41 @@
-.navbar-lewagon {
-  // justify-content: space-between;
-  height: 180px;
-  background-image: image-url("coin-nav-green.svg");
-  background-repeat: no-repeat;
-  background-position: top -54px left;
-  background-size: 913px 238px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat';
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-  margin-left: 280px;
+
+header {
+  height: 175px;
+
+  .first-nav {
+    background: #1D1D1D;
+    height: 100px;
+    position: absolute;
+    width: 100vw;
+
+    img {
+      height: 30px;
+      width: auto;
+      display: block;
+      margin: 35px auto;
+    }
+  }
+
+  .navbar {
+    background: rgba(29, 29, 29, 0.9);
+    position: absolute;
+    top: 100px;
+    width: 100vw;
+    height: 75px;
+    color: #fff;
+
+    .nav-link {
+      text-transform: uppercase;
+      font-weight: 600;
+      margin: 0 30px;
+      padding: 0;
+    }
+  }
 }
-
-.navbar-lewagon .navbar-brand img {
-  padding-bottom: 80px;
-  width: 137px;
-}
-
-// .collapse-navbar-collapse{
-//   color: white;
-// }
-
-.rayure {
-  // background: linear-gradient(-0.4turn, #d86017 48%, #642A06);
-  // background: linear-gradient(-0.4turn, #FF8032 48%, #642A06);
-  // background: linear-gradient(-0.4turn,#f8f9fa 48%, #42a195);
-}
-

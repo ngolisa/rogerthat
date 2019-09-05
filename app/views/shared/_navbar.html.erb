@@ -1,43 +1,39 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "Group 5.svg" %>
+<header>
+  <nav class="first-nav">
+    <% link_to root_path do %>
+    <%= cl_image_tag 'bde15117-faa7-4da8-bd99-b017ac395f17_up3t0x' %>
     <% end %>
-
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item">
+  </nav>
+  <nav class="navbar navbar-expand-md navbar-dark">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item" id="notion">
           <%= link_to "LES NOTIONS", notions_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
+        <span>|</span>
+
+        <li class="nav-item" id="lesson">
           <%= link_to "MES COURS", lessons_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
+        <span>|</span>
+        <li class="nav-item" id="emotion">
           <%= link_to "E-MOTION", test_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "MON DASHBOARD", dashboard_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My lessons", lessons_path, class: "dropdown-item"%>
-            <%= link_to "Notions", notions_path, class: "dropdown-item" %>
-            <%= link_to "All teachers", teachers_path, class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</div>
+        <span>|</span>
+        <li class="nav-item" id="teacher">
+         <%= link_to "TOUS LES PROFS", teachers_path, class: "nav-link" %>
+       </li>
+       <span>|</span>
+
+       <li class="nav-item" id="dashboard">
+         <%= link_to "MON DASHBOARD", dashboard_path, class: "nav-link" %>
+       </li>
+
+
+
+     </ul>
+   </div>
+ </nav>
+</header>
+
+

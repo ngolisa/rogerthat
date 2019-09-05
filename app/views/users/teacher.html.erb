@@ -1,3 +1,21 @@
+<script>
+
+  const path = 'teacher'
+  const idn = document.getElementById(path);
+  const attribut = idn.getAttribute("id");
+  if (attribut == "notion"){
+    idn.classList.add("active");
+  }else if (attribut == "lesson"){
+    idn.classList.add("active");
+  }else if (attribut == "emotion"){
+    idn.classList.add("active");
+  }else if (attribut == "dashboard"){
+    idn.classList.add("active");
+  } else if(attribut == "teacher"){
+    idn.classList.add("active");
+  }
+</script>
+
 <div class="container">
 
   <div class="center-text mb-5">
@@ -6,16 +24,16 @@
 
     <% m = 0 %>
     <% @reviews.each do |review| %>
-      <% m += review.rating %>
+    <% m += review.rating %>
     <% end %>
     <% if @reviews.length ==0 %>
-      <% s=0 %>
+    <% s=0 %>
     <% else %>
-      <% s = m/@reviews.length %>
+    <% s = m/@reviews.length %>
     <% end %>
 
     <% s.times do %>
-      <%=image_tag 'ballverte', style: 'height:30px;width:30px;'%>
+    <%=image_tag 'ballverte', style: 'height:30px;width:30px;'%>
     <% end %>
 
     <h4> <%=s %>/5</h4>
@@ -25,38 +43,38 @@
 
 
   <% unless @reviews.empty? %>
-    <% @reviews.each do |review| %>
+  <% @reviews.each do |review| %>
 
-      <div class="mb-5">
+  <div class="mb-5">
 
-        <div class="d-flex">
-          <%= cl_image_tag review.lesson.student.avatar, class: 'avatar-comment'%>
-          <div>
-            <div>
-              <h5>
-                <%= review.lesson.student.first_name %> <%= review.lesson.student.last_name %>
-              </h5>
-            </div>
-            <div>
-              <% review.rating.times do  %>
-                <%=image_tag 'ballverte', style: 'height:18px;width:18px;'%>
-              <% end %>
-              <h5><%= review.rating %>/5</h5>
-            </div>
-          </div>
+    <div class="d-flex">
+      <%= cl_image_tag review.lesson.student.avatar, class: 'avatar-comment'%>
+      <div>
+        <div>
+          <h5>
+            <%= review.lesson.student.first_name %> <%= review.lesson.student.last_name %>
+          </h5>
         </div>
         <div>
-          <p>"<%= review.comment %>"</p>
-        </div>
-        <div>
-          <p style="color:grey"><%= review.created_at.strftime('%A %e %B') %></p>
+          <% review.rating.times do  %>
+          <%=image_tag 'ballverte', style: 'height:18px;width:18px;'%>
+          <% end %>
+          <h5><%= review.rating %>/5</h5>
         </div>
       </div>
+    </div>
+    <div>
+      <p>"<%= review.comment %>"</p>
+    </div>
+    <div>
+      <p style="color:grey"><%= review.created_at.strftime('%A %e %B') %></p>
+    </div>
+  </div>
 
 
 
 
 
-    <% end %>
+  <% end %>
   <% end %>
 </div>
