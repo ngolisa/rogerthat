@@ -93,7 +93,7 @@
       <h2>Laisser un avis pour <%= @lesson.teacher.first_name %> <%= @lesson.teacher.last_name %></h2>
       <hr>
       <%= simple_form_for [@lesson, @review], class: 'form-ball' do |f| %>
-      <%= f.input :rating, default:1, label: "Note:" , collection: [5, 4, 3, 2, 1], :as => :radio_buttons, label_method: lambda { |l| image_tag 'ballverte.svg'}%>
+      <%= f.input :rating, default:1, label: "Note:" , collection: [1, 2, 3, 4, 5], :as => :radio_buttons, label_method: lambda { |l| image_tag 'ballverte.svg'}%>
       <%= f.input :comment, label: "Commentaire:      " %>
       <%= f.submit "Envoyer", class: 'btn btn-dark' %>
       <% end %>
