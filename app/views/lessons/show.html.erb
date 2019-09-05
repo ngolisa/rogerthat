@@ -52,7 +52,7 @@
       </div>
       <% end %>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-5">
       <div class="card-sport">
         <div class="card-img" style="background-image: url('<%= cl_image_path @lesson.notion.photo %>')"></div>
         <div class="card-desc" style="min-height: 200px; height: auto">
@@ -75,7 +75,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-7">
       <p><%= @lesson.notion.description %>
       </p>
     </div>
@@ -92,9 +92,9 @@
       <% if @lesson.review.nil?  && current_user == @lesson.student %>
       <h2>Laisser un avis pour <%= @lesson.teacher.first_name %> <%= @lesson.teacher.last_name %></h2>
       <hr>
-      <%= simple_form_for [@lesson, @review] do |f| %>
-      <%= f.input :rating, label: "Note" , collection: (0..5).to_a %>
-      <%= f.input :comment, label: "Commentaire" %>
+      <%= simple_form_for [@lesson, @review], class: 'form-ball' do |f| %>
+      <%= f.input :rating, label: "Note:" , collection: [5, 4, 3, 2, 1], :as => :radio_buttons, label_method: lambda { |l| image_tag 'ballverte.svg'}%>
+      <%= f.input :comment, label: "Commentaire:      " %>
       <%= f.submit "Envoyer", class: 'btn btn-dark' %>
       <% end %>
       <% end %>

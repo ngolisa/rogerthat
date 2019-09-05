@@ -7,3 +7,31 @@
 .form-container h1{
   text-align: center;
 }
+
+
+#new_review{
+  .form-group{
+   display:flex;
+ }
+
+ input[type=radio]{
+  display:none;
+}
+
+input[type=radio]+label{
+  filter: brightness(0.8);
+  cursor: pointer;
+}
+
+input[type=radio]+label:hover{
+  filter: brightness(1);
+}
+
+input[type=radio]:checked + label{
+  filter: brightness(1);
+}
+
+input[type=radio]:checked ~ label{
+  filter: brightness(1);
+}
+}
