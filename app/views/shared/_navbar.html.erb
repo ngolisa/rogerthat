@@ -31,11 +31,17 @@
          <%= link_to "MON DASHBOARD", dashboard_path, class: "nav-link" unless action_name == 'home'%>
        </li>
 
+       <span>|</span>
+
+       <li class="nav-item ml-5">
+        <%= link_to "<i class='fas fa-sign-out-alt'></i>".html_safe, destroy_user_session_path, method: :delete, class: 'text-white' %>
+      </li>
 
 
-     </ul>
-   </div>
- </nav>
+
+    </ul>
+  </div>
+</nav>
 </header>
 
 
