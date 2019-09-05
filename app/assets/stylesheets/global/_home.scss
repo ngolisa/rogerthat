@@ -31,7 +31,7 @@
   // background-repeat: no-repeat;
   // background-position: top -54px left;
   // background-size: 913px 238px;
-  background-image: image-url('image.png');
+  background-image: image-url('imageterrain.png');
   background-size: cover;
   background-position: bottom center;
   width: 100vw;
@@ -40,27 +40,23 @@
 }
 .button-home{
   position: absolute;
-  position: absolute;
-  left: 509px;
-  bottom: 78px;
-  width: 124px;
-  height: 124px;
-
+  left: 45%;
+  bottom: 35%;
 }
 
-.borders{
-  position:absolute;
-  bottom: 144px;
-  left: -85px;
-  background-color: white;
-  width: 130%;
-  height: 100%;
-  border-bottom: 32px solid #181E58;
-  transform: rotate(-10deg);
-  box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column-reverse;
-}
+// .borders{
+//   position:absolute;
+//   bottom: 144px;
+//   left: -85px;
+//   background-color: white;
+//   width: 130%;
+//   height: 100%;
+//   border-bottom: 32px solid #181E58;
+//   transform: rotate(-10deg);
+//   box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.5);
+//   display: flex;
+//   flex-direction: column-reverse;
+// }
 
 .rectnew{
   margin-bottom: 10px;
