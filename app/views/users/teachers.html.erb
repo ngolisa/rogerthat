@@ -1,14 +1,33 @@
+<script>
+
+  const path = 'teacher'
+  const idn = document.getElementById(path);
+  const attribut = idn.getAttribute("id");
+  if (attribut == "notion"){
+    idn.classList.add("active");
+  }else if (attribut == "lesson"){
+    idn.classList.add("active");
+  }else if (attribut == "emotion"){
+    idn.classList.add("active");
+  }else if (attribut == "dashboard"){
+    idn.classList.add("active");
+  } else if(attribut == "teacher"){
+    idn.classList.add("active");
+  }
+</script>
+
 <div class="container">
-  <h1>All teachers </h1>
+  <h2>All teachers </h2>
+  <hr>
   <% @teachers.each do |teacher| %>
-    <%= link_to teacher_path(teacher) do  %>
-      <div class="card-prof">
-        <%= cl_image_tag teacher.avatar %>
-        <div class="card-prof-infos">
-          <h1><%= teacher.first_name %> <%= teacher.last_name %></h1>
-        </div>
-      </div>
-    <% end %>
+  <%= link_to teacher_path(teacher) do  %>
+  <div class="card-prof">
+    <%= cl_image_tag teacher.avatar %>
+    <div class="card-prof-infos">
+      <h1><%= teacher.first_name %> <%= teacher.last_name %></h1>
+    </div>
+  </div>
+  <% end %>
 
   <% end %>
 </div>
