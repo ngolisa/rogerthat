@@ -1,64 +1,69 @@
+
 <div class="container">
   <% if current_user.teacher %>
-    <h1>Mes prochaines leçons</h1>
-    <% @lessons.each do |lesson|%>
+  <h2>Mes prochaines leçons</h2>
+  <hr>
+  <% @lessons.each do |lesson|%>
 
-      <%= link_to lesson_path(lesson) do %>
-        <ul class="list-group list-group-horizontal-lg card-index-lesson">
-          <li class="list-group-item"><%= lesson.notion.name %></li>
-          <li class="list-group-item"><%= "#{lesson.student.first_name} #{lesson.student.last_name}" %></li>
-          <li class="list-group-item">
-            <%= lesson.date.strftime('%A %e %B')%><br>
-            <%= lesson.date.strftime('%l:%M')%>
-          </li>
-        </ul>
-      <% end %>
-    <% end %>
+  <%= link_to lesson_path(lesson) do %>
+  <ul class="list-group list-group-horizontal-lg card-index-lesson">
+    <li class="list-group-item"><%= lesson.notion.name %></li>
+    <li class="list-group-item"><%= "#{lesson.student.first_name} #{lesson.student.last_name}" %></li>
+    <li class="list-group-item">
+      <%= lesson.date.strftime('%A %e %B')%><br>
+      <%= lesson.date.strftime('%l:%M')%>
+    </li>
+  </ul>
+  <% end %>
+  <% end %>
 
-    <h1>Mes anciennes leçons</h1>
-    <% @passed_lessons.each do |lesson|%>
-      <%= link_to lesson_path(lesson) do %>
-       <ul class="list-group list-group-horizontal-lg card-index-lesson">
-        <li class="list-group-item"><%= lesson.notion.name %></li>
-        <li class="list-group-item"><%= "#{lesson.student.first_name} #{lesson.student.last_name}" %></li>
-        <li class="list-group-item">
-          <%= lesson.date.strftime('%A %e %B')%><br>
-          <%= lesson.date.strftime('%l:%M')%>
-        </li>
-      </ul>
-      <% end %>
-    <% end %>
+  <h2>Mes anciennes leçons</h2>
+  <hr>
+  <% @passed_lessons.each do |lesson|%>
+  <%= link_to lesson_path(lesson) do %>
+  <ul class="list-group list-group-horizontal-lg card-index-lesson">
+    <li class="list-group-item"><%= lesson.notion.name %></li>
+    <li class="list-group-item"><%= "#{lesson.student.first_name} #{lesson.student.last_name}" %></li>
+    <li class="list-group-item">
+      <%= lesson.date.strftime('%A %e %B')%><br>
+      <%= lesson.date.strftime('%l:%M')%>
+    </li>
+  </ul>
+  <% end %>
+  <% end %>
 
   <% else %>
-    <% unless @lessons.empty? %>
-      <h1>Mes prochaines leçons</h1>
-      <% @lessons.each do |lesson|%>
-        <%= link_to lesson_path(lesson) do %>
-          <ul class="list-group list-group-horizontal-lg card-index-lesson">
-          <li class="list-group-item"><%= lesson.notion.name %></li>
-          <li class="list-group-item"><%= "#{lesson.teacher.first_name} #{lesson.teacher.last_name}" %></li>
-          <li class="list-group-item">
-            <%= lesson.date.strftime('%A %e %B')%><br>
-            <%= lesson.date.strftime('%l:%M')%>
-          </li>
-          <li class="list-group-item"><%= lesson.status.capitalize %></li>
-        </ul>
-        <% end %>
-      <% end %>
-    <% end %>
-    <h1>Mes anciennes leçons</h1>
-    <% @passed_lessons.each do |lesson|%>
-      <%= link_to lesson_path(lesson) do %>
-        <ul class="list-group list-group-horizontal-lg card-index-lesson">
-        <li class="list-group-item"><%= lesson.notion.name %></li>
-        <li class="list-group-item"><%= "#{lesson.teacher.first_name} #{lesson.teacher.last_name}" %></li>
-        <li class="list-group-item">
-          <%= lesson.date.strftime('%A %e %B')%><br>
-          <%= lesson.date.strftime('%l:%M')%>
-        </li>
-        <li class="list-group-item">Finished</li>
-      </ul>
-      <% end %>
-    <% end %>
+  <% unless @lessons.empty? %>
+  <h2>Mes prochaines leçons</h2>
+  <hr>
+  <% @lessons.each do |lesson|%>
+  <%= link_to lesson_path(lesson) do %>
+  <ul class="list-group list-group-horizontal-lg card-index-lesson">
+    <li class="list-group-item"><%= lesson.notion.name %></li>
+    <li class="list-group-item"><%= "#{lesson.teacher.first_name} #{lesson.teacher.last_name}" %></li>
+    <li class="list-group-item">
+      <%= lesson.date.strftime('%A %e %B')%><br>
+      <%= lesson.date.strftime('%l:%M')%>
+    </li>
+    <li class="list-group-item"><%= lesson.status.capitalize %></li>
+  </ul>
+  <% end %>
+  <% end %>
+  <% end %>
+  <h2>Mes anciennes leçons</h2>
+  <hr>
+  <% @passed_lessons.each do |lesson|%>
+  <%= link_to lesson_path(lesson) do %>
+  <ul class="list-group list-group-horizontal-lg card-index-lesson">
+    <li class="list-group-item"><%= lesson.notion.name %></li>
+    <li class="list-group-item"><%= "#{lesson.teacher.first_name} #{lesson.teacher.last_name}" %></li>
+    <li class="list-group-item">
+      <%= lesson.date.strftime('%A %e %B')%><br>
+      <%= lesson.date.strftime('%l:%M')%>
+    </li>
+    <li class="list-group-item">Terminée</li>
+  </ul>
+  <% end %>
+  <% end %>
   <% end %>
 </div>

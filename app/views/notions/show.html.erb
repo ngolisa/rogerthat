@@ -2,10 +2,7 @@
 
   <div class="reserve-notion">
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-flat" data-toggle="modal" data-target="#exampleModalCenter">
-      Take a lesson
-    </button>
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -19,15 +16,15 @@
           </div>
           <div class="modal-body">
 
-              <div class="form-container">
-                <h1>Create a lesson 👟</h1>
-                <%= simple_form_for @lesson do |f| %>
-                  <%= f.association :teacher, collection: User.where(teacher: true), label_method: :first_name %>
-                  <%= f.input :notion_id, as: :hidden, input_html: { value: @notion.id }   %>
-                  <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-                  <%= f.button :submit, class: 'btn btn-flat' %>
-                <% end %>
-              </div>
+            <div class="form-container">
+              <h1>Create a lesson 👟</h1>
+              <%= simple_form_for @lesson do |f| %>
+              <%= f.association :teacher, collection: User.where(teacher: true), label_method: :first_name %>
+              <%= f.input :notion_id, as: :hidden, input_html: { value: @notion.id }   %>
+              <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+              <%= f.button :submit, class: 'btn btn-flat' %>
+              <% end %>
+            </div>
 
           </div>
         </div>
@@ -38,24 +35,49 @@
 
   </div>
 
-    <div class="row">
-      <div class="col-sm-12">
-        <h1><%= @notion.name %></h1>
+  <h2><%= @notion.name %></h2>
+  <hr>
+
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="card-sport">
+        <div class="card-img" style="background-image: url('<%= cl_image_path @notion.photo %>')"></div>
+        <div class="card-desc">
+          <h3><%= @notion.name %></h3>
+          <div class="card-option">
+            <div class="col-option">
+              <button type="button" data-toggle="modal" data-target=<%="#exampleModalCenter"%>>
+                <i class="far fa-calendar-plus"></i> Réserver un cours
+
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="col-md-8">
+      <p><%= @notion.description %>
+      </p>
+    </div>
+  </div>
+  <h2>Vidéo explicative</h2>
+  <hr>
 
-    <div class="row">
-      <div class="col-sm-5">
-        <div class="img-lesson"> <%= cl_image_tag @notion.photo %> </div>
+  <video controls width="100%" style="margin-bottom: 50px">
+    <source src="<%= cl_video_path @notion.video %>" type="video/webm">
+    </video>
+    <!-- <div class="col-sm-5">
+      <div class="img-lesson"> <%= cl_image_tag @notion.photo %> </div>
 
-      </div>
-      <div class="col-sm-7">
-        <video controls width="100%">
-          <source src="<%= cl_video_path @notion.video %>" type="video/webm">
+    </div>
+    <div class="col-sm-7">
+      <video controls width="100%">
+        <source src="<%= cl_video_path @notion.video %>" type="video/webm">
         </video>
         <p><%= @notion.description %></p>
       </div>
-    </div>
+    </div> -->
 
   </div>
 

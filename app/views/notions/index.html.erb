@@ -1,78 +1,99 @@
-<div class="container-index-lesson">
+<!-- <div class="container-index-lesson">
+-->
+<div class="container">
+  <% if current_user.teacher %>
+  <%= link_to "Add a notion", new_notion_path, class: 'btn btn-flat' %>
+  <% end %>
 
-  <div class="container">
-    <% if current_user.teacher %>
-      <%= link_to "Add a notion", new_notion_path, class: 'btn btn-flat' %>
-    <% end %>
-
-    <% @categories.each do |category| %>
-      <div>
-        <h2 class="text-center">
-           <!--  #<%= image_tag "rectangle-blanc.svg", class: "rectangle-blanc" %> -->
-            <%= category.name%>
-           <!--  #<%= image_tag "rectangle-blanc.svg", class: "rectangle-blanc2" %> -->
-        </h2>
-        <div class="row">
-          <% category.notions.each do |notion|%>
+  <% @categories.each do |category| %>
+  <div>
+    <h2 class="text-center">
+     <!--  #<%= image_tag "rectangle-blanc.svg", class: "rectangle-blanc" %> -->
+     <%= category.name%>
+     <!--  #<%= image_tag "rectangle-blanc.svg", class: "rectangle-blanc2" %> -->
+   </h2>
+   <hr>
+   <div class="row">
+    <% category.notions.each do |notion|%>
 
 
 
-            <div class="col-12 col-lg-4 col-md-6 col-sm-12">
-              <div class="card-product" style="background-image: url('<%= cl_image_path notion.photo, height: 300, width: 400, crop: :fill %>')">
-                  <div class="card-product-description">
-                    <h3><%= notion.name %></h3>
-                    <h5><%= truncate(notion.description, length: 30) %></h5>
-                    <div class="d-flex" style="justify-content: 'space-evenly'">
-                      <%= link_to notion_path(notion) do %>
-                        <button class="avatar raquet"></button>
-                      <% end %>
-                      <button type="button" class="avatar calendar" data-toggle="modal" data-target=<%="#exampleModalCenter#{notion.id}"%> >
-                      </button>
-                    </div>
-                </div>
-              </div>
+    <div class="col-12 col-lg-4 col-md-6 col-sm-12">
+
+
+
+      <div class="card-sport">
+        <div class="card-img" style="background-image: url('<%= cl_image_path notion.photo %>');"></div>
+        <div class="card-desc">
+          <h3><%= notion.name %></h3>
+          <div class="card-option">
+            <div class="col-option">
+              <button type="button" data-toggle="modal" data-target=<%="#exampleModalCenter#{notion.id}"%>>
+                <i class="far fa-calendar-plus"></i> Réserver un cours
+
+              </button>
             </div>
-
-            <!-- <p><%#= notion.id %></p> -->
-          <!-- Modal -->
-            <div class="modal fade" id=<%="exampleModalCenter#{notion.id}" %>  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLongTitle">Take a lesson </h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-
-                      <div class="form-container">
-
-                        <h1>Create a lesson 👟</h1>
-                        <%= simple_form_for @lesson do |f| %>
-                        <%#= raise %>
-                          <%= f.association :teacher, collection: User.where(teacher: true), label_method: :first_name %>
-
-                          <%= f.input :notion_id, as: :hidden,  input_html: { value: notion.id }   %>
-                          <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-                          <%= f.button :submit, class: 'btn btn-flat' %>
-                        <% end %>
-                      </div>
-
-                  </div>
-                </div>
-              </div>
+            <div class="col-option">
+              <%=  link_to notion_path(notion) do %>
+              La théorie <i class="fas fa-chevron-right"></i>
+              <% end %>
             </div>
-            <!-- fin modal -->
-
-          <% end %>
-
-
+          </div>
         </div>
       </div>
+
+
+      <!-- Modal -->
+      <div class="modal fade" id=<%="exampleModalCenter#{notion.id}" %>  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLongTitle">Take a lesson </h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <div class="form-container">
+
+                <h1>Create a lesson 👟</h1>
+                <%= simple_form_for @lesson do |f| %>
+                <%#= raise %>
+                <%= f.association :teacher, collection: User.where(teacher: true), label_method: :first_name %>
+
+                <%= f.input :notion_id, as: :hidden,  input_html: { value: notion.id }   %>
+                <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                <%= f.button :submit, class: 'btn btn-flat' %>
+                <% end %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- fin modal -->
+
+
+
+
+
+
+
+
+    </div>
+
+    <!-- <p><%#= notion.id %></p> -->
+
+
     <% end %>
+
 
   </div>
 </div>
+<% end %>
+
+</div>
+<!-- </div> -->
 
 

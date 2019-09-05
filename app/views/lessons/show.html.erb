@@ -1,27 +1,37 @@
+<div class="container">
+  <% if current_user == @lesson.teacher && @lesson.status == 'pending'%>
+
+  <%= link_to "Confirm", changestatus_lesson_path(@lesson, :status => 'accepted'), method: :POST, class: "btn-confirm"%>
+
+
+
+  <%= link_to "Refuse", changestatus_lesson_path(@lesson, :status => 'refused'), method: :POST, class: "btn-refuse" %>
+
+  <% end %>
 
 
 
 
 
-<div class="total">
-  <div class="en_tete">
-    <h1 class="text_post-it0">MON COURS</h1>
-  </div>
-
-   <div class="corps">
-    <div class="next_to">
-
-         <%= cl_image_tag @lesson.teacher.avatar, class:"avatar" %>
-
-       <div>
-       <p class="text_post-it"> <%= @lesson.teacher.first_name %> <%= @lesson.teacher.last_name %> </p>
-      </div>
-
+  <div class="total">
+    <div class="en_tete">
+      <h1 class="text_post-it0">MON COURS</h1>
     </div>
 
-    <div class="next_to1">
+    <div class="corps">
+      <div class="next_to">
 
-        <%= image_tag "raquettes.svg", class: "test" %>
+       <%= cl_image_tag @lesson.teacher.avatar, class:"avatar" %>
+
+       <div>
+         <p class="text_post-it"> <%= @lesson.teacher.first_name %> <%= @lesson.teacher.last_name %> </p>
+       </div>
+
+     </div>
+
+     <div class="next_to1">
+
+      <%= image_tag "raquettes.svg", class: "test" %>
 
       <div class="ppostit">
         <%= @lesson.date.strftime('%A %e %B')%><br>
@@ -34,81 +44,76 @@
 
 
 <div class="container">
+
+  <h2><%= @lesson.notion.name %></h2>
+  <hr>
+
   <div class="row">
-    <div class="col-sm-12">
-      <h1><%= @lesson.notion.name %></h1>
-    </div>
-  </div>
-  <% if current_user == @lesson.teacher && @lesson.status == 'pending'%>
-
-      <%= link_to "Confirm", changestatus_lesson_path(@lesson, :status => 'accepted'), method: :POST, class: "btn-confirm"%>
-
-
-
-      <%= link_to "Refuse", changestatus_lesson_path(@lesson, :status => 'refused'), method: :POST, class: "btn-refuse" %>
-
-  <% end %>
-  <div class="row">
-    <div class="col-sm-5">
-      <div class="img-lesson"> <%= cl_image_tag @lesson.notion.photo %> </div>
+    <div class="col-md-12 mb-5">
       <% unless @lesson.comment.nil? %>
-        <div class="card-comment">
-          <%= cl_image_tag @lesson.teacher.avatar %>
-          <div class="card-comment-infos">
-            <h2>Conseil d'<%= @lesson.teacher.first_name %> :</h2>
-            <p><%= @lesson.comment %></p>
+      <div class="card-comment">
+        <%= cl_image_tag @lesson.teacher.avatar %>
+        <div class="card-comment-infos">
+          <h2>Conseil d'<%= @lesson.teacher.first_name %> :</h2>
+          <p><%= @lesson.comment %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <div class="card-sport">
+        <div class="card-img" style="background-image: url('<%= cl_image_path @lesson.notion.photo %>')"></div>
+        <div class="card-desc" style="min-height: 200px; height: auto">
+          <h3 style="height: auto"><%= @lesson.notion.name %></h3>
+          <div class="lesson-param">
+            <div class="lesson-option"><%= cl_image_tag @lesson.teacher.avatar, class: 'avatar' %> <%= @lesson.teacher.first_name %> <%= @lesson.teacher.last_name %></div>
+            <div class="lesson-option">
+              <i class="far fa-calendar-plus"></i>
+              <p>
+                <%= @lesson.date.strftime('%A %e %B')%><br>
+                <%= @lesson.date.strftime('%l:%M')%>
+              </p>
+            </div>
+            <div class="lesson-option">
+              <a href="#review" style="color: #000">
+                <i class="far fa-star"></i>Noter <%= @lesson.teacher.first_name %> <i class="fas fa-chevron-right"></i>
+              </a>
+            </div>
           </div>
         </div>
-      <% end %>
-      <% if @lesson.review.nil?  && current_user == @lesson.student %>
-        <h1>Laisser un avis pour <%= @lesson.teacher.first_name %> <%= @lesson.teacher.last_name %></h1>
-        <%= simple_form_for [@lesson, @review] do |f| %>
-          <%= f.input :rating, label: "Note" , collection: (0..5).to_a %>
-          <%= f.input :comment, label: "Commentaire" %>
-          <%= f.submit "Envoyer" %>
-        <% end %>
-      <% end %>
-      <% if current_user == @lesson.teacher && @lesson.comment.nil? %>
-        <h1>Laisser un commentaire pour <%= @lesson.student.first_name %> <%= @lesson.student.last_name %></h1>
-        <%= simple_form_for @lesson do |f| %>
-          <%= f.input :comment, label: "Commentaire" %>
-          <%= f.submit "Envoyer" %>
-        <% end %>
-      <%end %>
+      </div>
     </div>
-    <div class="col-sm-7">
-      <video controls width="100%">
-        <source src="<%= cl_video_path @lesson.notion.video %>" type="video/webm">
-      </video>
-      <p><%= @lesson.notion.description %></p>
+    <div class="col-md-8">
+      <p><%= @lesson.notion.description %>
+      </p>
     </div>
   </div>
 
+  <h2>Vidéo explicative</h2>
+  <hr>
+
+  <video controls width="100%" style="margin-bottom: 50px">
+    <source src="<%= cl_video_path @lesson.notion.video %>" type="video/webm">
+    </video>
+
+    <div class="col-md-12 mb-5" id="review">
+      <% if @lesson.review.nil?  && current_user == @lesson.student %>
+      <h2>Laisser un avis pour <%= @lesson.teacher.first_name %> <%= @lesson.teacher.last_name %></h2>
+      <hr>
+      <%= simple_form_for [@lesson, @review] do |f| %>
+      <%= f.input :rating, label: "Note" , collection: (0..5).to_a %>
+      <%= f.input :comment, label: "Commentaire" %>
+      <%= f.submit "Envoyer", class: 'btn btn-dark' %>
+      <% end %>
+      <% end %>
+      <% if current_user == @lesson.teacher && @lesson.comment.nil? %>
+      <h2>Laisser un commentaire pour <%= @lesson.student.first_name %> <%= @lesson.student.last_name %></h2>
+      <hr>
+      <%= simple_form_for @lesson do |f| %>
+      <%= f.input :comment, label: "Commentaire" %>
+      <%= f.submit "Envoyer" , class: 'btn btn-dark' %>
+      <% end %>
+      <%end %>
+    </div>
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
