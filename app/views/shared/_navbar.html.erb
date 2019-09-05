@@ -1,10 +1,12 @@
 <header>
-  <nav class="first-nav">
-    <% link_to root_path do %>
-    <%= cl_image_tag 'bde15117-faa7-4da8-bd99-b017ac395f17_up3t0x'unless action_name == 'home' %>
+
+  <div class="first-nav">
+    <%= link_to root_path do %>
+    <%=image_tag 'logoroger', style: ''%>
     <% end %>
-  </nav>
-  <nav class="navbar navbar-expand-md navbar-dark" >
+  </div>
+  <nav class="navbar navbar-expand-md navbar-dark">
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto">
         <li class="nav-item" id="notion">

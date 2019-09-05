@@ -97,21 +97,21 @@ coupdroit1 = Notion.create!(
   remote_video_url: video,
   remote_photo_url: photo,
   description:  "Le coup droit est le coup le plus connu du tennis avec le service. Pourquoi ? Parce qu’il est naturellement effectué par les joueurs qu’ils soient débutants ou experts.
-Tous les joueurs ont la facilité d’effectuer ce coup. Mais avant toute chose, reprenons les bases du coup droit croisé en 5 points clés.
+  Tous les joueurs ont la facilité d’effectuer ce coup. Mais avant toute chose, reprenons les bases du coup droit croisé en 5 points clés.
 
-La main libre doit aider à amener la raquette derrière ce qui permet la rotation des épaules.
+  La main libre doit aider à amener la raquette derrière ce qui permet la rotation des épaules.
 
-S’organiser assez vite pour que la fin de préparation se fasse au plus tard au rebond de la balle.
+  S’organiser assez vite pour que la fin de préparation se fasse au plus tard au rebond de la balle.
 
-Prise d’appui en ligne, semi-ouvert ou ouvert, en fonction de votre préférence.
+  Prise d’appui en ligne, semi-ouvert ou ouvert, en fonction de votre préférence.
 
-Descente de la tête de raquette en dessous du niveau de la balle.
+  Descente de la tête de raquette en dessous du niveau de la balle.
 
-En avant du corps, entre épaules et hanches, et coude décollé du corps (plus vous avez une prise fermée plus le plan de frappe doit être en avant !).
+  En avant du corps, entre épaules et hanches, et coude décollé du corps (plus vous avez une prise fermée plus le plan de frappe doit être en avant !).
 
-Pour un coup droit croisé, le plan de frappe doit obligatoirement être devant.
+  Pour un coup droit croisé, le plan de frappe doit obligatoirement être devant.
 
-Vers le haut et l’avant, le passage du coude doit entraîner le passage de l’épaule et seulement après le passage de l’appui arrière.",
+  Vers le haut et l’avant, le passage du coude doit entraîner le passage de l’épaule et seulement après le passage de l’appui arrière.",
   )
 
 # Notion coup droit 2-------------------------------------------------------------------:
@@ -121,11 +121,11 @@ video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1566997867/Roger_Fed
 coupdroit2 = Notion.create!(
   name: "Défendre en donnant de la longueur",
   description: "Le coup droit est le coup le plus connu du tennis avec le service. Pourquoi ? Parce qu’il est naturellement effectué par les joueurs qu’ils soient débutants ou experts.
-Tous les joueurs ont la facilité d’effectuer ce coup. Mais avant toute chose, reprenons les bases du coup droit croisé en 5 points clés.
+  Tous les joueurs ont la facilité d’effectuer ce coup. Mais avant toute chose, reprenons les bases du coup droit croisé en 5 points clés.
 
-La main libre doit aider à amener la raquette derrière ce qui permet la rotation des épaules.
+  La main libre doit aider à amener la raquette derrière ce qui permet la rotation des épaules.
 
-S’organiser assez vite pour que la fin de préparation se fasse au plus tard au rebond de la balle.",
+  S’organiser assez vite pour que la fin de préparation se fasse au plus tard au rebond de la balle.",
   user: arthur,
   category: coupdroit,
   remote_video_url: video,
@@ -144,21 +144,21 @@ coupdroit3 = Notion.create!(
   remote_video_url: video,
   remote_photo_url: photo,
   description: "Le coup droit est le coup le plus connu du tennis avec le service. Pourquoi ? Parce qu’il est naturellement effectué par les joueurs qu’ils soient débutants ou experts.
-Tous les joueurs ont la facilité d’effectuer ce coup. Mais avant toute chose, reprenons les bases du coup droit croisé en 5 points clés.
+  Tous les joueurs ont la facilité d’effectuer ce coup. Mais avant toute chose, reprenons les bases du coup droit croisé en 5 points clés.
 
-La main libre doit aider à amener la raquette derrière ce qui permet la rotation des épaules.
+  La main libre doit aider à amener la raquette derrière ce qui permet la rotation des épaules.
 
-S’organiser assez vite pour que la fin de préparation se fasse au plus tard au rebond de la balle.
+  S’organiser assez vite pour que la fin de préparation se fasse au plus tard au rebond de la balle.
 
-Prise d’appui en ligne, semi-ouvert ou ouvert, en fonction de votre préférence.
+  Prise d’appui en ligne, semi-ouvert ou ouvert, en fonction de votre préférence.
 
-Descente de la tête de raquette en dessous du niveau de la balle.
+  Descente de la tête de raquette en dessous du niveau de la balle.
 
-En avant du corps, entre épaules et hanches, et coude décollé du corps (plus vous avez une prise fermée plus le plan de frappe doit être en avant !).
+  En avant du corps, entre épaules et hanches, et coude décollé du corps (plus vous avez une prise fermée plus le plan de frappe doit être en avant !).
 
-Pour un coup droit croisé, le plan de frappe doit obligatoirement être devant.
+  Pour un coup droit croisé, le plan de frappe doit obligatoirement être devant.
 
-Vers le haut et l’avant, le passage du coude doit entraîner le passage de l’épaule et seulement après le passage de l’appui arrière."
+  Vers le haut et l’avant, le passage du coude doit entraîner le passage de l’épaule et seulement après le passage de l’appui arrière."
   )
 
 # Notion coup droit 4-------------------------------------------------------------------:
@@ -168,21 +168,21 @@ video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1566997867/Roger_Fed
 coupdroit4 = Notion.create!(
   name: "Comment se servir des jambes ? ",
   description: "Le coup droit est le coup le plus connu du tennis avec le service. Pourquoi ? Parce qu’il est naturellement effectué par les joueurs qu’ils soient débutants ou experts.
-Tous les joueurs ont la facilité d’effectuer ce coup. Mais avant toute chose, reprenons les bases du coup droit croisé en 5 points clés.
+  Tous les joueurs ont la facilité d’effectuer ce coup. Mais avant toute chose, reprenons les bases du coup droit croisé en 5 points clés.
 
-La main libre doit aider à amener la raquette derrière ce qui permet la rotation des épaules.
+  La main libre doit aider à amener la raquette derrière ce qui permet la rotation des épaules.
 
-S’organiser assez vite pour que la fin de préparation se fasse au plus tard au rebond de la balle.
+  S’organiser assez vite pour que la fin de préparation se fasse au plus tard au rebond de la balle.
 
-Prise d’appui en ligne, semi-ouvert ou ouvert, en fonction de votre préférence.
+  Prise d’appui en ligne, semi-ouvert ou ouvert, en fonction de votre préférence.
 
-Descente de la tête de raquette en dessous du niveau de la balle.
+  Descente de la tête de raquette en dessous du niveau de la balle.
 
-En avant du corps, entre épaules et hanches, et coude décollé du corps (plus vous avez une prise fermée plus le plan de frappe doit être en avant !).
+  En avant du corps, entre épaules et hanches, et coude décollé du corps (plus vous avez une prise fermée plus le plan de frappe doit être en avant !).
 
-Pour un coup droit croisé, le plan de frappe doit obligatoirement être devant.
+  Pour un coup droit croisé, le plan de frappe doit obligatoirement être devant.
 
-Vers le haut et l’avant, le passage du coude doit entraîner le passage de l’épaule et seulement après le passage de l’appui arrière.",
+  Vers le haut et l’avant, le passage du coude doit entraîner le passage de l’épaule et seulement après le passage de l’appui arrière.",
   user: arthur,
   category: coupdroit,
   remote_video_url: video,
@@ -196,21 +196,21 @@ video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1566997867/Roger_Fed
 coupdroit5 = Notion.create!(
   name: "Réussir son attaque",
   description: "Le coup droit est le coup le plus connu du tennis avec le service. Pourquoi ? Parce qu’il est naturellement effectué par les joueurs qu’ils soient débutants ou experts.
-Tous les joueurs ont la facilité d’effectuer ce coup. Mais avant toute chose, reprenons les bases du coup droit croisé en 5 points clés.
+  Tous les joueurs ont la facilité d’effectuer ce coup. Mais avant toute chose, reprenons les bases du coup droit croisé en 5 points clés.
 
-La main libre doit aider à amener la raquette derrière ce qui permet la rotation des épaules.
+  La main libre doit aider à amener la raquette derrière ce qui permet la rotation des épaules.
 
-S’organiser assez vite pour que la fin de préparation se fasse au plus tard au rebond de la balle.
+  S’organiser assez vite pour que la fin de préparation se fasse au plus tard au rebond de la balle.
 
-Prise d’appui en ligne, semi-ouvert ou ouvert, en fonction de votre préférence.
+  Prise d’appui en ligne, semi-ouvert ou ouvert, en fonction de votre préférence.
 
-Descente de la tête de raquette en dessous du niveau de la balle.
+  Descente de la tête de raquette en dessous du niveau de la balle.
 
-En avant du corps, entre épaules et hanches, et coude décollé du corps (plus vous avez une prise fermée plus le plan de frappe doit être en avant !).
+  En avant du corps, entre épaules et hanches, et coude décollé du corps (plus vous avez une prise fermée plus le plan de frappe doit être en avant !).
 
-Pour un coup droit croisé, le plan de frappe doit obligatoirement être devant.
+  Pour un coup droit croisé, le plan de frappe doit obligatoirement être devant.
 
-Vers le haut et l’avant, le passage du coude doit entraîner le passage de l’épaule et seulement après le passage de l’appui arrière.",
+  Vers le haut et l’avant, le passage du coude doit entraîner le passage de l’épaule et seulement après le passage de l’appui arrière.",
   user: roger,
   category: coupdroit,
   remote_video_url: video,
@@ -224,21 +224,21 @@ video = "https://res.cloudinary.com/dw4g4hgu2/video/upload/v1566997867/Roger_Fed
 coupdroit6 = Notion.create!(
   name: "A quel moment faire l'amorti ?",
   description: "Le coup droit est le coup le plus connu du tennis avec le service. Pourquoi ? Parce qu’il est naturellement effectué par les joueurs qu’ils soient débutants ou experts.
-Tous les joueurs ont la facilité d’effectuer ce coup. Mais avant toute chose, reprenons les bases du coup droit croisé en 5 points clés.
+  Tous les joueurs ont la facilité d’effectuer ce coup. Mais avant toute chose, reprenons les bases du coup droit croisé en 5 points clés.
 
-La main libre doit aider à amener la raquette derrière ce qui permet la rotation des épaules.
+  La main libre doit aider à amener la raquette derrière ce qui permet la rotation des épaules.
 
-S’organiser assez vite pour que la fin de préparation se fasse au plus tard au rebond de la balle.
+  S’organiser assez vite pour que la fin de préparation se fasse au plus tard au rebond de la balle.
 
-Prise d’appui en ligne, semi-ouvert ou ouvert, en fonction de votre préférence.
+  Prise d’appui en ligne, semi-ouvert ou ouvert, en fonction de votre préférence.
 
-Descente de la tête de raquette en dessous du niveau de la balle.
+  Descente de la tête de raquette en dessous du niveau de la balle.
 
-En avant du corps, entre épaules et hanches, et coude décollé du corps (plus vous avez une prise fermée plus le plan de frappe doit être en avant !).
+  En avant du corps, entre épaules et hanches, et coude décollé du corps (plus vous avez une prise fermée plus le plan de frappe doit être en avant !).
 
-Pour un coup droit croisé, le plan de frappe doit obligatoirement être devant.
+  Pour un coup droit croisé, le plan de frappe doit obligatoirement être devant.
 
-Vers le haut et l’avant, le passage du coude doit entraîner le passage de l’épaule et seulement après le passage de l’appui arrière.",
+  Vers le haut et l’avant, le passage du coude doit entraîner le passage de l’épaule et seulement après le passage de l’appui arrière.",
   user: arthur,
   category: coupdroit,
   remote_video_url: video,
@@ -256,15 +256,15 @@ revers1 = Notion.create!(
   remote_video_url: video,
   remote_photo_url: photo,
   description: "Le revers comme arme d’attaque
-Pour beaucoup de joueurs, il n’est que le coup neutre qui permet au mieux de repousser l’adversaire, au pire celui qui permet de simplement remettre la balle dans le court.
-Pourtant, même si le revers d’attaque est difficile à réaliser, il n’en est pas moins surprenant et peut se révéler une arme redoutable.
+  Pour beaucoup de joueurs, il n’est que le coup neutre qui permet au mieux de repousser l’adversaire, au pire celui qui permet de simplement remettre la balle dans le court.
+  Pourtant, même si le revers d’attaque est difficile à réaliser, il n’en est pas moins surprenant et peut se révéler une arme redoutable.
 
-REVERS D'ATTAQUE : « JE ME DÉCALE OU PAS ? »
-L’envie de se décaler lorsqu’une balle assez haute arrive vous démange ? Et c’est normal, mais est ce vraiment le bon moment ? Votre revers peut faire la différence.
+  REVERS D'ATTAQUE : « JE ME DÉCALE OU PAS ? »
+  L’envie de se décaler lorsqu’une balle assez haute arrive vous démange ? Et c’est normal, mais est ce vraiment le bon moment ? Votre revers peut faire la différence.
 
-Attention cependant aux balles dites “cotonneuses” sans vitesse et sans poids, ne vous précipitez pas !
-Préférez un revers lifté long et précis (voir “Le revers lifté”) afin d’obtenir une balle un peu plus consistante et qui vous permettra d’attaquer.
-Accélérez une balle haute, au dessus de votre épaule en revers est extrêmement compliqué car il faut bien souvent réalisé un revers sauté où il est difficile de mettre du poids dans la balle et de la vitesse. (Voir “Le revers sauté”). Attendez donc une balle plus propice."
+  Attention cependant aux balles dites “cotonneuses” sans vitesse et sans poids, ne vous précipitez pas !
+  Préférez un revers lifté long et précis (voir “Le revers lifté”) afin d’obtenir une balle un peu plus consistante et qui vous permettra d’attaquer.
+  Accélérez une balle haute, au dessus de votre épaule en revers est extrêmement compliqué car il faut bien souvent réalisé un revers sauté où il est difficile de mettre du poids dans la balle et de la vitesse. (Voir “Le revers sauté”). Attendez donc une balle plus propice."
 
   )
 # Notion Revers 2-------------------------------------------------------------------:
@@ -275,15 +275,15 @@ revers2 = Notion.create!(
   name: "Petit slice des familles",
   category: revers,
   description: "Le revers comme arme d’attaque
-Pour beaucoup de joueurs, il n’est que le coup neutre qui permet au mieux de repousser l’adversaire, au pire celui qui permet de simplement remettre la balle dans le court.
-Pourtant, même si le revers d’attaque est difficile à réaliser, il n’en est pas moins surprenant et peut se révéler une arme redoutable.
+  Pour beaucoup de joueurs, il n’est que le coup neutre qui permet au mieux de repousser l’adversaire, au pire celui qui permet de simplement remettre la balle dans le court.
+  Pourtant, même si le revers d’attaque est difficile à réaliser, il n’en est pas moins surprenant et peut se révéler une arme redoutable.
 
-REVERS D'ATTAQUE : « JE ME DÉCALE OU PAS ? »
-L’envie de se décaler lorsqu’une balle assez haute arrive vous démange ? Et c’est normal, mais est ce vraiment le bon moment ? Votre revers peut faire la différence.
+  REVERS D'ATTAQUE : « JE ME DÉCALE OU PAS ? »
+  L’envie de se décaler lorsqu’une balle assez haute arrive vous démange ? Et c’est normal, mais est ce vraiment le bon moment ? Votre revers peut faire la différence.
 
-Attention cependant aux balles dites “cotonneuses” sans vitesse et sans poids, ne vous précipitez pas !
-Préférez un revers lifté long et précis (voir “Le revers lifté”) afin d’obtenir une balle un peu plus consistante et qui vous permettra d’attaquer.
-Accélérez une balle haute, au dessus de votre épaule en revers est extrêmement compliqué car il faut bien souvent réalisé un revers sauté où il est difficile de mettre du poids dans la balle et de la vitesse. (Voir “Le revers sauté”). Attendez donc une balle plus propice.",
+  Attention cependant aux balles dites “cotonneuses” sans vitesse et sans poids, ne vous précipitez pas !
+  Préférez un revers lifté long et précis (voir “Le revers lifté”) afin d’obtenir une balle un peu plus consistante et qui vous permettra d’attaquer.
+  Accélérez une balle haute, au dessus de votre épaule en revers est extrêmement compliqué car il faut bien souvent réalisé un revers sauté où il est difficile de mettre du poids dans la balle et de la vitesse. (Voir “Le revers sauté”). Attendez donc une balle plus propice.",
   remote_video_url: video,
   remote_photo_url: photo,
   user: arthur,
@@ -296,15 +296,15 @@ photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1566997212/2607023-5
 revers3 = Notion.create!(
   name: "Plutôt une main ou deux mains ?",
   description: "Le revers comme arme d’attaque
-Pour beaucoup de joueurs, il n’est que le coup neutre qui permet au mieux de repousser l’adversaire, au pire celui qui permet de simplement remettre la balle dans le court.
-Pourtant, même si le revers d’attaque est difficile à réaliser, il n’en est pas moins surprenant et peut se révéler une arme redoutable.
+  Pour beaucoup de joueurs, il n’est que le coup neutre qui permet au mieux de repousser l’adversaire, au pire celui qui permet de simplement remettre la balle dans le court.
+  Pourtant, même si le revers d’attaque est difficile à réaliser, il n’en est pas moins surprenant et peut se révéler une arme redoutable.
 
-REVERS D'ATTAQUE : « JE ME DÉCALE OU PAS ? »
-L’envie de se décaler lorsqu’une balle assez haute arrive vous démange ? Et c’est normal, mais est ce vraiment le bon moment ? Votre revers peut faire la différence.
+  REVERS D'ATTAQUE : « JE ME DÉCALE OU PAS ? »
+  L’envie de se décaler lorsqu’une balle assez haute arrive vous démange ? Et c’est normal, mais est ce vraiment le bon moment ? Votre revers peut faire la différence.
 
-Attention cependant aux balles dites “cotonneuses” sans vitesse et sans poids, ne vous précipitez pas !
-Préférez un revers lifté long et précis (voir “Le revers lifté”) afin d’obtenir une balle un peu plus consistante et qui vous permettra d’attaquer.
-Accélérez une balle haute, au dessus de votre épaule en revers est extrêmement compliqué car il faut bien souvent réalisé un revers sauté où il est difficile de mettre du poids dans la balle et de la vitesse. (Voir “Le revers sauté”). Attendez donc une balle plus propice.",
+  Attention cependant aux balles dites “cotonneuses” sans vitesse et sans poids, ne vous précipitez pas !
+  Préférez un revers lifté long et précis (voir “Le revers lifté”) afin d’obtenir une balle un peu plus consistante et qui vous permettra d’attaquer.
+  Accélérez une balle haute, au dessus de votre épaule en revers est extrêmement compliqué car il faut bien souvent réalisé un revers sauté où il est difficile de mettre du poids dans la balle et de la vitesse. (Voir “Le revers sauté”). Attendez donc une balle plus propice.",
   remote_video_url: video,
   remote_photo_url: photo,
   user: arthur,
@@ -318,15 +318,15 @@ photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567438270/Revers/Ma
 revers4 = Notion.create!(
   name: "Comment défendre efficacement et avancer dans le terrain ?",
   description: "Le revers comme arme d’attaque
-Pour beaucoup de joueurs, il n’est que le coup neutre qui permet au mieux de repousser l’adversaire, au pire celui qui permet de simplement remettre la balle dans le court.
-Pourtant, même si le revers d’attaque est difficile à réaliser, il n’en est pas moins surprenant et peut se révéler une arme redoutable.
+  Pour beaucoup de joueurs, il n’est que le coup neutre qui permet au mieux de repousser l’adversaire, au pire celui qui permet de simplement remettre la balle dans le court.
+  Pourtant, même si le revers d’attaque est difficile à réaliser, il n’en est pas moins surprenant et peut se révéler une arme redoutable.
 
-REVERS D'ATTAQUE : « JE ME DÉCALE OU PAS ? »
-L’envie de se décaler lorsqu’une balle assez haute arrive vous démange ? Et c’est normal, mais est ce vraiment le bon moment ? Votre revers peut faire la différence.
+  REVERS D'ATTAQUE : « JE ME DÉCALE OU PAS ? »
+  L’envie de se décaler lorsqu’une balle assez haute arrive vous démange ? Et c’est normal, mais est ce vraiment le bon moment ? Votre revers peut faire la différence.
 
-Attention cependant aux balles dites “cotonneuses” sans vitesse et sans poids, ne vous précipitez pas !
-Préférez un revers lifté long et précis (voir “Le revers lifté”) afin d’obtenir une balle un peu plus consistante et qui vous permettra d’attaquer.
-Accélérez une balle haute, au dessus de votre épaule en revers est extrêmement compliqué car il faut bien souvent réalisé un revers sauté où il est difficile de mettre du poids dans la balle et de la vitesse. (Voir “Le revers sauté”). Attendez donc une balle plus propice.",
+  Attention cependant aux balles dites “cotonneuses” sans vitesse et sans poids, ne vous précipitez pas !
+  Préférez un revers lifté long et précis (voir “Le revers lifté”) afin d’obtenir une balle un peu plus consistante et qui vous permettra d’attaquer.
+  Accélérez une balle haute, au dessus de votre épaule en revers est extrêmement compliqué car il faut bien souvent réalisé un revers sauté où il est difficile de mettre du poids dans la balle et de la vitesse. (Voir “Le revers sauté”). Attendez donc une balle plus propice.",
   remote_video_url: video,
   remote_photo_url: photo,
   user: arthur,
@@ -340,15 +340,15 @@ photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567438214/Revers/An
 revers5 = Notion.create!(
   name: "Peut-on tenter l'amorti ?",
   description: "Le revers comme arme d’attaque
-Pour beaucoup de joueurs, il n’est que le coup neutre qui permet au mieux de repousser l’adversaire, au pire celui qui permet de simplement remettre la balle dans le court.
-Pourtant, même si le revers d’attaque est difficile à réaliser, il n’en est pas moins surprenant et peut se révéler une arme redoutable.
+  Pour beaucoup de joueurs, il n’est que le coup neutre qui permet au mieux de repousser l’adversaire, au pire celui qui permet de simplement remettre la balle dans le court.
+  Pourtant, même si le revers d’attaque est difficile à réaliser, il n’en est pas moins surprenant et peut se révéler une arme redoutable.
 
-REVERS D'ATTAQUE : « JE ME DÉCALE OU PAS ? »
-L’envie de se décaler lorsqu’une balle assez haute arrive vous démange ? Et c’est normal, mais est ce vraiment le bon moment ? Votre revers peut faire la différence.
+  REVERS D'ATTAQUE : « JE ME DÉCALE OU PAS ? »
+  L’envie de se décaler lorsqu’une balle assez haute arrive vous démange ? Et c’est normal, mais est ce vraiment le bon moment ? Votre revers peut faire la différence.
 
-Attention cependant aux balles dites “cotonneuses” sans vitesse et sans poids, ne vous précipitez pas !
-Préférez un revers lifté long et précis (voir “Le revers lifté”) afin d’obtenir une balle un peu plus consistante et qui vous permettra d’attaquer.
-Accélérez une balle haute, au dessus de votre épaule en revers est extrêmement compliqué car il faut bien souvent réalisé un revers sauté où il est difficile de mettre du poids dans la balle et de la vitesse. (Voir “Le revers sauté”). Attendez donc une balle plus propice.",
+  Attention cependant aux balles dites “cotonneuses” sans vitesse et sans poids, ne vous précipitez pas !
+  Préférez un revers lifté long et précis (voir “Le revers lifté”) afin d’obtenir une balle un peu plus consistante et qui vous permettra d’attaquer.
+  Accélérez une balle haute, au dessus de votre épaule en revers est extrêmement compliqué car il faut bien souvent réalisé un revers sauté où il est difficile de mettre du poids dans la balle et de la vitesse. (Voir “Le revers sauté”). Attendez donc une balle plus propice.",
   remote_video_url: video,
   remote_photo_url: photo,
   user: arthur,
@@ -362,15 +362,15 @@ photo = "https://res.cloudinary.com/dw4g4hgu2/image/upload/v1567435712/Revers/mo
 revers6 = Notion.create!(
   name: "Un revers comme Gael Monfils",
   description: "Le revers comme arme d’attaque
-Pour beaucoup de joueurs, il n’est que le coup neutre qui permet au mieux de repousser l’adversaire, au pire celui qui permet de simplement remettre la balle dans le court.
-Pourtant, même si le revers d’attaque est difficile à réaliser, il n’en est pas moins surprenant et peut se révéler une arme redoutable.
+  Pour beaucoup de joueurs, il n’est que le coup neutre qui permet au mieux de repousser l’adversaire, au pire celui qui permet de simplement remettre la balle dans le court.
+  Pourtant, même si le revers d’attaque est difficile à réaliser, il n’en est pas moins surprenant et peut se révéler une arme redoutable.
 
-REVERS D'ATTAQUE : « JE ME DÉCALE OU PAS ? »
-L’envie de se décaler lorsqu’une balle assez haute arrive vous démange ? Et c’est normal, mais est ce vraiment le bon moment ? Votre revers peut faire la différence.
+  REVERS D'ATTAQUE : « JE ME DÉCALE OU PAS ? »
+  L’envie de se décaler lorsqu’une balle assez haute arrive vous démange ? Et c’est normal, mais est ce vraiment le bon moment ? Votre revers peut faire la différence.
 
-Attention cependant aux balles dites “cotonneuses” sans vitesse et sans poids, ne vous précipitez pas !
-Préférez un revers lifté long et précis (voir “Le revers lifté”) afin d’obtenir une balle un peu plus consistante et qui vous permettra d’attaquer.
-Accélérez une balle haute, au dessus de votre épaule en revers est extrêmement compliqué car il faut bien souvent réalisé un revers sauté où il est difficile de mettre du poids dans la balle et de la vitesse. (Voir “Le revers sauté”). Attendez donc une balle plus propice.",
+  Attention cependant aux balles dites “cotonneuses” sans vitesse et sans poids, ne vous précipitez pas !
+  Préférez un revers lifté long et précis (voir “Le revers lifté”) afin d’obtenir une balle un peu plus consistante et qui vous permettra d’attaquer.
+  Accélérez une balle haute, au dessus de votre épaule en revers est extrêmement compliqué car il faut bien souvent réalisé un revers sauté où il est difficile de mettre du poids dans la balle et de la vitesse. (Voir “Le revers sauté”). Attendez donc une balle plus propice.",
   remote_video_url: video,
   remote_photo_url: photo,
   user: arthur,
@@ -533,15 +533,15 @@ mental2 = Notion.create!(
 
 # Lesson:
 
-lesson1 = Lesson.new(teacher: arthur, student: hector, notion: revers2, date: DateTime.new(2019,9,2,8))
+lesson1 = Lesson.new(teacher: arthur, student: hector, notion: revers2, date: DateTime.new(2019,8,2,8))
 lesson1.save!
 
 lesson2 = Lesson.new(teacher: arthur, student: elisabeth, notion: revers2, date: DateTime.new(2019,9,03,14), status:"confirmed", comment: "Super Elisabeth,
-Bravo pour tes premières séances sur le revers, je pense que tu es prêt pour ton prochain tournoi.
-La prochaine fois je te montrerai comment améliorer ton coup droit")
+  Bravo pour tes premières séances sur le revers, je pense que tu es prêt pour ton prochain tournoi.
+  La prochaine fois je te montrerai comment améliorer ton coup droit")
 lesson2.save!
 
-lesson3 = Lesson.new(teacher: arthur, student: novak, notion: mental2, date: DateTime.new(2019,9,03,14), status:"confirmed")
+lesson3 = Lesson.new(teacher: arthur, student: novak, notion: mental2, date: DateTime.new(2019,6,03,14), status:"confirmed")
 lesson3.save!
 
 Review.create!(lesson: lesson1, rating: 5, comment: "Arthur est un excellent professeur: sympathique et de très bon conseil, idéal pour progresser rapidement!")

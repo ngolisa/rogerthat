@@ -34,7 +34,7 @@
           <div class="modal-body">
 
             <div class="form-container">
-              <h1>Create a lesson 👟</h1>
+              <h1>Reserver un cours 👟</h1>
               <%= simple_form_for @lesson do |f| %>
               <%= f.association :teacher, collection: User.where(teacher: true), label_method: :first_name %>
               <%= f.input :notion_id, as: :hidden, input_html: { value: @notion.id }   %>
