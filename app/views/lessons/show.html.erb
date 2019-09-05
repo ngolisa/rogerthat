@@ -1,3 +1,20 @@
+<script>
+
+  const path = 'lesson'
+  const idn = document.getElementById(path);
+  const attribut = idn.getAttribute("id");
+  if (attribut == "notion"){
+    idn.classList.add("active");
+  }else if (attribut == "lesson"){
+    idn.classList.add("active");
+  }else if (attribut == "emotion"){
+    idn.classList.add("active");
+  }else if (attribut == "dashboard"){
+    idn.classList.add("active");
+  }
+</script>
+
+
 <div class="container">
   <% if current_user == @lesson.teacher && @lesson.status == 'pending'%>
 
@@ -13,32 +30,7 @@
 
 
 
-  <div class="total">
-    <div class="en_tete">
-      <h1 class="text_post-it0">MON COURS</h1>
-    </div>
 
-    <div class="corps">
-      <div class="next_to">
-
-       <%= cl_image_tag @lesson.teacher.avatar, class:"avatar" %>
-
-       <div>
-         <p class="text_post-it"> <%= @lesson.teacher.first_name %> <%= @lesson.teacher.last_name %> </p>
-       </div>
-
-     </div>
-
-     <div class="next_to1">
-
-      <%= image_tag "raquettes.svg", class: "test" %>
-
-      <div class="ppostit">
-        <%= @lesson.date.strftime('%A %e %B')%><br>
-        <%= @lesson.date.strftime('%l:%M')%>
-      </div>
-    </div>
-  </div>
 
 </div>
 

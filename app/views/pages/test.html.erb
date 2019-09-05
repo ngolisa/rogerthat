@@ -1,4 +1,21 @@
- <div class="container">
+ <script>
+
+  const path = 'emotion'
+  const idn = document.getElementById(path);
+  const attribut = idn.getAttribute("id");
+  if (attribut == "notion"){
+    idn.classList.add("active");
+  }else if (attribut == "lesson"){
+    idn.classList.add("active");
+  }else if (attribut == "emotion"){
+    idn.classList.add("active");
+  }else if (attribut == "dashboard"){
+    idn.classList.add("active");
+  }
+</script>
+
+
+<div class="container">
 
   <h2>Entraine-toi grâce à l'E-MOTION</h2>
   <hr>

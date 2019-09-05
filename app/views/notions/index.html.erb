@@ -1,5 +1,22 @@
 <!-- <div class="container-index-lesson">
 -->
+
+<script>
+
+  const path = 'notion';
+  const idn = document.getElementById(path);
+  const attribut = idn.getAttribute("id");
+  if (attribut == "notion"){
+    idn.classList.add("active");
+  }else if (attribut == "lesson"){
+    idn.classList.add("active");
+  }else if (attribut == "emotion"){
+    idn.classList.add("active");
+  }else if (attribut == "dashboard"){
+    idn.classList.add("active");
+  }
+
+</script>
 <div class="container">
   <% if current_user.teacher %>
   <%= link_to "Add a notion", new_notion_path, class: 'btn btn-flat' %>
