@@ -1,32 +1,32 @@
 <header>
   <nav class="first-nav">
     <% link_to root_path do %>
-    <%= cl_image_tag 'bde15117-faa7-4da8-bd99-b017ac395f17_up3t0x' %>
+    <%= cl_image_tag 'bde15117-faa7-4da8-bd99-b017ac395f17_up3t0x'unless action_name == 'home' %>
     <% end %>
   </nav>
-  <nav class="navbar navbar-expand-md navbar-dark">
+  <nav class="navbar navbar-expand-md navbar-dark" >
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto">
         <li class="nav-item" id="notion">
-          <%= link_to "LES NOTIONS", notions_path, class: "nav-link" %>
+          <%= link_to "LES NOTIONS", notions_path, class: "nav-link"unless action_name == 'home' %>
         </li>
         <span>|</span>
 
         <li class="nav-item" id="lesson">
-          <%= link_to "MES COURS", lessons_path, class: "nav-link" %>
+          <%= link_to "MES COURS", lessons_path, class: "nav-link" unless action_name == 'home' %>
         </li>
         <span>|</span>
         <li class="nav-item" id="emotion">
-          <%= link_to "E-MOTION", test_path, class: "nav-link" %>
+          <%= link_to "E-MOTION", test_path, class: "nav-link" unless action_name == 'home'%>
         </li>
         <span>|</span>
         <li class="nav-item" id="teacher">
-         <%= link_to "TOUS LES PROFS", teachers_path, class: "nav-link" %>
+         <%= link_to "TOUS LES PROFS", teachers_path, class: "nav-link unless action_name == 'home'" %>
        </li>
        <span>|</span>
 
        <li class="nav-item" id="dashboard">
-         <%= link_to "MON DASHBOARD", dashboard_path, class: "nav-link" %>
+         <%= link_to "MON DASHBOARD", dashboard_path, class: "nav-link" unless action_name == 'home'%>
        </li>
 
 
