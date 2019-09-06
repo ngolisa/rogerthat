@@ -160,7 +160,7 @@ return data;
     contextCanvas2.drawImage(motion, 0, 0, 400, 320);
     contextCanvas2.drawImage(canvasTeacher, 0, 0, 400, 320);
 
-    calcul(contextCanvas2.getImageData(0,0,400,320));
+    calcul(contextTeacher.getImageData(0,0,400,320), contextMotion.getImageData(0,0,400,320));
     setTimeout(function() {
       copy();
       // huecfunction();
@@ -276,22 +276,28 @@ return data;
       }
     }
 
-    function calcul(imagedata){
+    function calcul(teacherData, studentData){
 
+      let top = 0;
       let score = 0;
-      const data = imagedata.data
+      const data = teacherData.data;
+      const data2 = studentData.data;
       for (let i = 0; i < data.length; i += 4){
-        if (data[i+3] === 0) {
-          score += 1
+        if(data[i+3] !== 0){
+          top += 1;
+          if((data2[i+3] !== 0)){
+            score += 1;
+          }
         }
       }
-      score = Math.round((((score/(data.length/4))*100)-80)*4.3);
+
+
+      score = Math.round((score*100)/top);
 
       s = document.querySelector('.score')
       s = document.querySelector('.score')
       s.innerText = ''
       progress(score);
-      console.log(score);
       return score;
     };
 
