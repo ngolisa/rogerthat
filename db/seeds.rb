@@ -76,7 +76,7 @@ hector.save
 elisabeth = User.new(
   email: "elisabeth75@gmail.com",
   password: '123456',
-  first_name: 'Elisabeth',
+  first_name: 'Lisa',
   last_name: 'Lacour'
   )
 url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/vnpbitl1cj7pf7wbg0mo.jpg"
@@ -536,8 +536,11 @@ mental2 = Notion.create!(
 lesson1 = Lesson.new(teacher: arthur, student: hector, notion: revers2, date: DateTime.new(2019,8,2,8))
 lesson1.save!
 
+
 lesson2 = Lesson.new(teacher: arthur, student: elisabeth, notion: revers2, date: DateTime.new(2019,9,03,14), status:"confirmed", comment: "Super Elisabeth,
   Bravo pour tes premières séances sur le revers, je pense que tu es prête pour ton prochain tournoi.
+
+
   La prochaine fois je te montrerai comment améliorer ton coup droit")
 lesson2.save!
 
