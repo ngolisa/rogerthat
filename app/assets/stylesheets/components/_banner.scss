@@ -23,3 +23,20 @@
 .card-category {
   width: 100%;
 }
+
+.banner-corner {
+  transform: rotate(25deg);
+  position: absolute;
+  background-color: black;
+  width: 819px;
+  height: 330px;
+  right: -113px;
+  top: -144px;
+}
+
+.banner-logo {
+  position: absolute;
+  width: 360px;
+  right: 42px;
+  top: 71px;
+}
