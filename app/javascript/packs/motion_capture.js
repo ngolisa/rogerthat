@@ -285,12 +285,13 @@ return data;
           score += 1
         }
       }
-      score = Math.round((((score/(data.length/4))*100)-60)*2.5);
+      score = Math.round((((score/(data.length/4))*100)-80)*4.3);
 
       s = document.querySelector('.score')
       s = document.querySelector('.score')
       s.innerText = ''
       progress(score);
+      console.log(score);
       return score;
     };
 
