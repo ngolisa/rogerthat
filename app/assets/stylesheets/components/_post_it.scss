@@ -1,12 +1,12 @@
 
 .total {
-width: 248px;
-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-right: 20px;
-position: absolute;
-top: 24px;
-transform: rotate(5deg);
-z-index:1;
+  width: 248px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  right: 20px;
+  position: absolute;
+  top: 24px;
+  transform: rotate(5deg);
+  z-index:1;
 
 }
 
@@ -15,20 +15,20 @@ z-index:1;
 }
 
 .en_tete {
-background-color: #1BA393;
-margin-bottom: -8px;
-padding: 3px;
+  background-color: #1BA393;
+  margin-bottom: -8px;
+  padding: 3px;
 }
 
 .corps {
-background-color: #1FBDAA;
-padding: 8px 8px 23px 8px
+  background-color: #1FBDAA;
+  padding: 8px 8px 23px 8px
 }
 
 .text_post-it0 {
-font-size: 24px;
-color:white;
-margin-left: 33px;
+  font-size: 24px;
+  color:white;
+  margin-left: 33px;
 }
 
 .text_post-it{
@@ -38,10 +38,10 @@ margin-left: 33px;
 }
 
 .text_post-it2 {
-color:white;
-line-height: 40px;
-margin: 0;
-padding-left: 6px;
+  color:white;
+  line-height: 40px;
+  margin: 0;
+  padding-left: 6px;
 }
 
 .next_to {
@@ -50,11 +50,13 @@ padding-left: 6px;
 }
 
 .next_to1 {
-display:flex;
- padding-left: 8px;
+  display:flex;
+  padding-left: 8px;
 }
 
 
 .test{
   width: 40px;
 }
+
+
